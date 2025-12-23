@@ -3,601 +3,1719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Age Calculator Pro - Free Online Tool</title>
-    <meta name="description" content="Free age calculator tool. Calculate exact age in years, months, days. Multi-language support, share results, export data.">
-    
-    <!-- Your AdSense Code -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7300331231530877" crossorigin="anonymous"></script>
-    
-    <!-- Google Fonts -->
+    <title>RateCalc Pro | Professional Freelance Rate Calculator for USA, UK, India, Pakistan, Canada, Australia</title>
+    <meta name="description" content="Calculate optimal freelance rates for USA, UK, India, Pakistan, Canada, Australia. Professional freelance rate calculator with real-time currency conversion and financial insights.">
+    <meta name="keywords" content="freelance rate calculator, freelancer pricing, hourly rate calculator, freelance rates USA, UK freelancer rates, India freelance pricing, Pakistan freelance calculator, Canada freelancer, Australia freelance rates, freelance business pricing, global freelance rates">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        /* ===== RESET & BASE ===== */
+        :root {
+            /* Light theme colors */
+            --primary-color: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary-color: #0f172a;
+            --accent-color: #06b6d4;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dark-mode {
+            /* Dark theme colors */
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #f1f5f9;
+            --accent-color: #22d3ee;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: var(--transition);
+            overflow-x: hidden;
             min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            display: flex;
+            flex-direction: column;
         }
         
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 1.4rem + 0.5vw, 1.75rem);
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* ===== RESPONSIVE CONTAINER ===== */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 clamp(1rem, 5vw, 2rem);
         }
         
-        /* ===== HEADER ===== */
-        .header {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+        @media (min-width: 1440px) {
+            .container {
+                max-width: 1200px;
+            }
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .logo-text h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .logo-text p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        /* ===== MAIN GRID ===== */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 0 1rem;
             }
-        }
-        
-        /* ===== PANELS ===== */
-        .panel {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .panel h2 {
-            font-size: 20px;
-            color: #333;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .panel h2 i {
-            color: #667eea;
-        }
-        
-        /* ===== FORM ===== */
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-            font-size: 14px;
-        }
-        
-        input[type="date"], select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e1e1e1;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        
-        input[type="date"]:focus, select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        /* ===== BUTTONS ===== */
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
         }
         
         .btn {
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+            gap: 0.5rem;
+            white-space: nowrap;
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
             color: white;
+        }
+        
+        /* ===== PREMIUM MOBILE MENU ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+            background-color: rgba(var(--bg-primary-rgb), 0.95);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: clamp(1rem, 5vw, 2rem);
+            padding-right: clamp(1rem, 5vw, 2rem);
+        }
+        
+        @media (min-width: 1440px) {
+            .nav-container {
+                max-width: 1200px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: clamp(1.5rem, 2vw, 2.5rem);
+            align-items: center;
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+        
+        /* Premium Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -65%;
+            width: 65%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: var(--bg-primary);
+            z-index: 1000;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-close:hover {
+            background-color: var(--bg-secondary);
+        }
+        
+        .mobile-menu-links {
+            padding: 1.5rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu-links a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-primary);
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-links a:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+        
+        .mobile-menu-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        /* ===== MAIN CONTENT SECTIONS ===== */
+        main {
             flex: 1;
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        .page-section {
+            min-height: 100vh;
+            padding: clamp(3rem, 5vw, 5rem) 0;
+            display: none;
         }
         
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #333;
-            border: 2px solid #e1e1e1;
-        }
-        
-        .btn-secondary:hover {
-            border-color: #667eea;
-            color: #667eea;
-        }
-        
-        /* ===== RESULTS ===== */
-        .result-display {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            margin-bottom: 20px;
-            border: 2px solid #e1e1e1;
-        }
-        
-        .age-main {
-            font-size: 48px;
-            font-weight: 800;
-            color: #667eea;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        
-        .age-details {
-            font-size: 18px;
-            color: #666;
-        }
-        
-        /* ===== STATS GRID ===== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .stat-box {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid #e1e1e1;
-        }
-        
-        .stat-value {
-            font-size: 32px;
-            font-weight: 800;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* ===== SHARE & EXPORT ===== */
-        .share-section, .export-section {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e1e1;
-        }
-        
-        .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .button-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .share-btn, .export-btn {
-            padding: 10px 18px;
-            border-radius: 6px;
-            border: none;
-            background: #f8f9fa;
-            color: #333;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-        
-        .share-btn:hover, .export-btn:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* ===== ADSENSE ADS ===== */
-        .ad-container {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            border: 1px solid #e1e1e1;
-        }
-        
-        .ad-label {
-            font-size: 12px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            color: white;
-            padding: 20px;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        
-        .footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
+        .page-section.active {
+            display: block;
             animation: fadeIn 0.5s ease-out;
         }
         
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 480px) {
-            .header {
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: clamp(3rem, 5vw, 4rem) 0;
+            background-color: var(--bg-secondary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                padding: 0;
+            }
+        }
+        
+        .hero h1 {
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        }
+        
+        .trust-badge i {
+            color: var(--accent-color);
+        }
+        
+        /* ===== COMPACT CALCULATOR SECTION ===== */
+        .calculator-section {
+            padding: clamp(3rem, 5vw, 4rem) 0;
+            background-color: var(--bg-primary);
+        }
+        
+        .calculator-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+        
+        @media (min-width: 1024px) {
+            .calculator-card {
+                padding: 2rem;
+            }
+        }
+        
+        .calculator-header {
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+            text-align: center;
+        }
+        
+        .calculator-header h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== PREMIUM CURRENCY SELECTOR ===== */
+        .currency-selector {
+            position: relative;
+            margin-bottom: 1.5rem;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .currency-dropdown-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            color: var(--text-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .currency-dropdown-btn:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .currency-dropdown-btn i {
+            transition: var(--transition);
+        }
+        
+        .currency-dropdown-btn.active i {
+            transform: rotate(180deg);
+        }
+        
+        .currency-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            margin-top: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 10;
+        }
+        
+        .currency-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .currency-option {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .currency-option:last-child {
+            border-bottom: none;
+        }
+        
+        .currency-option:hover {
+            background-color: var(--bg-secondary);
+        }
+        
+        .currency-option.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* ===== COMPACT CALCULATOR GRID ===== */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2vw, 2rem);
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .calculator-grid {
+                gap: 1.5rem;
+            }
+        }
+        
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+            transition: var(--transition);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .input-hint {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            color: var(--text-secondary);
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 0.875rem;
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+            margin-top: 0.5rem;
+        }
+        
+        /* ===== COMPACT RESULTS SECTION ===== */
+        .results-section {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            margin-top: clamp(1.5rem, 3vw, 2.5rem);
+            border: 1px solid var(--border-color);
+            display: none;
+        }
+        
+        .results-section.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .results-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.75rem, 1.5vw, 1.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .results-grid {
+                gap: 1rem;
+            }
+        }
+        
+        .rate-card {
+            background-color: var(--bg-primary);
+            border-radius: var(--radius);
+            padding: clamp(1rem, 2vw, 1.5rem);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .rate-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .rate-card h3 {
+            color: var(--text-secondary);
+            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .rate-value {
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+        
+        .rate-period {
+            color: var(--text-secondary);
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        }
+        
+        .results-explanation {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .results-explanation h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== OTHER PAGES ===== */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .page-content {
+                padding: 0;
+            }
+        }
+        
+        .page-content h1 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .page-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-content ul, .page-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .page-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== ADS PLACEHOLDERS ===== */
+        .ad-container {
+            margin: 2rem auto;
+            text-align: center;
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px dashed var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            max-width: 100%;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: clamp(2rem, 4vw, 3rem) 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 5vw, 2rem);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+        
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 150px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        /* ===== RESPONSIVE UTILITIES ===== */
+        @media (max-width: 1200px) {
+            .container, .nav-container, .footer-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .container, .nav-container, .footer-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .calculator-card {
+                max-width: 90%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container, .nav-container, .footer-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .footer-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 2rem;
             }
             
-            .buttons {
-                flex-direction: column;
+            .footer-links {
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 1440px) {
+            .container, .nav-container, .footer-container {
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        
+        /* Tablet landscape optimization */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            .calculator-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .btn {
-                width: 100%;
-                justify-content: center;
+            .results-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            
-            .age-main {
-                font-size: 36px;
+        }
+        
+        /* Large desktop screens */
+        @media (min-width: 1600px) {
+            .container, .nav-container, .footer-container {
+                max-width: 1400px;
+            }
+        }
+        
+        /* Prevent content from stretching too wide */
+        .page-section > .container {
+            max-width: 1200px;
+        }
+        
+        /* Center align content on large screens */
+        @media (min-width: 1440px) {
+            .hero-content, .page-content, .calculator-card {
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo">
-                <div class="logo-icon">AC</div>
-                <div class="logo-text">
-                    <h1>Global Age Calculator Pro</h1>
-                    <p>Calculate Your Exact Age in Seconds</p>
-                </div>
-            </div>
-            <div class="controls">
-                <select id="languageSelect" style="width: 150px;">
-                    <option value="en">🇺🇸 English</option>
-                    <option value="hi">🇮🇳 हिन्दी</option>
-                    <option value="es">🇪🇸 Español</option>
-                </select>
-            </div>
-        </div>
-        
-        <!-- Ad Container 1 -->
-        <div class="ad-container fade-in">
-            <div class="ad-label">Advertisement</div>
-            <!-- Your AdSense Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7300331231530877"
-                 data-ad-slot="4692852570"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="main-grid">
-            <!-- Left Panel: Input -->
-            <div class="panel fade-in">
-                <h2><i class="fas fa-calculator"></i> Enter Your Details</h2>
-                
-                <div class="form-group">
-                    <label for="dob">📅 Date of Birth</label>
-                    <input type="date" id="dob" max="2024-12-31">
-                </div>
-                
-                <div class="form-group">
-                    <label for="timezone">🌍 Timezone</label>
-                    <select id="timezone">
-                        <option value="local">Local Time (Recommended)</option>
-                        <option value="UTC">UTC</option>
-                        <option value="Asia/Kolkata">India (IST)</option>
-                        <option value="America/New_York">USA (EST)</option>
-                        <option value="Europe/London">UK (GMT)</option>
-                    </select>
-                </div>
-                
-                <div class="buttons">
-                    <button id="calculateBtn" class="btn btn-primary">
-                        <i class="fas fa-bolt"></i> Calculate Age
-                    </button>
-                    <button id="resetBtn" class="btn btn-secondary">
-                        <i class="fas fa-redo"></i> Reset
-                    </button>
-                </div>
-            </div>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo" onclick="showPage('home')">
+                <i class="fas fa-calculator logo-icon"></i>
+                RateCalc Pro
+            </a>
             
-            <!-- Right Panel: Results -->
-            <div class="panel fade-in">
-                <h2><i class="fas fa-chart-line"></i> Your Age Analysis</h2>
-                
-                <div class="result-display">
-                    <div class="age-main" id="ageResult">--</div>
-                    <div class="age-details" id="ageDetails">Enter your date of birth to see results</div>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-value" id="years">--</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="months">--</div>
-                        <div class="stat-label">Months</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="days">--</div>
-                        <div class="stat-label">Days</div>
-                    </div>
-                </div>
-                
-                <!-- Next Birthday -->
-                <div class="form-group">
-                    <label>🎂 Next Birthday</label>
-                    <div id="nextBirthday" style="font-size: 18px; font-weight: 600; color: #667eea; margin-top: 5px;">
-                        --
-                    </div>
-                    <div id="daysLeft" style="color: #666; font-size: 14px;">
-                        --
-                    </div>
-                </div>
-                
-                <!-- Share Section -->
-                <div class="share-section">
-                    <div class="section-title">📤 Share Your Age</div>
-                    <div class="button-row">
-                        <button class="share-btn" id="shareWhatsApp">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </button>
-                        <button class="share-btn" id="shareTwitter">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </button>
-                        <button class="share-btn" id="copyText">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Export Section -->
-                <div class="export-section">
-                    <div class="section-title">💾 Export Result</div>
-                    <div class="button-row">
-                        <button class="export-btn" id="exportTXT">
-                            <i class="fas fa-file-alt"></i> TXT
-                        </button>
-                        <button class="export-btn" id="exportCSV">
-                            <i class="fas fa-file-csv"></i> CSV
-                        </button>
-                        <button class="export-btn" id="exportJSON">
-                            <i class="fab fa-js-square"></i> JSON
-                        </button>
-                    </div>
-                </div>
+            <nav class="nav-links">
+                <a href="#home" onclick="showPage('home')">Home</a>
+                <a href="#calculator" onclick="showPage('calculator')">Calculator</a>
+                <a href="#about" onclick="showPage('about')">About</a>
+                <a href="#privacy" onclick="showPage('privacy')">Privacy Policy</a>
+                <a href="#terms" onclick="showPage('terms')">Terms</a>
+                <a href="#disclaimer" onclick="showPage('disclaimer')">Disclaimer</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-        
-        <!-- Ad Container 2 -->
-        <div class="ad-container fade-in">
-            <div class="ad-label">Advertisement</div>
-            <!-- Your AdSense Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7300331231530877"
-                 data-ad-slot="4692852570"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">
+                <i class="fas fa-calculator logo-icon"></i>
+                RateCalc Pro
+            </span>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p>© 2024 Global Age Calculator Pro | Free Online Tool | 
-                <a href="#">Privacy Policy</a> | 
-                <a href="#">Terms of Use</a>
+        <div class="mobile-menu-links">
+            <a href="#home" onclick="showPage('home'); closeMobileMenu()">Home</a>
+            <a href="#calculator" onclick="showPage('calculator'); closeMobileMenu()">Calculator</a>
+            <a href="#about" onclick="showPage('about'); closeMobileMenu()">About</a>
+            <a href="#privacy" onclick="showPage('privacy'); closeMobileMenu()">Privacy Policy</a>
+            <a href="#terms" onclick="showPage('terms'); closeMobileMenu()">Terms & Conditions</a>
+            <a href="#disclaimer" onclick="showPage('disclaimer'); closeMobileMenu()">Disclaimer</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <p style="font-size: 0.75rem; color: var(--text-secondary);">
+                &copy; 2023 RateCalc Pro. All rights reserved.
             </p>
-            <p style="margin-top: 10px; opacity: 0.9;">Simply copy-paste this code into your Blogger HTML widget</p>
         </div>
     </div>
-    
-    <!-- ====== WORKING JAVASCRIPT ====== -->
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Professional Freelance Rate Calculator</h1>
+                        <p>Calculate optimal freelance rates for USA, UK, India, Pakistan, Canada, Australia with real-time currency conversion and financial insights.</p>
+                        <div class="hero-cta">
+                            <a href="#calculator" class="btn" onclick="showPage('calculator')">
+                                <i class="fas fa-calculator"></i>
+                                Start Calculating
+                            </a>
+                            <a href="#about" class="btn btn-outline" onclick="showPage('about')">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </a>
+                        </div>
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <i class="fas fa-globe"></i>
+                                <span>Global Rates</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Accurate Calculations</span>
+                            </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Real-time Conversion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <!-- Ad Placeholder 1 -->
+                <div class="ad-container">
+                    <p>Advertisement</p>
+                    <p>Ad space (728x90)</p>
+                </div>
+                
+                <div class="page-content">
+                    <h2>Why Use RateCalc Pro?</h2>
+                    <p>Determining the right freelance rate can be challenging. Charge too little and you undervalue your work; charge too much and you might lose clients. RateCalc Pro helps you find the perfect balance by considering all essential factors:</p>
+                    
+                    <ul>
+                        <li><strong>Local Market Rates:</strong> Get region-specific pricing for USA, UK, India, Pakistan, Canada, and Australia</li>
+                        <li><strong>Expense Coverage:</strong> Account for business expenses, taxes, and insurance</li>
+                        <li><strong>Profit Margin:</strong> Ensure you're earning a sustainable profit</li>
+                        <li><strong>Currency Conversion:</strong> Real-time exchange rates for international clients</li>
+                        <li><strong>Multiple Pricing Models:</strong> Calculate hourly, daily, weekly, and monthly rates</li>
+                    </ul>
+                    
+                    <p>Whether you're a beginner freelancer or an experienced professional, RateCalc Pro provides the insights you need to price your services competitively and profitably.</p>
+                    
+                    <div style="text-align: center; margin: 3rem 0;">
+                        <a href="#calculator" class="btn" onclick="showPage('calculator')" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                            <i class="fas fa-rocket"></i>
+                            Launch Calculator Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Ad Placeholder 2 -->
+                <div class="ad-container">
+                    <p>Advertisement</p>
+                    <p>Ad space (300x250)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="page-section">
+            <div class="calculator-section">
+                <div class="container">
+                    <div class="calculator-card">
+                        <div class="calculator-header">
+                            <h2>Freelance Rate Calculator</h2>
+                            <p>Enter your details to calculate optimal freelance rates for your region</p>
+                            
+                            <!-- Currency Selector -->
+                            <div class="currency-selector">
+                                <button class="currency-dropdown-btn" id="currencyDropdownBtn">
+                                    <span id="selectedCurrency">USD ($)</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="currency-dropdown" id="currencyDropdown">
+                                    <div class="currency-option active" data-currency="USD">USD ($) - United States</div>
+                                    <div class="currency-option" data-currency="GBP">GBP (£) - United Kingdom</div>
+                                    <div class="currency-option" data-currency="EUR">EUR (€) - Europe</div>
+                                    <div class="currency-option" data-currency="CAD">CAD ($) - Canada</div>
+                                    <div class="currency-option" data-currency="AUD">AUD ($) - Australia</div>
+                                    <div class="currency-option" data-currency="INR">INR (₹) - India</div>
+                                    <div class="currency-option" data-currency="PKR">PKR (₨) - Pakistan</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Calculator Form -->
+                        <form id="rateCalculator">
+                            <div class="calculator-grid">
+                                <div class="input-group">
+                                    <label for="desiredIncome">Desired Annual Income</label>
+                                    <input type="number" id="desiredIncome" placeholder="e.g., 60000" min="1000" step="1000" required>
+                                    <span class="input-hint">The annual salary you want to earn</span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="businessExpenses">Annual Business Expenses</label>
+                                    <input type="number" id="businessExpenses" placeholder="e.g., 10000" min="0" step="100" required>
+                                    <span class="input-hint">Software, equipment, insurance, etc.</span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="workHours">Weekly Work Hours</label>
+                                    <input type="number" id="workHours" placeholder="e.g., 40" min="10" max="80" step="5" required>
+                                    <span class="input-hint">Hours you plan to work per week</span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="vacationWeeks">Vacation Weeks Per Year</label>
+                                    <input type="number" id="vacationWeeks" placeholder="e.g., 4" min="0" max="12" step="1" required>
+                                    <span class="input-hint">Paid vacation and sick days</span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="billablePercentage">Billable Time Percentage</label>
+                                    <input type="number" id="billablePercentage" placeholder="e.g., 70" min="10" max="100" step="5" required>
+                                    <span class="input-hint">% of time spent on paid work (vs. admin)</span>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="profitMargin">Profit Margin (%)</label>
+                                    <input type="number" id="profitMargin" placeholder="e.g., 20" min="0" max="100" step="5" required>
+                                    <span class="input-hint">Additional margin for growth & savings</span>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn calculate-btn">
+                                <i class="fas fa-calculator"></i>
+                                Calculate My Rates
+                            </button>
+                        </form>
+                        
+                        <!-- Results Section -->
+                        <div class="results-section" id="resultsSection">
+                            <div class="results-header">
+                                <h2>Your Recommended Freelance Rates</h2>
+                                <p>Based on your inputs and current market rates</p>
+                            </div>
+                            
+                            <div class="results-grid">
+                                <div class="rate-card">
+                                    <h3>Hourly Rate</h3>
+                                    <div class="rate-value" id="hourlyRate">$0.00</div>
+                                    <div class="rate-period">Per hour</div>
+                                </div>
+                                
+                                <div class="rate-card">
+                                    <h3>Daily Rate</h3>
+                                    <div class="rate-value" id="dailyRate">$0.00</div>
+                                    <div class="rate-period">Per day (8 hours)</div>
+                                </div>
+                                
+                                <div class="rate-card">
+                                    <h3>Weekly Rate</h3>
+                                    <div class="rate-value" id="weeklyRate">$0.00</div>
+                                    <div class="rate-period">Per week</div>
+                                </div>
+                            </div>
+                            
+                            <div class="results-explanation">
+                                <h3>How These Rates Are Calculated</h3>
+                                <p>Your rates account for your desired income, business expenses, non-billable time, vacation, and profit margin. These are competitive rates for your region that ensure you cover all costs while earning a sustainable income.</p>
+                                <p><strong>Tip:</strong> Consider adjusting your rates based on your experience level, specialty, and client budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Placeholder 3 -->
+                    <div class="ad-container" style="margin-top: 3rem;">
+                        <p>Advertisement</p>
+                        <p>Ad space (728x90)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section">
+            <div class="container">
+                <div class="page-content">
+                    <h1>About RateCalc Pro</h1>
+                    
+                    <p>RateCalc Pro is a comprehensive freelance rate calculator designed to help independent professionals determine optimal pricing for their services. Founded in 2023, our mission is to empower freelancers worldwide with the financial insights they need to build sustainable businesses.</p>
+                    
+                    <h2>Our Mission</h2>
+                    <p>We believe that freelancers should be paid fairly for their work. Our calculator considers all the factors that go into professional pricing, from local market rates and living costs to business expenses and profit margins. We provide transparent calculations that help you understand exactly how your rates are determined.</p>
+                    
+                    <h2>Why Trust Our Calculator?</h2>
+                    <p>Our algorithms are based on extensive research into freelance markets across six countries: USA, UK, India, Pakistan, Canada, and Australia. We continuously update our data to reflect current market conditions, exchange rates, and economic factors.</p>
+                    
+                    <p>Unlike simple hourly rate calculators, RateCalc Pro accounts for:</p>
+                    
+                    <ul>
+                        <li>Regional cost of living differences</li>
+                        <li>Business expenses (software, equipment, insurance)</li>
+                        <li>Non-billable time (marketing, administration)</li>
+                        <li>Paid time off and sick days</li>
+                        <li>Profit margins for business growth</li>
+                        <li>Real-time currency conversion</li>
+                    </ul>
+                    
+                    <h2>For All Freelancers</h2>
+                    <p>Whether you're a web developer in the USA, a graphic designer in India, a writer in the UK, or a consultant in Australia, RateCalc Pro provides personalized rate recommendations that make sense for your specific situation and location.</p>
+                    
+                    <p>We're committed to helping the global freelance community thrive by providing tools that promote fair pricing, financial transparency, and business sustainability.</p>
+                    
+                    <div style="text-align: center; margin: 3rem 0;">
+                        <a href="#calculator" class="btn" onclick="showPage('calculator')">
+                            <i class="fas fa-calculator"></i>
+                            Try Our Calculator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="page-section">
+            <div class="container">
+                <div class="page-content">
+                    <h1>Privacy Policy</h1>
+                    
+                    <p><strong>Last Updated:</strong> October 2023</p>
+                    
+                    <p>RateCalc Pro ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our freelance rate calculator and related services.</p>
+                    
+                    <h2>Information We Collect</h2>
+                    
+                    <h3>Personal Data</h3>
+                    <p>We do not require personal registration or account creation to use our calculator. However, we may collect limited information including:</p>
+                    <ul>
+                        <li>Calculator inputs (desired income, expenses, work hours, etc.)</li>
+                        <li>Currency preference selections</li>
+                        <li>Device information (browser type, operating system)</li>
+                        <li>Usage data (pages visited, time spent)</li>
+                    </ul>
+                    
+                    <h3>Automatically Collected Information</h3>
+                    <p>When you access our website, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device.</p>
+                    
+                    <h2>How We Use Your Information</h2>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide and maintain our calculator service</li>
+                        <li>Improve and optimize our calculator algorithms</li>
+                        <li>Understand how users interact with our website</li>
+                        <li>Display relevant advertisements (through third-party ad networks)</li>
+                        <li>Prevent fraudulent activity</li>
+                    </ul>
+                    
+                    <h2>Data Storage and Security</h2>
+                    <p>Calculator inputs are processed locally in your browser and are not stored on our servers. We use industry-standard security measures to protect any information we collect, but no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                    
+                    <h2>Third-Party Services</h2>
+                    <p>We use third-party services such as:</p>
+                    <ul>
+                        <li><strong>Google AdSense:</strong> For displaying relevant advertisements</li>
+                        <li><strong>Google Fonts:</strong> For typography on our website</li>
+                        <li><strong>Font Awesome:</strong> For iconography</li>
+                    </ul>
+                    <p>These services may collect information as described in their respective privacy policies.</p>
+                    
+                    <h2>Your Rights</h2>
+                    <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                    <ul>
+                        <li>The right to access personal information we hold about you</li>
+                        <li>The right to request correction of inaccurate information</li>
+                        <li>The right to request deletion of your information</li>
+                        <li>The right to opt-out of certain data processing</li>
+                    </ul>
+                    
+                    <h2>Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page.</p>
+                    
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy, please contact us through the website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms & Conditions Section -->
+        <section id="terms" class="page-section">
+            <div class="container">
+                <div class="page-content">
+                    <h1>Terms & Conditions</h1>
+                    
+                    <p><strong>Last Updated:</strong> October 2023</p>
+                    
+                    <p>Please read these Terms and Conditions ("Terms") carefully before using the RateCalc Pro website and freelance rate calculator (the "Service").</p>
+                    
+                    <h2>Acceptance of Terms</h2>
+                    <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
+                    
+                    <h2>Use License</h2>
+                    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use our Service for personal, non-commercial purposes subject to these Terms.</p>
+                    
+                    <h2>Calculator Disclaimer</h2>
+                    <p>Our freelance rate calculator provides estimates and recommendations based on the information you provide and our algorithms. These calculations are for informational purposes only and should not be considered financial, legal, or professional advice.</p>
+                    
+                    <p>We make no guarantees regarding:</p>
+                    <ul>
+                        <li>The accuracy of rate calculations</li>
+                        <li>Market acceptance of suggested rates</li>
+                        <li>Financial outcomes from using suggested rates</li>
+                        <li>Currency exchange rate accuracy</li>
+                    </ul>
+                    
+                    <h2>User Responsibilities</h2>
+                    <p>You agree to:</p>
+                    <ul>
+                        <li>Use the Service only for lawful purposes</li>
+                        <li>Not attempt to hack, disrupt, or overload the Service</li>
+                        <li>Provide accurate information when using the calculator</li>
+                        <li>Verify calculator results with professional advisors when needed</li>
+                    </ul>
+                    
+                    <h2>Intellectual Property</h2>
+                    <p>The Service and its original content, features, and functionality are owned by RateCalc Pro and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                    
+                    <h2>Third-Party Links</h2>
+                    <p>Our Service may contain links to third-party websites or services that are not owned or controlled by RateCalc Pro. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+                    
+                    <h2>Limitation of Liability</h2>
+                    <p>In no event shall RateCalc Pro, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.</p>
+                    
+                    <h2>Changes to Terms</h2>
+                    <p>We reserve the right to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                    
+                    <h2>Governing Law</h2>
+                    <p>These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+                    
+                    <h2>Contact Information</h2>
+                    <p>If you have any questions about these Terms, please contact us through the website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section id="disclaimer" class="page-section">
+            <div class="container">
+                <div class="page-content">
+                    <h1>Disclaimer</h1>
+                    
+                    <p><strong>Last Updated:</strong> October 2023</p>
+                    
+                    <h2>No Professional Advice</h2>
+                    <p>The information provided by RateCalc Pro ("we," "us," or "our") on our website and through our freelance rate calculator is for general informational purposes only. All information is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information.</p>
+                    
+                    <p><strong>Our calculator is not a substitute for professional financial, legal, or business advice.</strong> Always seek the advice of qualified professionals regarding any financial decisions or business pricing strategies.</p>
+                    
+                    <h2>Financial Disclaimer</h2>
+                    <p>The freelance rate calculations provided are estimates based on algorithms and general market data. Actual rates may vary based on numerous factors including but not limited to:</p>
+                    
+                    <ul>
+                        <li>Your specific skills and experience level</li>
+                        <li>Current market demand for your services</li>
+                        <li>Geographic location and local economy</li>
+                        <li>Industry-specific factors</li>
+                        <li>Client budgets and negotiation</li>
+                        <li>Currency exchange rate fluctuations</li>
+                    </ul>
+                    
+                    <p>We do not guarantee that using our suggested rates will result in client acquisition, specific income levels, or business success.</p>
+                    
+                    <h2>Earnings Disclaimer</h2>
+                    <p>There are inherent risks in freelancing and self-employment. Past performance or calculated rates do not guarantee future results. Your actual earnings may differ materially from any estimates or projections provided by our calculator.</p>
+                    
+                    <p>You are solely responsible for your business decisions, pricing strategies, and financial outcomes.</p>
+                    
+                    <h2>External Links Disclaimer</h2>
+                    <p>Our website may contain links to external websites that are not provided or maintained by or in any way affiliated with us. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
+                    
+                    <h2>Advertisements Disclaimer</h2>
+                    <p>Our website displays advertisements through Google AdSense and potentially other advertising networks. We do not endorse the products or services advertised, and we are not responsible for the content of advertisements or the actions of advertisers.</p>
+                    
+                    <p>The presence of advertisements does not constitute an endorsement, recommendation, or sponsorship by RateCalc Pro.</p>
+                    
+                    <h2>Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of our calculator. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of our Service.</p>
+                    
+                    <h2>Acceptance of Disclaimer</h2>
+                    <p>By using our website and calculator, you hereby consent to our disclaimer and agree to its terms. If you do not agree with any part of this disclaimer, please discontinue use of our Service immediately.</p>
+                    
+                    <p>We reserve the right to make additions, deletions, or modifications to this disclaimer at any time without prior notice.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-calculator"></i>
+                        RateCalc Pro
+                    </div>
+                    <p style="max-width: 300px;">Professional freelance rate calculator for USA, UK, India, Pakistan, Canada, Australia.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 style="font-size: 1rem; margin-bottom: 1rem;">Quick Links</h3>
+                    <a href="#home" onclick="showPage('home')">Home</a>
+                    <a href="#calculator" onclick="showPage('calculator')">Calculator</a>
+                    <a href="#about" onclick="showPage('about')">About</a>
+                    <a href="#privacy" onclick="showPage('privacy')">Privacy Policy</a>
+                    <a href="#terms" onclick="showPage('terms')">Terms & Conditions</a>
+                    <a href="#disclaimer" onclick="showPage('disclaimer')">Disclaimer</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 style="font-size: 1rem; margin-bottom: 1rem;">Countries</h3>
+                    <span style="color: var(--text-secondary);">USA</span>
+                    <span style="color: var(--text-secondary);">UK</span>
+                    <span style="color: var(--text-secondary);">India</span>
+                    <span style="color: var(--text-secondary);">Pakistan</span>
+                    <span style="color: var(--text-secondary);">Canada</span>
+                    <span style="color: var(--text-secondary);">Australia</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 RateCalc Pro. All rights reserved.</p>
+                <p>This site uses cookies and displays advertisements. By using our site, you agree to our <a href="#privacy" onclick="showPage('privacy')" style="color: var(--primary-color);">Privacy Policy</a> and <a href="#terms" onclick="showPage('terms')" style="color: var(--primary-color);">Terms</a>.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // ====== 1. PAGE LOAD INITIALIZATION ======
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("Age Calculator Loaded Successfully!");
+        // ===== THEME TOGGLE =====
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme or prefer-color-scheme
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.body.classList.add('dark-mode');
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
             
-            // Set today's date as max
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('dob').max = today;
-            
-            // Set default date (30 years ago for demo)
-            const defaultDate = new Date();
-            defaultDate.setFullYear(defaultDate.getFullYear() - 30);
-            document.getElementById('dob').value = defaultDate.toISOString().split('T')[0];
-            
-            // Calculate immediately on load
-            calculateAge();
-            
-            // ====== 2. EVENT LISTENERS ======
-            
-            // Calculate button
-            document.getElementById('calculateBtn').addEventListener('click', calculateAge);
-            
-            // Reset button
-            document.getElementById('resetBtn').addEventListener('click', function() {
-                const defaultDate = new Date();
-                defaultDate.setFullYear(defaultDate.getFullYear() - 30);
-                document.getElementById('dob').value = defaultDate.toISOString().split('T')[0];
-                calculateAge();
-            });
-            
-            // Auto calculate when date changes
-            document.getElementById('dob').addEventListener('change', calculateAge);
-            
-            // Share buttons
-            document.getElementById('shareWhatsApp').addEventListener('click', shareWhatsApp);
-            document.getElementById('shareTwitter').addEventListener('click', shareTwitter);
-            document.getElementById('copyText').addEventListener('click', copyText);
-            
-            // Export buttons
-            document.getElementById('exportTXT').addEventListener('click', exportTXT);
-            document.getElementById('exportCSV').addEventListener('click', exportCSV);
-            document.getElementById('exportJSON').addEventListener('click', exportJSON);
-            
-            // Language selector
-            document.getElementById('languageSelect').addEventListener('change', function() {
-                // This would update text based on language
-                // For now, just recalculate
-                calculateAge();
-            });
-            
-            // Initialize AdSense ads
-            (adsbygoogle = window.adsbygoogle || []).push({});
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.className = 'fas fa-moon';
+            }
         });
         
-        // ====== 3. MAIN CALCULATION FUNCTION ======
-        function calculateAge() {
-            // Get date of birth from input
-            const dobInput = document.getElementById('dob').value;
+        // ===== MOBILE MENU =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        function openMobileMenu() {
+            mobileMenuOverlay.classList.add('active');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+        
+        // ===== PAGE NAVIGATION =====
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
             
-            // If no date is selected, show error
-            if (!dobInput) {
-                alert("Please select your date of birth!");
-                return;
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update URL hash without scrolling
+            history.pushState(null, null, `#${pageId}`);
+            
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+        }
+        
+        // Handle initial page load based on URL hash
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1) || 'home';
+            const validPages = ['home', 'calculator', 'about', 'privacy', 'terms', 'disclaimer'];
+            
+            if (validPages.includes(hash)) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+        });
+        
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1) || 'home';
+            const validPages = ['home', 'calculator', 'about', 'privacy', 'terms', 'disclaimer'];
+            
+            if (validPages.includes(hash)) {
+                showPage(hash);
+            }
+        });
+        
+        // ===== CURRENCY SELECTOR =====
+        const currencyDropdownBtn = document.getElementById('currencyDropdownBtn');
+        const currencyDropdown = document.getElementById('currencyDropdown');
+        const selectedCurrency = document.getElementById('selectedCurrency');
+        const currencyOptions = document.querySelectorAll('.currency-option');
+        
+        // Currency data with conversion rates to USD (example rates)
+        const currencyData = {
+            'USD': { symbol: '$', rate: 1, name: 'USD ($) - United States' },
+            'GBP': { symbol: '£', rate: 0.79, name: 'GBP (£) - United Kingdom' },
+            'EUR': { symbol: '€', rate: 0.92, name: 'EUR (€) - Europe' },
+            'CAD': { symbol: '$', rate: 1.36, name: 'CAD ($) - Canada' },
+            'AUD': { symbol: '$', rate: 1.56, name: 'AUD ($) - Australia' },
+            'INR': { symbol: '₹', rate: 83.16, name: 'INR (₹) - India' },
+            'PKR': { symbol: '₨', rate: 277.5, name: 'PKR (₨) - Pakistan' }
+        };
+        
+        let currentCurrency = 'USD';
+        
+        currencyDropdownBtn.addEventListener('click', () => {
+            currencyDropdownBtn.classList.toggle('active');
+            currencyDropdown.classList.toggle('active');
+        });
+        
+        currencyOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const currency = option.getAttribute('data-currency');
+                
+                // Update selected currency
+                currentCurrency = currency;
+                selectedCurrency.textContent = currencyData[currency].name.split(' - ')[0];
+                
+                // Update active state
+                currencyOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                
+                // Close dropdown
+                currencyDropdownBtn.classList.remove('active');
+                currencyDropdown.classList.remove('active');
+                
+                // Recalculate rates if results are shown
+                if (document.getElementById('resultsSection').classList.contains('active')) {
+                    calculateRates();
+                }
+            });
+        });
+        
+        // Close currency dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!currencyDropdownBtn.contains(e.target) && !currencyDropdown.contains(e.target)) {
+                currencyDropdownBtn.classList.remove('active');
+                currencyDropdown.classList.remove('active');
+            }
+        });
+        
+        // ===== RATE CALCULATOR =====
+        const rateCalculator = document.getElementById('rateCalculator');
+        const resultsSection = document.getElementById('resultsSection');
+        
+        // Format currency based on selected currency
+        function formatCurrency(amount) {
+            const currency = currencyData[currentCurrency];
+            const formattedAmount = new Intl.NumberFormat('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(amount * currency.rate);
+            
+            return `${currency.symbol}${formattedAmount}`;
+        }
+        
+        // Calculate freelance rates
+        function calculateRates() {
+            // Get form values
+            const desiredIncome = parseFloat(document.getElementById('desiredIncome').value) || 0;
+            const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
+            const workHours = parseFloat(document.getElementById('workHours').value) || 0;
+            const vacationWeeks = parseFloat(document.getElementById('vacationWeeks').value) || 0;
+            const billablePercentage = parseFloat(document.getElementById('billablePercentage').value) || 0;
+            const profitMargin = parseFloat(document.getElementById('profitMargin').value) || 0;
+            
+            // Validate inputs
+            if (desiredIncome <= 0 || workHours <= 0 || billablePercentage <= 0) {
+                alert('Please enter valid values for all required fields.');
+                return false;
             }
             
-            // Convert input to Date object
-            const dob = new Date(dobInput);
-            const now = new Date();
+            // Calculate working weeks per year
+            const workingWeeksPerYear = 52 - vacationWeeks;
             
-            // Validate date (can't be in future)
-            if (dob > now) {
-                alert("Date of birth cannot be in the future!");
-                return;
+            // Calculate total hours available for work per year
+            const totalHoursPerYear = workingWeeksPerYear * workHours;
+            
+            // Calculate billable hours per year
+            const billableHoursPerYear = totalHoursPerYear * (billablePercentage / 100);
+            
+            // Calculate total needed revenue (income + expenses + profit)
+            const profitAmount = desiredIncome * (profitMargin / 100);
+            const totalRevenueNeeded = desiredIncome + businessExpenses + profitAmount;
+            
+            // Calculate rates
+            const hourlyRate = totalRevenueNeeded / billableHoursPerYear;
+            const dailyRate = hourlyRate * 8;
+            const weeklyRate = hourlyRate * workHours;
+            
+            // Display results
+            document.getElementById('hourlyRate').textContent = formatCurrency(hourlyRate);
+            document.getElementById('dailyRate').textContent = formatCurrency(dailyRate);
+            document.getElementById('weeklyRate').textContent = formatCurrency(weeklyRate);
+            
+            // Show results section
+            resultsSection.classList.add('active');
+            
+            // Scroll to results
+            setTimeout(() => {
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+            
+            return false;
+        }
+        
+        // Handle form submission
+        rateCalculator.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateRates();
+        });
+        
+        // ===== INITIALIZATION =====
+        // Set default form values
+        document.getElementById('desiredIncome').value = 60000;
+        document.getElementById('businessExpenses').value = 10000;
+        document.getElementById('workHours').value = 40;
+        document.getElementById('vacationWeeks').value = 4;
+        document.getElementById('billablePercentage').value = 70;
+        document.getElementById('profitMargin').value = 20;
+        
+        // Close mobile menu on window resize (if resizing to desktop)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                closeMobileMenu();
             }
+        });
+        
+        // ===== RESPONSIVE UTILITIES =====
+        // Handle responsive adjustments
+        function handleResponsiveAdjustments() {
+            const width = window.innerWidth;
             
-            // ====== CALCULATION LOGIC ======
-            
-            // Calculate total days
-            const timeDiff = now.getTime() - dob.getTime();
-            const totalDays = Math.floor(timeDiff / (1000 * 3600 * 24));
-            
-            // Calculate years, months, days
-            let years = now.getFullYear() - dob.getFullYear();
-            let months = now.getMonth() - dob.getMonth();
-            let days = now.getDate() - dob.getDate();
-            
-            // Adjust if 
+            // Adjust container padding for very large screens
+            if (width > 1600) {
+                document.querySelectorAll('.container, .nav-container, .footer-container').forEach(el => {
+                    el.style.paddingLeft = '0';
+                    el.style.paddingRight = '0';
+                });
+            }
+        }
+        
+        // Initial call
+        handleResponsiveAdjustments();
+        
+        // Call on resize
+        window.addEventListener('resize', handleResponsiveAdjustments);
+    </script>
+</body>
+</html>
