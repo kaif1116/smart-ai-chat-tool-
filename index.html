@@ -3,1771 +3,1828 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RateCalc Pro | Professional Freelance Rate Calculator for USA, UK, India, Pakistan, Canada, Australia</title>
-    <meta name="description" content="Calculate optimal freelance rates for USA, UK, India, Pakistan, Canada, Australia. Professional freelance rate calculator with real-time currency conversion and financial insights.">
-    <meta name="keywords" content="freelance rate calculator, freelancer pricing, hourly rate calculator, freelance rates USA, UK freelancer rates, India freelance pricing, Pakistan freelance calculator, Canada freelancer, Australia freelance rates, freelance business pricing, global freelance rates">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>AI Content Repurposing Tool - Transform Content Across Platforms</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            /* Light theme colors */
-            --primary-color: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary-color: #0f172a;
-            --accent-color: #06b6d4;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --radius: 8px;
-            --radius-lg: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .dark-mode {
-            /* Dark theme colors */
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary-color: #f1f5f9;
-            --accent-color: #22d3ee;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #1e293b;
-            --border-color: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            transition: var(--transition);
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-        
-        h1 {
-            font-size: clamp(2rem, 1.8rem + 1vw, 2.5rem);
-        }
-        
-        h2 {
-            font-size: clamp(1.5rem, 1.4rem + 0.5vw, 1.75rem);
-            margin-bottom: 1rem;
-        }
-        
-        h3 {
-            font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* ===== RESPONSIVE CONTAINER ===== */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 5vw, 2rem);
-        }
-        
-        @media (min-width: 1440px) {
-            .container {
-                max-width: 1200px;
-            }
-        }
-        
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius);
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        /* ===== PREMIUM MOBILE MENU ===== */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: var(--bg-primary);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            backdrop-filter: blur(8px);
-            background-color: rgba(var(--bg-primary-rgb), 0.95);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: clamp(1rem, 5vw, 2rem);
-            padding-right: clamp(1rem, 5vw, 2rem);
-        }
-        
-        @media (min-width: 1440px) {
-            .nav-container {
-                max-width: 1200px;
-            }
-        }
-        
-        @media (max-width: 1024px) {
-            .nav-container {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-        
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
-            font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .logo-icon {
-            color: var(--accent-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: clamp(1.5rem, 2vw, 2.5rem);
-            align-items: center;
-        }
-        
-        @media (max-width: 1024px) {
-            .nav-links {
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-        }
-        
-        .nav-links a {
-            color: var(--text-primary);
-            font-weight: 500;
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            cursor: pointer;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-        
-        .theme-toggle:hover {
-            background-color: var(--bg-secondary);
-        }
-        
-        /* Premium Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-primary);
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius);
-            transition: var(--transition);
-        }
-        
-        @media (max-width: 900px) {
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-        
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -65%;
-            width: 65%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: var(--bg-primary);
-            z-index: 1000;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-            border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-        }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        .mobile-menu-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .mobile-menu-close {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-        
-        .mobile-menu-close:hover {
-            background-color: var(--bg-secondary);
-        }
-        
-        .mobile-menu-links {
-            padding: 1.5rem;
-            flex: 1;
-            overflow-y: auto;
-        }
-        
-        .mobile-menu-links a {
-            display: block;
-            padding: 0.75rem 0;
-            color: var(--text-primary);
-            font-weight: 500;
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        
-        .mobile-menu-links a:hover {
-            color: var(--primary-color);
-            padding-left: 0.5rem;
-        }
-        
-        .mobile-menu-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        /* ===== MAIN CONTENT SECTIONS ===== */
-        main {
-            flex: 1;
-        }
-        
-        .page-section {
-            min-height: 100vh;
-            padding: clamp(3rem, 5vw, 5rem) 0;
-            display: none;
-        }
-        
-        .page-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        /* ===== HERO SECTION ===== */
-        .hero {
-            padding: clamp(3rem, 5vw, 4rem) 0;
-            background-color: var(--bg-secondary);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-        }
-        
-        .hero-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-content {
-                padding: 0;
-            }
-        }
-        
-        .hero h1 {
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-            margin-bottom: 2rem;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-        }
-        
-        .trust-badge i {
-            color: var(--accent-color);
-        }
-        
-        /* ===== COMPACT CALCULATOR SECTION ===== */
-        .calculator-section {
-            padding: clamp(3rem, 5vw, 4rem) 0;
-            background-color: var(--bg-primary);
-        }
-        
-        .calculator-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            max-width: 900px;
-            margin: 0 auto;
-            border: 1px solid var(--border-color);
-        }
-        
-        @media (min-width: 1024px) {
-            .calculator-card {
-                padding: 2rem;
-            }
-        }
-        
-        .calculator-header {
-            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-            text-align: center;
-        }
-        
-        .calculator-header h2 {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== PREMIUM CURRENCY SELECTOR ===== */
-        .currency-selector {
-            position: relative;
-            margin-bottom: 1.5rem;
-            max-width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .currency-dropdown-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            color: var(--text-primary);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .currency-dropdown-btn:hover {
-            border-color: var(--primary-color);
-        }
-        
-        .currency-dropdown-btn i {
-            transition: var(--transition);
-        }
-        
-        .currency-dropdown-btn.active i {
-            transform: rotate(180deg);
-        }
-        
-        .currency-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-            margin-top: 0.5rem;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: var(--transition);
-            z-index: 10;
-        }
-        
-        .currency-dropdown.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .currency-option {
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .currency-option:last-child {
-            border-bottom: none;
-        }
-        
-        .currency-option:hover {
-            background-color: var(--bg-secondary);
-        }
-        
-        .currency-option.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        /* ===== COMPACT CALCULATOR GRID ===== */
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1rem, 2vw, 2rem);
-            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-        }
-        
-        @media (max-width: 768px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .calculator-grid {
-                gap: 1.5rem;
-            }
-        }
-        
-        .input-group {
-            margin-bottom: 1rem;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-        }
-        
-        .input-group input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-            transition: var(--transition);
-        }
-        
-        .input-group input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-        
-        .input-hint {
-            display: block;
-            margin-top: 0.25rem;
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-            color: var(--text-secondary);
-        }
-        
-        .calculate-btn {
-            width: 100%;
-            padding: 0.875rem;
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-            margin-top: 0.5rem;
-        }
-        
-        /* ===== COMPACT RESULTS SECTION ===== */
-        .results-section {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: clamp(1.5rem, 3vw, 2.5rem);
-            margin-top: clamp(1.5rem, 3vw, 2.5rem);
-            border: 1px solid var(--border-color);
-            display: none;
-        }
-        
-        .results-section.active {
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .results-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: clamp(0.75rem, 1.5vw, 1.5rem);
-            margin-bottom: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .results-grid {
-                gap: 1rem;
-            }
-        }
-        
-        .rate-card {
-            background-color: var(--bg-primary);
-            border-radius: var(--radius);
-            padding: clamp(1rem, 2vw, 1.5rem);
-            text-align: center;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-        
-        .rate-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary-color);
-        }
-        
-        .rate-card h3 {
-            color: var(--text-secondary);
-            font-size: clamp(0.875rem, 0.85rem + 0.13vw, 0.9375rem);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .rate-value {
-            font-size: clamp(1.5rem, 2vw, 2rem);
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-            line-height: 1.2;
-        }
-        
-        .rate-period {
-            color: var(--text-secondary);
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-        }
-        
-        .results-explanation {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .results-explanation h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== OTHER PAGES ===== */
-        .page-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .page-content {
-                padding: 0;
-            }
-        }
-        
-        .page-content h1 {
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .page-content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .page-content ul, .page-content ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        .page-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== ADS PLACEHOLDERS ===== */
-        .ad-container {
-            margin: 2rem auto;
-            text-align: center;
-            background-color: var(--bg-secondary);
-            border-radius: var(--radius);
-            padding: 2rem;
-            border: 1px dashed var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            max-width: 100%;
-        }
-        
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: var(--bg-secondary);
-            padding: clamp(2rem, 4vw, 3rem) 0;
-            border-top: 1px solid var(--border-color);
-            margin-top: auto;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 5vw, 2rem);
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                text-align: left;
-            }
-        }
-        
-        .footer-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            min-width: 150px;
-        }
-        
-        .footer-links a {
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .footer-bottom {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-        
-        /* ===== RESPONSIVE UTILITIES ===== */
-        @media (max-width: 1200px) {
-            .container, .nav-container, .footer-container {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-        
-        @media (max-width: 1024px) {
-            .container, .nav-container, .footer-container {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-            
-            .calculator-card {
-                max-width: 90%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container, .nav-container, .footer-container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .footer-links {
-                align-items: center;
-            }
-        }
-        
-        @media (min-width: 1440px) {
-            .container, .nav-container, .footer-container {
-                max-width: 1200px;
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-        
-        /* Tablet landscape optimization */
-        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-            .calculator-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .results-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        /* Large desktop screens */
-        @media (min-width: 1600px) {
-            .container, .nav-container, .footer-container {
-                max-width: 1400px;
-            }
-        }
-        
-        /* Prevent content from stretching too wide */
-        .page-section > .container {
-            max-width: 1200px;
-        }
-        
-        /* Center align content on large screens */
-        @media (min-width: 1440px) {
-            .hero-content, .page-content, .calculator-card {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔄</text></svg>">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <a href="#home" class="logo" onclick="showPage('home')">
-                <i class="fas fa-calculator logo-icon"></i>
-                RateCalc Pro
-            </a>
-            
-            <nav class="nav-links">
-                <a href="#home" onclick="showPage('home')">Home</a>
-                <a href="#calculator" onclick="showPage('calculator')">Calculator</a>
-                <a href="#about" onclick="showPage('about')">About</a>
-                <a href="#privacy" onclick="showPage('privacy')">Privacy Policy</a>
-                <a href="#terms" onclick="showPage('terms')">Terms</a>
-                <a href="#disclaimer" onclick="showPage('disclaimer')">Disclaimer</a>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-recycle"></i>
+                    <span>ContentRepurpose.ai</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#tool" class="nav-link">Tool</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="btn btn-outline nav-btn">Login</a></li>
+                </ul>
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </nav>
-            
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <span class="logo">
-                <i class="fas fa-calculator logo-icon"></i>
-                RateCalc Pro
-            </span>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="mobile-menu-links">
-            <a href="#home" onclick="showPage('home'); closeMobileMenu()">Home</a>
-            <a href="#calculator" onclick="showPage('calculator'); closeMobileMenu()">Calculator</a>
-            <a href="#about" onclick="showPage('about'); closeMobileMenu()">About</a>
-            <a href="#privacy" onclick="showPage('privacy'); closeMobileMenu()">Privacy Policy</a>
-            <a href="#terms" onclick="showPage('terms'); closeMobileMenu()">Terms & Conditions</a>
-            <a href="#disclaimer" onclick="showPage('disclaimer'); closeMobileMenu()">Disclaimer</a>
-        </div>
-        <div class="mobile-menu-footer">
-            <p style="font-size: 0.75rem; color: var(--text-secondary);">
-                &copy; 2023 RateCalc Pro. All rights reserved.
-            </p>
-        </div>
-    </div>
-
     <!-- Main Content -->
     <main>
-        <!-- Home Section -->
-        <section id="home" class="page-section active">
-            <div class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>Professional Freelance Rate Calculator</h1>
-                        <p>Calculate optimal freelance rates for USA, UK, India, Pakistan, Canada, Australia with real-time currency conversion and financial insights.</p>
-                        <div class="hero-cta">
-                            <a href="#calculator" class="btn" onclick="showPage('calculator')">
-                                <i class="fas fa-calculator"></i>
-                                Start Calculating
-                            </a>
-                            <a href="#about" class="btn btn-outline" onclick="showPage('about')">
-                                <i class="fas fa-info-circle"></i>
-                                Learn More
-                            </a>
-                        </div>
-                        <div class="trust-badges">
-                            <div class="trust-badge">
-                                <i class="fas fa-globe"></i>
-                                <span>Global Rates</span>
-                            </div>
-                            <div class="trust-badge">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Accurate Calculations</span>
-                            </div>
-                            <div class="trust-badge">
-                                <i class="fas fa-sync-alt"></i>
-                                <span>Real-time Conversion</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+        <!-- Hero Section -->
+        <section class="hero" id="home">
             <div class="container">
-                <!-- Ad Placeholder 1 -->
-                <div class="ad-container">
-                    <p>Advertisement</p>
-                    <p>Ad space (728x90)</p>
-                </div>
-                
-                <div class="page-content">
-                    <h2>Why Use RateCalc Pro?</h2>
-                    <p>Determining the right freelance rate can be challenging. Charge too little and you undervalue your work; charge too much and you might lose clients. RateCalc Pro helps you find the perfect balance by considering all essential factors:</p>
-                    
-                    <ul>
-                        <li><strong>Local Market Rates:</strong> Get region-specific pricing for USA, UK, India, Pakistan, Canada, and Australia</li>
-                        <li><strong>Expense Coverage:</strong> Account for business expenses, taxes, and insurance</li>
-                        <li><strong>Profit Margin:</strong> Ensure you're earning a sustainable profit</li>
-                        <li><strong>Currency Conversion:</strong> Real-time exchange rates for international clients</li>
-                        <li><strong>Multiple Pricing Models:</strong> Calculate hourly, daily, weekly, and monthly rates</li>
-                    </ul>
-                    
-                    <p>Whether you're a beginner freelancer or an experienced professional, RateCalc Pro provides the insights you need to price your services competitively and profitably.</p>
-                    
-                    <div style="text-align: center; margin: 3rem 0;">
-                        <a href="#calculator" class="btn" onclick="showPage('calculator')" style="padding: 1rem 2rem; font-size: 1.1rem;">
-                            <i class="fas fa-rocket"></i>
-                            Launch Calculator Now
-                        </a>
+                <div class="hero-content">
+                    <h1 class="hero-title">AI-Powered Content Repurposing Tool</h1>
+                    <p class="hero-subtitle">Transform one piece of content into 10+ formats instantly. Save hours of manual work with our intelligent AI.</p>
+                    <div class="hero-buttons">
+                        <a href="#tool" class="btn btn-primary">Try Free Tool</a>
+                        <a href="#pricing" class="btn btn-outline">View Pricing</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>10,000+</h3>
+                            <p>Content Pieces Repurposed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2,500+</h3>
+                            <p>Happy Creators</p>
+                        </div>
+                        <div class="stat">
+                            <h3>95%</h3>
+                            <p>Time Saved</p>
+                        </div>
                     </div>
                 </div>
-
-                <!-- NEW SEO CONTENT STARTS HERE -->
-                <div class="page-content">
-                    <h2>What is a Freelance Rate Calculator?</h2>
-                    <p>A professional freelance rate calculator is an essential tool that helps independent contractors, consultants, and self-employed professionals determine appropriate pricing for their services. Unlike simple hourly wage calculators, a comprehensive freelance rate calculator like RateCalc Pro accounts for numerous business factors that affect your true earning potential. These tools transform complex financial calculations into actionable insights, ensuring freelancers don't underprice their services or leave money on the table.</p>
-                    <p>Our freelance hourly rate calculator considers your desired annual income, business expenses, non-billable hours, vacation time, and profit margins to generate accurate rate recommendations. This sophisticated approach moves beyond basic arithmetic to provide market-aware pricing that reflects both your value and local economic conditions. Whether you're a web developer in San Francisco, a graphic designer in London, or a content writer in Mumbai, understanding how to calculate your true freelance rate is the foundation of a sustainable business.</p>
-                    <p>The best freelance rate calculators serve as strategic business partners, helping you navigate pricing conversations with confidence. They demystify the relationship between time, value, and income while accounting for the hidden costs of freelancing that employees never see—health insurance, equipment depreciation, software subscriptions, and self-employment taxes.</p>
-
-                    <h3>How to Calculate Freelance Rates Professionally</h3>
-                    <p>Calculating freelance rates requires a systematic approach that goes beyond simply dividing your desired income by hours worked. Here's the professional methodology used by RateCalc Pro:</p>
-                    <ul>
-                        <li><strong>Start with Your Target Annual Income:</strong> Determine the pre-tax income you need to cover living expenses, savings, and investments. This becomes your financial baseline.</li>
-                        <li><strong>Add Business Expenses:</strong> Calculate all business-related costs including software, equipment, marketing, insurance, professional development, and office expenses.</li>
-                        <li><strong>Account for Non-Billable Time:</strong> Most freelancers spend 20-40% of their time on administrative tasks, marketing, and professional development. This "overhead" time must be factored into your rates.</li>
-                        <li><strong>Consider Vacation and Sick Days:</strong> Unlike employees, freelancers don't get paid time off. Your rates must compensate for weeks you're not working.</li>
-                        <li><strong>Include Profit Margin:</strong> A healthy business reinvests in growth. Include 15-30% profit margin for business development, emergency funds, and future investments.</li>
-                        <li><strong>Adjust for Local Market Rates:</strong> Research what similar professionals charge in your region and adjust your calculations accordingly.</li>
-                        <li><strong>Factor in Currency Differences:</strong> For international clients, use current exchange rates and consider purchasing power parity.</li>
-                    </ul>
-                    <p>Our freelancer pricing calculator automates this complex process, providing you with accurate hourly, daily, and weekly rates within seconds. This eliminates guesswork and ensures your pricing reflects both your financial needs and market reality.</p>
-
-                    <h3>Why Use RateCalc Pro: Advanced Features and Benefits</h3>
-                    <p>RateCalc Pro stands out among freelance rate calculators with its comprehensive features designed specifically for the modern freelancer. Our tool offers several unique advantages:</p>
-                    <ul>
-                        <li><strong>Multi-Currency Support:</strong> Calculate rates in USD, GBP, EUR, CAD, AUD, INR, and PKR with real-time exchange rate awareness.</li>
-                        <li><strong>Country-Specific Market Data:</strong> Our algorithms incorporate regional economic factors, cost of living differences, and local freelance market conditions.</li>
-                        <li><strong>Comprehensive Expense Tracking:</strong> Beyond basic calculations, we help you identify often-overlooked business expenses that impact your bottom line.</li>
-                        <li><strong>Flexible Pricing Models:</strong> Get accurate rates for hourly, daily, weekly, monthly, and project-based pricing structures.</li>
-                        <li><strong>Profit Margin Optimization:</strong> Visualize how different profit margins affect your rates and long-term business sustainability.</li>
-                        <li><strong>Non-Billable Time Analysis:</strong> Understand exactly how administrative tasks impact your effective hourly rate.</li>
-                        <li><strong>Tax Planning Integration:</strong> Our calculations consider self-employment tax implications across different countries.</li>
-                    </ul>
-                    <p>Using RateCalc Pro gives you the confidence to quote rates that ensure business profitability while remaining competitive in your local and global markets.</p>
-
-                    <h2>Freelance Rate Calculator by Country: Regional Pricing Insights</h2>
-                    <p>Freelance rates vary dramatically across different countries due to factors like cost of living, local demand, currency strength, and economic conditions. Here's how our freelance rate calculator adapts to regional differences:</p>
-
-                    <h3>USA Freelance Rate Calculator</h3>
-                    <p>The United States has one of the world's most developed freelance markets with significant regional variations. Our USA freelance rate calculator accounts for:</p>
-                    <ul>
-                        <li><strong>High Business Expenses:</strong> Health insurance costs averaging $400-600/month for individuals</li>
-                        <li><strong>Self-Employment Taxes:</strong> Approximately 15.3% for Social Security and Medicare</li>
-                        <li><strong>Regional Cost Variations:</strong> Rates in San Francisco or New York are typically 30-50% higher than national averages</li>
-                        <li><strong>Industry Standards:</strong> Technology and legal freelancers command premium rates compared to creative fields</li>
-                        <li><strong>Recommended Hourly Range:</strong> $50-150+ depending on expertise and specialization</li>
-                    </ul>
-
-                    <h3>UK Freelance Rate Calculator</h3>
-                    <p>United Kingdom freelancers navigate unique tax structures and market conditions. Our UK freelance rate calculator includes:</p>
-                    <ul>
-                        <li><strong>VAT Considerations:</strong> Registration required for earnings over £85,000 annually</li>
-                        <li><strong>IR35 Regulations:</strong> Important for determining employment status and tax obligations</li>
-                        <li><strong>London Weighting:</strong> Rates in London typically 25-40% higher than other UK regions</li>
-                        <li><strong>National Insurance:</strong> Class 2 and Class 4 contributions for self-employed individuals</li>
-                        <li><strong>Recommended Hourly Range:</strong> £35-£100+ depending on experience and location</li>
-                    </ul>
-
-                    <h3>India Freelance Rate Calculator</h3>
-                    <p>India's booming freelance economy requires special consideration for local economic factors. Our India freelance rate calculator addresses:</p>
-                    <ul>
-                        <li><strong>GST Registration:</strong> Required for freelancers earning over ₹20 lakhs annually</li>
-                        <li><strong>Lower Operational Costs:</strong> Reduced overhead compared to Western counterparts</li>
-                        <li><strong>International Client Pricing:</strong> Dual pricing strategies for domestic vs international clients</li>
-                        <li><strong>Regional Variations:</strong> Metro cities (Mumbai, Bangalore, Delhi) command 40-60% higher rates</li>
-                        <li><strong>Recommended Hourly Range:</strong> ₹500-₹3000+ depending on skills and client location</li>
-                    </ul>
-
-                    <h3>Pakistan Freelance Rate Calculator</h3>
-                    <p>Pakistan's rapidly growing freelance sector benefits from our specialized calculator features:</p>
-                    <ul>
-                        <li><strong>Foreign Exchange Advantages:</strong> Earning in USD or EUR significantly increases local purchasing power</li>
-                        <li><strong>Digital Nomad Potential:</strong> Lower cost structure allows competitive international pricing</li>
-                        <li><strong>Tax Considerations:</strong> Different tax slabs for resident and non-resident Pakistanis</li>
-                        <li><strong>Emerging Market Status:</strong> Rapidly increasing rates as skills and reputation grow</li>
-                        <li><strong>Recommended Hourly Range:</strong> $10-$50+ with top specialists reaching $100+ internationally</li>
-                    </ul>
-
-                    <h3>Canada Freelance Rate Calculator</h3>
-                    <p>Canadian freelancers benefit from our regionally-aware calculations including:</p>
-                    <ul>
-                        <li><strong>Provincial Tax Variations:</strong> Different tax rates across provinces and territories</li>
-                        <li><strong>Healthcare Considerations:</strong> While public healthcare exists, additional insurance often needed</li>
-                        <li><strong>Currency Fluctuations:</strong> CAD-USD exchange rate significantly impacts cross-border work</li>
-                        <li><strong>Regional Market Differences:</strong> Toronto and Vancouver rates 25-40% higher than national average</li>
-                        <li><strong>Recommended Hourly Range:</strong> CAD 50-150+ depending on province and specialization</li>
-                    </ul>
-
-                    <h3>Australia Freelance Rate Calculator</h3>
-                    <p>Australian freelancers face unique market conditions addressed by our calculator:</p>
-                    <ul>
-                        <li><strong>High Cost of Living:</strong> Particularly in Sydney and Melbourne affecting rate requirements</li>
-                        <li><strong>Superannuation Requirements:</strong> Self-employed must manage their own retirement contributions</li>
-                        <li><strong>GST Registration:</strong> Required for businesses earning over AUD 75,000 annually</li>
-                        <li><strong>Remote Work Advantages:</strong> Time zone alignment with Asian markets creates unique opportunities</li>
-                        <li><strong>Recommended Hourly Range:</strong> AUD 60-180+ with significant variations by city and industry</li>
-                    </ul>
-
-                    <h2>Hourly vs Fixed Pricing: Choosing the Right Model</h2>
-                    <p>One of the most critical decisions freelancers face is whether to charge hourly rates or fixed project fees. Our freelance rate calculator helps you understand both approaches:</p>
-                    <h3>Hourly Rate Pricing</h3>
-                    <ul>
-                        <li><strong>Best For:</strong> Uncertain scope projects, ongoing maintenance work, consulting services</li>
-                        <li><strong>Advantages:</strong> Payment for all hours worked, easy to understand, flexible for scope changes</li>
-                        <li><strong>Disadvantages:</strong> Penalizes efficiency, requires time tracking, can create client skepticism about hours</li>
-                        <li><strong>RateCalc Pro Feature:</strong> Calculates your minimum viable hourly rate based on all business factors</li>
-                    </ul>
-                    <h3>Fixed Price/Project-Based Pricing</h3>
-                    <ul>
-                        <li><strong>Best For:</strong> Well-defined projects, deliverables with clear specifications, product-based work</li>
-                        <li><strong>Advantages:</strong> Rewards efficiency, predictable income, easier client budgeting</li>
-                        <li><strong>Disadvantages:</strong> Risk of scope creep, requires accurate estimation skills, potential for undercharging</li>
-                        <li><strong>RateCalc Pro Feature:</strong> Convert hourly rates to project estimates based on time investment</li>
-                    </ul>
-                    <p>Many successful freelancers use a hybrid approach, combining elements of both models. Our calculator helps you establish baseline hourly rates that can then be converted to project fees or retainer agreements.</p>
-
-                    <h2>Benefits of Using a Professional Freelance Rate Calculator</h2>
-                    <p>Implementing a systematic approach to pricing with a dedicated freelance rate calculator offers numerous advantages:</p>
-                    <ul>
-                        <li><strong>Eliminates Underpricing:</strong> Most freelancers undercharge by 20-40% according to industry studies. Our calculator ensures you cover all costs plus profit.</li>
-                        <li><strong>Builds Confidence:</strong> Back your rate quotes with data-driven calculations rather than guesswork or emotion.</li>
-                        <li><strong>Improves Financial Planning:</strong> Understand exactly how many billable hours you need to reach income targets.</li>
-                        <li><strong>Adapts to Market Changes:</strong> Quickly adjust rates based on inflation, currency fluctuations, or increased expenses.</li>
-                        <li><strong>Supports Business Growth:</strong> Identify when you can afford to hire help, invest in equipment, or reduce rates strategically.</li>
-                        <li><strong>Facilitates International Work:</strong> Accurately price services for clients in different currencies and economic environments.</li>
-                        <li><strong>Reduces Administrative Burden:</strong> Automate complex calculations that would take hours to compute manually.</li>
-                        <li><strong>Provides Competitive Analysis:</strong> Compare your rates against market averages while ensuring profitability.</li>
-                    </ul>
-                    <p>Regular use of RateCalc Pro transforms pricing from a stressful negotiation into a strategic business decision based on clear financial data.</p>
-
-                    <h2>Frequently Asked Questions (FAQs)</h2>
-                    
-                    <h3>1. How accurate is the freelance rate calculator?</h3>
-                    <p>RateCalc Pro provides highly accurate rate calculations based on sophisticated algorithms that incorporate your specific financial inputs, local market data, and current economic factors. While individual results may vary based on niche specialization and negotiation skills, our calculator gives you a data-driven starting point that's typically within 10-15% of optimal market rates.</p>
-
-                    <h3>2. Should I charge different rates for local vs international clients?</h3>
-                    <p>Yes, most experienced freelancers maintain dual pricing strategies. For international clients (particularly from high-income countries), you can typically charge rates closer to their local market averages. For domestic clients, rates should reflect local purchasing power while still ensuring your business profitability. Our currency conversion features help you navigate these differences effectively.</p>
-
-                    <h3>3. How often should I recalculate my freelance rates?</h3>
-                    <p>We recommend reviewing and potentially adjusting your rates every 6-12 months, or whenever significant changes occur in: your living expenses, business costs, tax obligations, skill level, market demand, or currency exchange rates. Regular rate reviews ensure your pricing remains competitive and sustainable.</p>
-
-                    <h3>4. What percentage of my time should be billable?</h3>
-                    <p>Most successful freelancers maintain 60-75% billable time. The remaining 25-40% covers administration, marketing, professional development, and business management. Our calculator automatically factors in this non-billable time, ensuring your rates compensate for all hours invested in your business.</p>
-
-                    <h3>5. How do I handle rate negotiations with clients?</h3>
-                    <p>Use your RateCalc Pro results as a negotiation foundation. Instead of simply stating a number, explain how your rate reflects: your expertise, business expenses, market value, and the specific value you provide. For clients concerned about budget, offer scaled service packages or phased deliverables rather than reducing your base rate.</p>
-
-                    <h3>6. Are freelance rates different for beginners vs experienced professionals?</h3>
-                    <p>Yes, experience significantly impacts rates. Beginners might charge 40-60% of market rates while building portfolios and testimonials. Mid-career professionals should charge full market rates, while specialists with rare skills or extensive experience can command premiums of 50-100% above average. Our calculator allows adjustment for experience level.</p>
-
-                    <h3>7. How do taxes affect my freelance rate calculations?</h3>
-                    <p>Taxes typically reduce your take-home pay by 20-40% depending on your country and income level. Our calculator helps you determine pre-tax rates needed to achieve your desired after-tax income. We incorporate regional tax considerations for each supported country.</p>
-
-                    <h3>8. Can I use the calculator for retainer or monthly pricing?</h3>
-                    <p>Absolutely. Calculate your monthly required income using our annual targets, then determine appropriate retainer fees based on expected monthly hours or deliverables. Many freelancers find retainers provide more stable income while allowing clients predictable budgeting.</p>
-
-                    <h3>9. How do I account for irregular income as a freelancer?</h3>
-                    <p>Our calculator helps by establishing rates that create financial stability despite income fluctuations. We recommend: 1) Setting rates that allow for savings during busy periods, 2) Including a "dry spell" buffer in your calculations, 3) Creating multiple service tiers to maintain income during slower periods.</p>
-
-                    <h3>10. What's the difference between this and free freelance rate calculators?</h3>
-                    <p>RateCalc Pro offers significantly more sophisticated calculations than basic free tools. We incorporate: real-time currency conversion, country-specific economic factors, comprehensive expense tracking, profit margin optimization, and market-aware pricing algorithms. Free calculators typically offer simple division of desired income by hours, missing crucial business factors.</p>
-
-                    <h3>11. How do I transition from hourly to value-based pricing?</h3>
-                    <p>Start by using our calculator to understand your hourly baseline, then gradually shift to pricing based on deliverables and outcomes. Track how much value you create for clients (revenue generated, time saved, problems solved) and price accordingly. Many freelancers successfully charge 3-5x their hourly rate for value-based projects.</p>
-
-                    <h3>12. Should freelancers in low-cost countries charge international rates?</h3>
-                    <p>This depends on your market positioning. Many freelancers from lower-cost countries successfully charge near-international rates by emphasizing: quality equivalent to Western counterparts, timezone advantages, English proficiency, and cultural alignment. Our calculator helps you find the optimal balance between competitive pricing and fair compensation.</p>
-
-                    <div style="text-align: center; margin: 3rem 0;">
-                        <a href="#calculator" class="btn" onclick="showPage('calculator')" style="padding: 1rem 2rem; font-size: 1.1rem;">
-                            <i class="fas fa-calculator"></i>
-                            Calculate Your Optimal Freelance Rates Now
-                        </a>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-blog"></i>
+                        <p>Blog Post</p>
                     </div>
-                </div>
-                <!-- NEW SEO CONTENT ENDS HERE -->
-                
-                <!-- Ad Placeholder 2 -->
-                <div class="ad-container">
-                    <p>Advertisement</p>
-                    <p>Ad space (300x250)</p>
+                    <div class="floating-card">
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fab fa-youtube"></i>
+                        <p>YouTube</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fab fa-twitter"></i>
+                        <p>Twitter/X</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-envelope"></i>
+                        <p>Email</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Calculator Section -->
-        <section id="calculator" class="page-section">
-            <div class="calculator-section">
-                <div class="container">
-                    <div class="calculator-card">
-                        <div class="calculator-header">
-                            <h2>Freelance Rate Calculator</h2>
-                            <p>Enter your details to calculate optimal freelance rates for your region</p>
-                            
-                            <!-- Currency Selector -->
-                            <div class="currency-selector">
-                                <button class="currency-dropdown-btn" id="currencyDropdownBtn">
-                                    <span id="selectedCurrency">USD ($)</span>
-                                    <i class="fas fa-chevron-down"></i>
+        <!-- Main Tool Section -->
+        <section class="tool-section" id="tool">
+            <div class="container">
+                <div class="section-header">
+                    <h2>AI Content Repurposing Tool</h2>
+                    <p>Paste your original content below and watch it transform across platforms</p>
+                </div>
+
+                <div class="tool-wrapper">
+                    <div class="tool-controls">
+                        <div class="control-group">
+                            <label for="toneSelect">Content Tone</label>
+                            <select id="toneSelect" class="form-control">
+                                <option value="professional">Professional</option>
+                                <option value="casual" selected>Casual</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="persuasive">Persuasive</option>
+                                <option value="storytelling">Storytelling</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="languageSelect">Language</label>
+                            <select id="languageSelect" class="form-control">
+                                <option value="english" selected>English</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="hinglish">Hinglish</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="emojiSelect">Emoji Level</label>
+                            <select id="emojiSelect" class="form-control">
+                                <option value="none">None</option>
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="lengthSelect">Content Length</label>
+                            <select id="lengthSelect" class="form-control">
+                                <option value="short">Short</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="long">Long</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-output-container">
+                        <!-- Input Section -->
+                        <div class="input-section">
+                            <div class="section-header">
+                                <h3>Original Content</h3>
+                                <div class="counter">
+                                    <span id="wordCount">0</span> words | 
+                                    <span id="charCount">0</span> characters
+                                </div>
+                            </div>
+                            <textarea id="contentInput" class="content-input" placeholder="Paste your blog post, article, video script, or any content here... Minimum 100 words for best results." rows="10"></textarea>
+                            <div class="input-actions">
+                                <button id="generateBtn" class="btn btn-primary">
+                                    <i class="fas fa-magic"></i> Generate All Formats
                                 </button>
-                                <div class="currency-dropdown" id="currencyDropdown">
-                                    <div class="currency-option active" data-currency="USD">USD ($) - United States</div>
-                                    <div class="currency-option" data-currency="GBP">GBP (£) - United Kingdom</div>
-                                    <div class="currency-option" data-currency="EUR">EUR (€) - Europe</div>
-                                    <div class="currency-option" data-currency="CAD">CAD ($) - Canada</div>
-                                    <div class="currency-option" data-currency="AUD">AUD ($) - Australia</div>
-                                    <div class="currency-option" data-currency="INR">INR (₹) - India</div>
-                                    <div class="currency-option" data-currency="PKR">PKR (₨) - Pakistan</div>
+                                <button id="resetBtn" class="btn btn-outline">
+                                    <i class="fas fa-redo"></i> Reset
+                                </button>
+                            </div>
+                            <div class="ad-placeholder" id="adTop">
+                                <div class="ad-label">Advertisement</div>
+                                <p>Premium users enjoy an ad-free experience</p>
+                            </div>
+                        </div>
+
+                        <!-- Output Tabs -->
+                        <div class="output-section">
+                            <div class="tabs-container">
+                                <div class="tabs-header">
+                                    <div class="tabs-scroll">
+                                        <button class="tab-btn active" data-tab="summary">Blog Summary</button>
+                                        <button class="tab-btn" data-tab="linkedin">LinkedIn Post</button>
+                                        <button class="tab-btn" data-tab="instagram">Instagram Caption</button>
+                                        <button class="tab-btn" data-tab="reel">Reel Script</button>
+                                        <button class="tab-btn" data-tab="shorts">Shorts Script</button>
+                                        <button class="tab-btn" data-tab="twitter">Twitter Thread</button>
+                                        <button class="tab-btn" data-tab="email">Email Newsletter</button>
+                                        <button class="tab-btn" data-tab="seo">SEO Meta</button>
+                                        <button class="tab-btn" data-tab="hashtag">Hashtags</button>
+                                        <button class="tab-btn" data-tab="cta">CTAs</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="tabs-content">
+                                    <!-- Blog Summary -->
+                                    <div class="tab-content active" id="summary">
+                                        <div class="tab-header">
+                                            <h4>Blog Summary</h4>
+                                            <button class="copy-btn" data-target="summaryOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="summaryOutput" class="output-text">
+                                            <p>Your AI-generated blog summary will appear here. Paste your content and click "Generate All Formats" to begin.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- LinkedIn Post -->
+                                    <div class="tab-content" id="linkedin">
+                                        <div class="tab-header">
+                                            <h4>LinkedIn Post</h4>
+                                            <button class="copy-btn" data-target="linkedinOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="linkedinOutput" class="output-text">
+                                            <p>Your professional LinkedIn post will be generated here. Perfect for B2B audiences and networking.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Instagram Caption -->
+                                    <div class="tab-content" id="instagram">
+                                        <div class="tab-header">
+                                            <h4>Instagram Caption</h4>
+                                            <button class="copy-btn" data-target="instagramOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="instagramOutput" class="output-text">
+                                            <p>Your engaging Instagram caption with emojis will appear here. Ready to post with hashtags!</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Reel Script -->
+                                    <div class="tab-content" id="reel">
+                                        <div class="tab-header">
+                                            <h4>Instagram Reel Script</h4>
+                                            <button class="copy-btn" data-target="reelOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="reelOutput" class="output-text">
+                                            <p>Your 15-30 second Reel script with visual cues will be generated here. Perfect for viral content!</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- YouTube Shorts Script -->
+                                    <div class="tab-content" id="shorts">
+                                        <div class="tab-header">
+                                            <h4>YouTube Shorts Script</h4>
+                                            <button class="copy-btn" data-target="shortsOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="shortsOutput" class="output-text">
+                                            <p>Your YouTube Shorts script (under 60 seconds) will appear here. Hook, content, and CTA included.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Twitter Thread -->
+                                    <div class="tab-content" id="twitter">
+                                        <div class="tab-header">
+                                            <h4>Twitter/X Thread</h4>
+                                            <button class="copy-btn" data-target="twitterOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="twitterOutput" class="output-text">
+                                            <p>Your Twitter thread (2-5 tweets) will be generated here. Threaded for maximum engagement.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Email Newsletter -->
+                                    <div class="tab-content" id="email">
+                                        <div class="tab-header">
+                                            <h4>Email Newsletter</h4>
+                                            <button class="copy-btn" data-target="emailOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="emailOutput" class="output-text">
+                                            <p>Your email newsletter draft will appear here. Includes subject line, body, and call-to-action.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- SEO Meta -->
+                                    <div class="tab-content" id="seo">
+                                        <div class="tab-header">
+                                            <h4>SEO Title & Meta Description</h4>
+                                            <button class="copy-btn" data-target="seoOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="seoOutput" class="output-text">
+                                            <p>Your SEO-optimized title tags and meta descriptions will be generated here.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Hashtag Generator -->
+                                    <div class="tab-content" id="hashtag">
+                                        <div class="tab-header">
+                                            <h4>Hashtag Generator</h4>
+                                            <button class="copy-btn" data-target="hashtagOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="hashtagOutput" class="output-text">
+                                            <p>Relevant hashtags for your content will appear here. Categorized by popularity and relevance.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- CTA Generator -->
+                                    <div class="tab-content" id="cta">
+                                        <div class="tab-header">
+                                            <h4>Call-to-Action Generator</h4>
+                                            <button class="copy-btn" data-target="ctaOutput">
+                                                <i class="far fa-copy"></i> Copy
+                                            </button>
+                                        </div>
+                                        <div id="ctaOutput" class="output-text">
+                                            <p>Persuasive call-to-action phrases will be generated here. Tailored for different platforms.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Calculator Form -->
-                        <form id="rateCalculator">
-                            <div class="calculator-grid">
-                                <div class="input-group">
-                                    <label for="desiredIncome">Desired Annual Income</label>
-                                    <input type="number" id="desiredIncome" placeholder="e.g., 60000" min="1000" step="1000" required>
-                                    <span class="input-hint">The annual salary you want to earn</span>
-                                </div>
-                                
-                                <div class="input-group">
-                                    <label for="businessExpenses">Annual Business Expenses</label>
-                                    <input type="number" id="businessExpenses" placeholder="e.g., 10000" min="0" step="100" required>
-                                    <span class="input-hint">Software, equipment, insurance, etc.</span>
-                                </div>
-                                
-                                <div class="input-group">
-                                    <label for="workHours">Weekly Work Hours</label>
-                                    <input type="number" id="workHours" placeholder="e.g., 40" min="10" max="80" step="5" required>
-                                    <span class="input-hint">Hours you plan to work per week</span>
-                                </div>
-                                
-                                <div class="input-group">
-                                    <label for="vacationWeeks">Vacation Weeks Per Year</label>
-                                    <input type="number" id="vacationWeeks" placeholder="e.g., 4" min="0" max="12" step="1" required>
-                                    <span class="input-hint">Paid vacation and sick days</span>
-                                </div>
-                                
-                                <div class="input-group">
-                                    <label for="billablePercentage">Billable Time Percentage</label>
-                                    <input type="number" id="billablePercentage" placeholder="e.g., 70" min="10" max="100" step="5" required>
-                                    <span class="input-hint">% of time spent on paid work (vs. admin)</span>
-                                </div>
-                                
-                                <div class="input-group">
-                                    <label for="profitMargin">Profit Margin (%)</label>
-                                    <input type="number" id="profitMargin" placeholder="e.g., 20" min="0" max="100" step="5" required>
-                                    <span class="input-hint">Additional margin for growth & savings</span>
-                                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Choose Your Plan</h2>
+                    <p>Start for free, upgrade when you need more power</p>
+                </div>
+                
+                <div class="pricing-cards">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <div class="price">
+                                <span class="amount">$0</span>
+                                <span class="period">/month</span>
                             </div>
-                            
-                            <button type="submit" class="btn calculate-btn">
-                                <i class="fas fa-calculator"></i>
-                                Calculate My Rates
-                            </button>
-                        </form>
-                        
-                        <!-- Results Section -->
-                        <div class="results-section" id="resultsSection">
-                            <div class="results-header">
-                                <h2>Your Recommended Freelance Rates</h2>
-                                <p>Based on your inputs and current market rates</p>
-                            </div>
-                            
-                            <div class="results-grid">
-                                <div class="rate-card">
-                                    <h3>Hourly Rate</h3>
-                                    <div class="rate-value" id="hourlyRate">$0.00</div>
-                                    <div class="rate-period">Per hour</div>
-                                </div>
-                                
-                                <div class="rate-card">
-                                    <h3>Daily Rate</h3>
-                                    <div class="rate-value" id="dailyRate">$0.00</div>
-                                    <div class="rate-period">Per day (8 hours)</div>
-                                </div>
-                                
-                                <div class="rate-card">
-                                    <h3>Weekly Rate</h3>
-                                    <div class="rate-value" id="weeklyRate">$0.00</div>
-                                    <div class="rate-period">Per week</div>
-                                </div>
-                            </div>
-                            
-                            <div class="results-explanation">
-                                <h3>How These Rates Are Calculated</h3>
-                                <p>Your rates account for your desired income, business expenses, non-billable time, vacation, and profit margin. These are competitive rates for your region that ensure you cover all costs while earning a sustainable income.</p>
-                                <p><strong>Tip:</strong> Consider adjusting your rates based on your experience level, specialty, and client budget.</p>
-                            </div>
+                            <p>Perfect for beginners</p>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 10 repurposes per month</li>
+                                <li><i class="fas fa-check"></i> Basic tone options</li>
+                                <li><i class="fas fa-check"></i> 5 output formats</li>
+                                <li><i class="fas fa-check"></i> Standard generation speed</li>
+                                <li><i class="fas fa-check"></i> Ads enabled</li>
+                                <li><i class="fas fa-times"></i> Commercial use</li>
+                                <li><i class="fas fa-times"></i> Advanced tones</li>
+                                <li><i class="fas fa-times"></i> Export options</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-action">
+                            <a href="#tool" class="btn btn-outline">Get Started</a>
                         </div>
                     </div>
                     
-                    <!-- Ad Placeholder 3 -->
-                    <div class="ad-container" style="margin-top: 3rem;">
-                        <p>Advertisement</p>
-                        <p>Ad space (728x90)</p>
+                    <!-- Premium Plan -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <div class="price">
+                                <span class="amount">$10</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p>For serious creators</p>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Unlimited repurposes</li>
+                                <li><i class="fas fa-check"></i> All tone options</li>
+                                <li><i class="fas fa-check"></i> All 10+ output formats</li>
+                                <li><i class="fas fa-check"></i> Priority generation</li>
+                                <li><i class="fas fa-check"></i> No ads</li>
+                                <li><i class="fas fa-check"></i> Commercial use allowed</li>
+                                <li><i class="fas fa-check"></i> Export to PDF/TXT</li>
+                                <li><i class="fas fa-check"></i> Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-action">
+                            <button class="btn btn-primary">Upgrade Now</button>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="ad-placeholder" id="adMiddle">
+                    <div class="ad-label">Advertisement</div>
+                    <p>Upgrade to Premium to remove all ads and unlock unlimited repurposing</p>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="page-section">
+        <section class="about-section" id="about">
             <div class="container">
-                <div class="page-content">
-                    <h1>About RateCalc Pro</h1>
+                <div class="section-header">
+                    <h2>About ContentRepurpose.ai</h2>
+                    <p>Our mission is to help creators maximize their content's potential</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Why We Built This Tool</h3>
+                        <p>In today's digital landscape, creators are expected to maintain a presence across multiple platforms. What works on LinkedIn doesn't resonate on Instagram. YouTube audiences have different expectations than email subscribers. Manually adapting content for each platform is time-consuming and inefficient.</p>
+                        
+                        <p>ContentRepurpose.ai was founded in 2023 to solve this exact problem. Our AI-powered platform analyzes your core content and intelligently adapts it for different platforms, audiences, and formats while maintaining your unique voice and message.</p>
+                        
+                        <h3>How Our AI Works</h3>
+                        <p>Our proprietary AI engine doesn't just paraphrase content. It understands context, identifies key messages, and recreates them in platform-optimized formats. The system considers:</p>
+                        
+                        <ul>
+                            <li><strong>Platform norms:</strong> Character limits, visual preferences, user behavior</li>
+                            <li><strong>Audience expectations:</strong> Professional tone for LinkedIn, casual for Instagram</li>
+                            <li><strong>Content structure:</strong> Hashtags for social, bullet points for emails</li>
+                            <li><strong>SEO optimization:</strong> Keywords, meta descriptions, readability</li>
+                            <li><strong>Engagement elements:</strong> CTAs, questions, emojis where appropriate</li>
+                        </ul>
+                        
+                        <p>We continuously train our AI on successful content across platforms to ensure our outputs are not just correct, but effective.</p>
+                        
+                        <h3>Our Commitment to Quality</h3>
+                        <p>Unlike many AI tools that produce generic, robotic content, we've fine-tuned our models to preserve your unique voice. The tone controls, language options, and customization features ensure the output feels authentically yours.</p>
+                        
+                        <p>We're transparent about our tool's capabilities. While AI can dramatically speed up the repurposing process, we always recommend reviewing and personalizing the generated content. Think of our tool as your most efficient content assistant, not a complete replacement for human creativity.</p>
+                        
+                        <p>Our tool is used by bloggers, marketers, small businesses, content agencies, and social media managers worldwide. Whether you're a solo creator or part of a marketing team, ContentRepurpose.ai can save you hours each week while improving your content's reach and effectiveness.</p>
+                    </div>
                     
-                    <p>RateCalc Pro is a comprehensive freelance rate calculator designed to help independent professionals determine optimal pricing for their services. Founded in 2023, our mission is to empower freelancers worldwide with the financial insights they need to build sustainable businesses.</p>
-                    
-                    <h2>Our Mission</h2>
-                    <p>We believe that freelancers should be paid fairly for their work. Our calculator considers all the factors that go into professional pricing, from local market rates and living costs to business expenses and profit margins. We provide transparent calculations that help you understand exactly how your rates are determined.</p>
-                    
-                    <h2>Why Trust Our Calculator?</h2>
-                    <p>Our algorithms are based on extensive research into freelance markets across six countries: USA, UK, India, Pakistan, Canada, and Australia. We continuously update our data to reflect current market conditions, exchange rates, and economic factors.</p>
-                    
-                    <p>Unlike simple hourly rate calculators, RateCalc Pro accounts for:</p>
-                    
-                    <ul>
-                        <li>Regional cost of living differences</li>
-                        <li>Business expenses (software, equipment, insurance)</li>
-                        <li>Non-billable time (marketing, administration)</li>
-                        <li>Paid time off and sick days</li>
-                        <li>Profit margins for business growth</li>
-                        <li>Real-time currency conversion</li>
-                    </ul>
-                    
-                    <h2>For All Freelancers</h2>
-                    <p>Whether you're a web developer in the USA, a graphic designer in India, a writer in the UK, or a consultant in Australia, RateCalc Pro provides personalized rate recommendations that make sense for your specific situation and location.</p>
-                    
-                    <p>We're committed to helping the global freelance community thrive by providing tools that promote fair pricing, financial transparency, and business sustainability.</p>
-                    
-                    <div style="text-align: center; margin: 3rem 0;">
-                        <a href="#calculator" class="btn" onclick="showPage('calculator')">
-                            <i class="fas fa-calculator"></i>
-                            Try Our Calculator
-                        </a>
+                    <div class="about-image">
+                        <div class="about-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>AI-Powered</h4>
+                            <p>Advanced algorithms trained on millions of successful content pieces</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Privacy Focused</h4>
+                            <p>Your content is never stored or used to train public models</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Constantly Improving</h4>
+                            <p>Weekly updates based on user feedback and platform changes</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Multilingual</h4>
+                            <p>Supports English, Hindi, and Hinglish with more languages coming soon</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Privacy Policy Section -->
-        <section id="privacy" class="page-section">
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
             <div class="container">
-                <div class="page-content">
-                    <h1>Privacy Policy</h1>
-                    
-                    <p><strong>Last Updated:</strong> October 2023</p>
-                    
-                    <p>RateCalc Pro ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our freelance rate calculator and related services.</p>
-                    
-                    <h2>Information We Collect</h2>
-                    
-                    <h3>Personal Data</h3>
-                    <p>We do not require personal registration or account creation to use our calculator. However, we may collect limited information including:</p>
-                    <ul>
-                        <li>Calculator inputs (desired income, expenses, work hours, etc.)</li>
-                        <li>Currency preference selections</li>
-                        <li>Device information (browser type, operating system)</li>
-                        <li>Usage data (pages visited, time spent)</li>
-                    </ul>
-                    
-                    <h3>Automatically Collected Information</h3>
-                    <p>When you access our website, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device.</p>
-                    
-                    <h2>How We Use Your Information</h2>
-                    <p>We use the information we collect to:</p>
-                    <ul>
-                        <li>Provide and maintain our calculator service</li>
-                        <li>Improve and optimize our calculator algorithms</li>
-                        <li>Understand how users interact with our website</li>
-                        <li>Display relevant advertisements (through third-party ad networks)</li>
-                        <li>Prevent fraudulent activity</li>
-                    </ul>
-                    
-                    <h2>Data Storage and Security</h2>
-                    <p>Calculator inputs are processed locally in your browser and are not stored on our servers. We use industry-standard security measures to protect any information we collect, but no method of transmission over the Internet or electronic storage is 100% secure.</p>
-                    
-                    <h2>Third-Party Services</h2>
-                    <p>We use third-party services such as:</p>
-                    <ul>
-                        <li><strong>Google AdSense:</strong> For displaying relevant advertisements</li>
-                        <li><strong>Google Fonts:</strong> For typography on our website</li>
-                        <li><strong>Font Awesome:</strong> For iconography</li>
-                    </ul>
-                    <p>These services may collect information as described in their respective privacy policies.</p>
-                    
-                    <h2>Your Rights</h2>
-                    <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-                    <ul>
-                        <li>The right to access personal information we hold about you</li>
-                        <li>The right to request correction of inaccurate information</li>
-                        <li>The right to request deletion of your information</li>
-                        <li>The right to opt-out of certain data processing</li>
-                    </ul>
-                    
-                    <h2>Changes to This Privacy Policy</h2>
-                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page.</p>
-                    
+                <div class="section-header">
                     <h2>Contact Us</h2>
-                    <p>If you have questions about this Privacy Policy, please contact us through the website.</p>
+                    <p>Have questions? We're here to help</p>
+                </div>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Us</h4>
+                            <p>support@contentrepurpose.ai</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-comments"></i>
+                            <h4>Live Chat</h4>
+                            <p>Available for premium users</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Documentation</h4>
+                            <p>Check our help center</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Feature Requests</h4>
+                            <p>Suggest new features</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" class="form-control" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="billing">Billing Inquiry</option>
+                                    <option value="feedback">Product Feedback</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Terms & Conditions Section -->
-        <section id="terms" class="page-section">
+        <!-- Legal Pages (Hidden by default, accessible via footer) -->
+        <section class="legal-section" id="legalPages" style="display: none;">
             <div class="container">
-                <div class="page-content">
-                    <h1>Terms & Conditions</h1>
-                    
-                    <p><strong>Last Updated:</strong> October 2023</p>
-                    
-                    <p>Please read these Terms and Conditions ("Terms") carefully before using the RateCalc Pro website and freelance rate calculator (the "Service").</p>
-                    
-                    <h2>Acceptance of Terms</h2>
-                    <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
-                    
-                    <h2>Use License</h2>
-                    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use our Service for personal, non-commercial purposes subject to these Terms.</p>
-                    
-                    <h2>Calculator Disclaimer</h2>
-                    <p>Our freelance rate calculator provides estimates and recommendations based on the information you provide and our algorithms. These calculations are for informational purposes only and should not be considered financial, legal, or professional advice.</p>
-                    
-                    <p>We make no guarantees regarding:</p>
-                    <ul>
-                        <li>The accuracy of rate calculations</li>
-                        <li>Market acceptance of suggested rates</li>
-                        <li>Financial outcomes from using suggested rates</li>
-                        <li>Currency exchange rate accuracy</li>
-                    </ul>
-                    
-                    <h2>User Responsibilities</h2>
-                    <p>You agree to:</p>
-                    <ul>
-                        <li>Use the Service only for lawful purposes</li>
-                        <li>Not attempt to hack, disrupt, or overload the Service</li>
-                        <li>Provide accurate information when using the calculator</li>
-                        <li>Verify calculator results with professional advisors when needed</li>
-                    </ul>
-                    
-                    <h2>Intellectual Property</h2>
-                    <p>The Service and its original content, features, and functionality are owned by RateCalc Pro and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
-                    
-                    <h2>Third-Party Links</h2>
-                    <p>Our Service may contain links to third-party websites or services that are not owned or controlled by RateCalc Pro. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
-                    
-                    <h2>Limitation of Liability</h2>
-                    <p>In no event shall RateCalc Pro, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.</p>
-                    
-                    <h2>Changes to Terms</h2>
-                    <p>We reserve the right to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
-                    
-                    <h2>Governing Law</h2>
-                    <p>These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
-                    
-                    <h2>Contact Information</h2>
-                    <p>If you have any questions about these Terms, please contact us through the website.</p>
+                <div class="legal-nav">
+                    <button class="legal-tab active" data-legal="privacy">Privacy Policy</button>
+                    <button class="legal-tab" data-legal="terms">Terms & Conditions</button>
+                    <button class="legal-tab" data-legal="disclaimer">Disclaimer</button>
                 </div>
-            </div>
-        </section>
-
-        <!-- Disclaimer Section -->
-        <section id="disclaimer" class="page-section">
-            <div class="container">
-                <div class="page-content">
-                    <h1>Disclaimer</h1>
+                
+                <div class="legal-content">
+                    <!-- Privacy Policy -->
+                    <div class="legal-page active" id="privacy">
+                        <h2>Privacy Policy</h2>
+                        <p><strong>Last Updated:</strong> March 15, 2024</p>
+                        
+                        <h3>1. Introduction</h3>
+                        <p>Welcome to ContentRepurpose.ai. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+                        
+                        <h3>2. The Data We Collect About You</h3>
+                        <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+                        
+                        <ul>
+                            <li><strong>Identity Data:</strong> Includes first name, last name, username or similar identifier.</li>
+                            <li><strong>Contact Data:</strong> Includes email address.</li>
+                            <li><strong>Technical Data:</strong> Includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
+                            <li><strong>Usage Data:</strong> Includes information about how you use our website and services.</li>
+                            <li><strong>Content Data:</strong> Includes the content you input into our tool for repurposing.</li>
+                        </ul>
+                        
+                        <h3>3. How We Use Your Data</h3>
+                        <p>We will only use your personal data for the purpose for which we collected it which includes the following:</p>
+                        
+                        <ul>
+                            <li>To provide and maintain our service</li>
+                            <li>To notify you about changes to our service</li>
+                            <li>To provide customer support</li>
+                            <li>To gather analysis or valuable information so that we can improve our service</li>
+                            <li>To monitor the usage of our service</li>
+                            <li>To detect, prevent and address technical issues</li>
+                        </ul>
+                        
+                        <h3>4. Data Security</h3>
+                        <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.</p>
+                        
+                        <h3>5. Data Retention</h3>
+                        <p>We will only retain your personal data for as long as reasonably necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.</p>
+                        
+                        <h3>6. Your Legal Rights</h3>
+                        <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, to object to processing, to portability of data and (where the lawful ground of processing is consent) to withdraw consent.</p>
+                        
+                        <h3>7. Third-Party Links</h3>
+                        <p>This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.</p>
+                        
+                        <h3>8. Cookies</h3>
+                        <p>You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.</p>
+                        
+                        <h3>9. Contact Us</h3>
+                        <p>If you have any questions about this privacy policy or our privacy practices, please contact us at privacy@contentrepurpose.ai.</p>
+                    </div>
                     
-                    <p><strong>Last Updated:</strong> October 2023</p>
+                    <!-- Terms & Conditions -->
+                    <div class="legal-page" id="terms">
+                        <h2>Terms & Conditions</h2>
+                        <p><strong>Last Updated:</strong> March 15, 2024</p>
+                        
+                        <h3>1. Acceptance of Terms</h3>
+                        <p>By accessing and using ContentRepurpose.ai, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                        
+                        <h3>2. Description of Service</h3>
+                        <p>ContentRepurpose.ai provides users with an AI-powered content repurposing tool. The service allows users to input original content and receive reformatted versions optimized for different platforms including but not limited to blog summaries, social media posts, email newsletters, and video scripts.</p>
+                        
+                        <h3>3. User Obligations</h3>
+                        <p>As a user of this website, you agree not to:</p>
+                        
+                        <ul>
+                            <li>Use the service for any illegal purpose or in violation of any laws</li>
+                            <li>Violate or infringe upon the intellectual property rights of others</li>
+                            <li>Upload or transmit any malicious code, viruses, or harmful content</li>
+                            <li>Attempt to gain unauthorized access to any portion of the service</li>
+                            <li>Use the service to generate spam, misleading, or fraudulent content</li>
+                            <li>Impersonate any person or entity or falsely state your affiliation</li>
+                        </ul>
+                        
+                        <h3>4. Intellectual Property</h3>
+                        <p>The service and its original content, features, and functionality are and will remain the exclusive property of ContentRepurpose.ai and its licensors. The service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of ContentRepurpose.ai.</p>
+                        
+                        <h3>5. User Content</h3>
+                        <p>You retain all rights to the content you submit to our service. By submitting content, you grant us a limited license to process that content solely for the purpose of providing the repurposing service. We do not claim ownership of your content, and we do not store your content after processing except as necessary to provide the service.</p>
+                        
+                        <h3>6. Subscription and Payments</h3>
+                        <p>Certain features of the service may require payment. By selecting a premium subscription, you agree to pay the specified fees. All payments are processed through secure third-party payment processors. We reserve the right to change our subscription plans or adjust pricing for our service at any time.</p>
+                        
+                        <h3>7. Limitation of Liability</h3>
+                        <p>In no event shall ContentRepurpose.ai, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.</p>
+                        
+                        <h3>8. Termination</h3>
+                        <p>We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                        
+                        <h3>9. Changes to Terms</h3>
+                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                    </div>
                     
-                    <h2>No Professional Advice</h2>
-                    <p>The information provided by RateCalc Pro ("we," "us," or "our") on our website and through our freelance rate calculator is for general informational purposes only. All information is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information.</p>
-                    
-                    <p><strong>Our calculator is not a substitute for professional financial, legal, or business advice.</strong> Always seek the advice of qualified professionals regarding any financial decisions or business pricing strategies.</p>
-                    
-                    <h2>Financial Disclaimer</h2>
-                    <p>The freelance rate calculations provided are estimates based on algorithms and general market data. Actual rates may vary based on numerous factors including but not limited to:</p>
-                    
-                    <ul>
-                        <li>Your specific skills and experience level</li>
-                        <li>Current market demand for your services</li>
-                        <li>Geographic location and local economy</li>
-                        <li>Industry-specific factors</li>
-                        <li>Client budgets and negotiation</li>
-                        <li>Currency exchange rate fluctuations</li>
-                    </ul>
-                    
-                    <p>We do not guarantee that using our suggested rates will result in client acquisition, specific income levels, or business success.</p>
-                    
-                    <h2>Earnings Disclaimer</h2>
-                    <p>There are inherent risks in freelancing and self-employment. Past performance or calculated rates do not guarantee future results. Your actual earnings may differ materially from any estimates or projections provided by our calculator.</p>
-                    
-                    <p>You are solely responsible for your business decisions, pricing strategies, and financial outcomes.</p>
-                    
-                    <h2>External Links Disclaimer</h2>
-                    <p>Our website may contain links to external websites that are not provided or maintained by or in any way affiliated with us. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
-                    
-                    <h2>Advertisements Disclaimer</h2>
-                    <p>Our website displays advertisements through Google AdSense and potentially other advertising networks. We do not endorse the products or services advertised, and we are not responsible for the content of advertisements or the actions of advertisers.</p>
-                    
-                    <p>The presence of advertisements does not constitute an endorsement, recommendation, or sponsorship by RateCalc Pro.</p>
-                    
-                    <h2>Limitation of Liability</h2>
-                    <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of our calculator. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of our Service.</p>
-                    
-                    <h2>Acceptance of Disclaimer</h2>
-                    <p>By using our website and calculator, you hereby consent to our disclaimer and agree to its terms. If you do not agree with any part of this disclaimer, please discontinue use of our Service immediately.</p>
-                    
-                    <p>We reserve the right to make additions, deletions, or modifications to this disclaimer at any time without prior notice.</p>
+                    <!-- Disclaimer -->
+                    <div class="legal-page" id="disclaimer">
+                        <h2>Disclaimer</h2>
+                        <p><strong>Last Updated:</strong> March 15, 2024</p>
+                        
+                        <h3>1. No Professional Advice</h3>
+                        <p>The content generated by ContentRepurpose.ai is for informational and assistance purposes only. It should not be considered professional advice in fields such as legal, financial, medical, or any other professional domain. Always seek the advice of qualified professionals regarding any such matters.</p>
+                        
+                        <h3>2. AI-Generated Content</h3>
+                        <p>Our tool uses artificial intelligence to generate content based on your input. While we strive for accuracy and quality, AI-generated content may:</p>
+                        
+                        <ul>
+                            <li>Contain inaccuracies or errors</li>
+                            <li>Generate content that requires human review and editing</li>
+                            <li>Produce results that may not align perfectly with your expectations</li>
+                            <li>Require fact-checking and verification</li>
+                        </ul>
+                        
+                        <p>You are solely responsible for reviewing, editing, and approving all content generated by our tool before publication or use.</p>
+                        
+                        <h3>3. No Guarantee of Results</h3>
+                        <p>We do not guarantee that the use of our service will result in specific outcomes such as increased engagement, followers, sales, or any other metric. Content performance depends on numerous factors beyond our control including audience behavior, platform algorithms, timing, and market conditions.</p>
+                        
+                        <h3>4. Third-Party Content</h3>
+                        <p>Our service may contain links to third-party websites or services that are not owned or controlled by ContentRepurpose.ai. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+                        
+                        <h3>5. Service Availability</h3>
+                        <p>We strive to maintain 24/7 service availability but do not guarantee uninterrupted access to our service. We may need to perform maintenance, updates, or experience unexpected downtime. We are not liable for any losses or damages resulting from service interruptions.</p>
+                        
+                        <h3>6. Fair Use and Copyright</h3>
+                        <p>You must ensure that any content you input into our tool does not violate copyright laws or intellectual property rights. Our tool is designed to help you repurpose your own original content. We do not condone or support plagiarism, copyright infringement, or unethical content practices.</p>
+                        
+                        <h3>7. Testimonials and Examples</h3>
+                        <p>Any testimonials or examples shown on our website are exceptional results, don't apply to the average user, and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
+                        
+                        <h3>8. Contact for Concerns</h3>
+                        <p>If you have concerns about any content generated by our tool or believe it may infringe upon your rights, please contact us immediately at legal@contentrepurpose.ai.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
+    <footer class="footer">
+        <div class="container">
             <div class="footer-content">
-                <div>
-                    <div class="footer-logo">
-                        <i class="fas fa-calculator"></i>
-                        RateCalc Pro
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>ContentRepurpose.ai</span>
+                    </a>
+                    <p>Transform your content across platforms with AI-powered repurposing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <p style="max-width: 300px;">Professional freelance rate calculator for USA, UK, India, Pakistan, Canada, Australia.</p>
                 </div>
                 
                 <div class="footer-links">
-                    <h3 style="font-size: 1rem; margin-bottom: 1rem;">Quick Links</h3>
-                    <a href="#home" onclick="showPage('home')">Home</a>
-                    <a href="#calculator" onclick="showPage('calculator')">Calculator</a>
-                    <a href="#about" onclick="showPage('about')">About</a>
-                    <a href="#privacy" onclick="showPage('privacy')">Privacy Policy</a>
-                    <a href="#terms" onclick="showPage('terms')">Terms & Conditions</a>
-                    <a href="#disclaimer" onclick="showPage('disclaimer')">Disclaimer</a>
-                </div>
-                
-                <div class="footer-links">
-                    <h3 style="font-size: 1rem; margin-bottom: 1rem;">Countries</h3>
-                    <span style="color: var(--text-secondary);">USA</span>
-                    <span style="color: var(--text-secondary);">UK</span>
-                    <span style="color: var(--text-secondary);">India</span>
-                    <span style="color: var(--text-secondary);">Pakistan</span>
-                    <span style="color: var(--text-secondary);">Canada</span>
-                    <span style="color: var(--text-secondary);">Australia</span>
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#tool">AI Tool</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a></li>
+                            <li><a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a></li>
+                            <li><a href="#" class="legal-link" data-legal="disclaimer">Disclaimer</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 RateCalc Pro. All rights reserved.</p>
-                <p>This site uses cookies and displays advertisements. By using our site, you agree to our <a href="#privacy" onclick="showPage('privacy')" style="color: var(--primary-color);">Privacy Policy</a> and <a href="#terms" onclick="showPage('terms')" style="color: var(--primary-color);">Terms</a>.</p>
+                <p>&copy; 2024 ContentRepurpose.ai. All rights reserved.</p>
+                <p>This is a demo tool for educational purposes. No real payments processed.</p>
             </div>
         </div>
     </footer>
-    /* ===== RESPONSIVE UTILITIES ===== */
-@media (max-width: 1200px) {
-    .container, .nav-container, .footer-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-}
 
-@media (max-width: 1024px) {
-    .container, .nav-container, .footer-container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-    
-    .calculator-card {
-        max-width: 90%;
-    }
-}
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #4cc9f0;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #fff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --border-color: #dee2e6;
+            --success-color: #06d6a0;
+            --warning-color: #ffd166;
+            --danger-color: #ef476f;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s ease;
+            --header-height: 70px;
+        }
+        
+        .dark-mode {
+            --primary-color: #5a7dff;
+            --secondary-color: #4a1fb8;
+            --accent-color: #6bd7f8;
+            --text-color: #f8f9fa;
+            --text-light: #adb5bd;
+            --bg-color: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2d2d2d;
+            --border-color: #404040;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: var(--header-height);
+            transition: var(--transition);
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--header-height);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        .logo i {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .nav-btn {
+            margin-left: 1rem;
+        }
+        
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--bg-tertiary);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(76, 201, 240, 0.05) 100%);
+        }
+        
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .stat h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+            height: 400px;
+        }
+        
+        .floating-card {
+            position: absolute;
+            background-color: var(--bg-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            width: 120px;
+            height: 120px;
+        }
+        
+        .floating-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .floating-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .floating-card p {
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .floating-card:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+        
+        .floating-card:nth-child(2) {
+            top: 20%;
+            right: 10%;
+        }
+        
+        .floating-card:nth-child(3) {
+            top: 60%;
+            left: 10%;
+        }
+        
+        .floating-card:nth-child(4) {
+            top: 40%;
+            right: 0;
+        }
+        
+        .floating-card:nth-child(5) {
+            bottom: 0;
+            left: 30%;
+        }
+        
+        .floating-card:nth-child(6) {
+            bottom: 20%;
+            right: 30%;
+        }
+        
+        /* Tool Section */
+        .tool-section {
+            padding: 5rem 0;
+            background-color: var(--bg-secondary);
+        }
+        
+        .tool-wrapper {
+            background-color: var(--bg-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+        
+        .tool-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        .input-output-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 992px) {
+            .input-output-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-section, .output-section {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+        
+        .input-section .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        
+        .counter {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .content-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+            min-height: 200px;
+            transition: var(--transition);
+        }
+        
+        .content-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        .input-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .ad-placeholder {
+            background-color: var(--bg-tertiary);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px dashed var(--border-color);
+        }
+        
+        .ad-label {
+            display: inline-block;
+            background-color: var(--bg-secondary);
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tabs */
+        .tabs-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tabs-header {
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tabs-scroll {
+            display: flex;
+            min-width: max-content;
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tabs-content {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .copy-btn {
+            background-color: var(--bg-tertiary);
+            border: none;
+            border-radius: var(--radius);
+            padding: 8px 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .output-text {
+            background-color: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin: 1rem 0;
+        }
+        
+        .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+        
+        .period {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-features .fa-check {
+            color: var(--success-color);
+        }
+        
+        .pricing-features .fa-times {
+            color: var(--danger-color);
+        }
+        
+        .pricing-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background-color: var(--bg-secondary);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .about-text h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-text h3:first-child {
+            margin-top: 0;
+        }
+        
+        .about-image {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .about-card {
+            background-color: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .about-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .about-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .contact-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            background-color: var(--bg-tertiary);
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .contact-form-container {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Legal Section */
+        .legal-section {
+            padding: 3rem 0;
+            background-color: var(--bg-secondary);
+        }
+        
+        .legal-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        
+        .legal-tab {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .legal-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        .legal-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .legal-page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .legal-page.active {
+            display: block;
+        }
+        
+        .legal-page h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .legal-page h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--bg-tertiary);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .footer-brand p {
+            margin: 1rem 0;
+            color: var(--text-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-secondary);
+            border-radius: 50%;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom p:first-child {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - var(--header-height));
+                background-color: var(--bg-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+                transition: var(--transition);
+                z-index: 99;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .tool-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .input-actions {
+                flex-direction: column;
+            }
+            
+            .tabs-scroll {
+                overflow-x: auto;
+            }
+        }
+    </style>
 
-/* YAHAN SE NAYA CODE ADD KARO (Mobile specific fixes) */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-        padding: 0 0.5rem;
-    }
-    
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .hero-cta .btn {
-        width: 100%;
-        max-width: 280px;
-        margin-bottom: 0.5rem;
-    }
-    
-    .trust-badges {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .calculator-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .results-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .rate-card {
-        padding: 1rem;
-    }
-    
-    .rate-value {
-        font-size: 1.75rem;
-    }
-    
-    .page-content {
-        padding: 0 0.5rem;
-    }
-    
-    .page-content ul, .page-content ol {
-        margin-left: 1rem;
-        padding-right: 0.5rem;
-    }
-    
-    h2 {
-        font-size: 1.4rem;
-        padding: 0 0.5rem;
-    }
-    
-    h3 {
-        font-size: 1.2rem;
-        padding: 0 0.5rem;
-    }
-    
-    p {
-        padding: 0 0.5rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-    
-    .calculator-card {
-        padding: 1rem;
-    }
-    
-    .mobile-menu {
-        width: 85%;
-        max-width: 280px;
-    }
-}
-/* YAHAN TAK NAYA CODE */
-
-@media (max-width: 768px) {
-    .container, .nav-container, .footer-container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .footer-links {
-        align-items: center;
-    }
-}
     <script>
-        // ===== THEME TOGGLE =====
+        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('i');
         
         // Check for saved theme or prefer-color-scheme
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        const currentTheme = localStorage.getItem('theme');
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         
-        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+        if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
-            themeIcon.className = 'fas fa-sun';
-        } else {
-            themeIcon.className = 'fas fa-moon';
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
         }
         
         themeToggle.addEventListener('click', () => {
@@ -1775,242 +1832,402 @@
             
             if (document.body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
             } else {
                 localStorage.setItem('theme', 'light');
-                themeIcon.className = 'fas fa-moon';
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
             }
         });
         
-        // ===== MOBILE MENU =====
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
         
-        function openMobileMenu() {
-            mobileMenuOverlay.classList.add('active');
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeMobileMenu() {
-            mobileMenuOverlay.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-        
-        // Close mobile menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeMobileMenu();
-            }
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
         
-        // ===== PAGE NAVIGATION =====
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Word and Character Counter
+        const contentInput = document.getElementById('contentInput');
+        const wordCount = document.getElementById('wordCount');
+        const charCount = document.getElementById('charCount');
+        
+        contentInput.addEventListener('input', () => {
+            const text = contentInput.value.trim();
+            const words = text === '' ? 0 : text.split(/\s+/).length;
+            const chars = text.length;
+            
+            wordCount.textContent = words;
+            charCount.textContent = chars;
+        });
+        
+        // Tab Switching
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Update active tab button
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show active tab content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Copy Buttons
+        const copyBtns = document.querySelectorAll('.copy-btn');
+        
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                const textToCopy = targetElement.textContent;
+                
+                // Create a temporary textarea element to copy text
+                const tempTextarea = document.createElement('textarea');
+                tempTextarea.value = textToCopy;
+                document.body.appendChild(tempTextarea);
+                tempTextarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextarea);
+                
+                // Visual feedback
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.style.backgroundColor = 'var(--success-color)';
+                btn.style.color = 'white';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }, 2000);
+            });
+        });
+        
+        // Legal Pages
+        const legalLinks = document.querySelectorAll('.legal-link');
+        const legalSection = document.getElementById('legalPages');
+        const legalTabs = document.querySelectorAll('.legal-tab');
+        const legalPages = document.querySelectorAll('.legal-page');
+        
+        legalLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const legalType = link.getAttribute('data-legal');
+                
+                // Show legal section
+                legalSection.style.display = 'block';
+                
+                // Scroll to legal section
+                legalSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Activate correct tab
+                legalTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('data-legal') === legalType) {
+                        tab.classList.add('active');
+                    }
+                });
+                
+                // Show correct page
+                legalPages.forEach(page => {
+                    page.classList.remove('active');
+                    if (page.id === legalType) {
+                        page.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Legal Tab Switching
+        legalTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const legalType = tab.getAttribute('data-legal');
+                
+                // Update active tab
+                legalTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show active page
+                legalPages.forEach(page => {
+                    page.classList.remove('active');
+                    if (page.id === legalType) {
+                        page.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real app, you would send this data to a server
+            // For this demo, we'll just show a success message
+            alert(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Reset Button
+        const resetBtn = document.getElementById('resetBtn');
+        
+        resetBtn.addEventListener('click', () => {
+            contentInput.value = '';
+            wordCount.textContent = '0';
+            charCount.textContent = '0';
+            
+            // Reset all output areas
+            document.querySelectorAll('.output-text').forEach(output => {
+                output.innerHTML = `<p>Your AI-generated content will appear here. Paste your content and click "Generate All Formats" to begin.</p>`;
             });
             
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
+            // Reset to first tab
+            tabBtns.forEach((btn, index) => {
+                btn.classList.remove('active');
+                if (index === 0) btn.classList.add('active');
+            });
             
-            // Update URL hash without scrolling
-            history.pushState(null, null, `#${pageId}`);
-            
-            // Scroll to top of page
-            window.scrollTo(0, 0);
-        }
-        
-        // Handle initial page load based on URL hash
-        window.addEventListener('load', () => {
-            const hash = window.location.hash.substring(1) || 'home';
-            const validPages = ['home', 'calculator', 'about', 'privacy', 'terms', 'disclaimer'];
-            
-            if (validPages.includes(hash)) {
-                showPage(hash);
-            } else {
-                showPage('home');
-            }
+            tabContents.forEach((content, index) => {
+                content.classList.remove('active');
+                if (index === 0) content.classList.add('active');
+            });
         });
         
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', () => {
-            const hash = window.location.hash.substring(1) || 'home';
-            const validPages = ['home', 'calculator', 'about', 'privacy', 'terms', 'disclaimer'];
-            
-            if (validPages.includes(hash)) {
-                showPage(hash);
-            }
-        });
+        // Generate Button - AI Simulation
+        const generateBtn = document.getElementById('generateBtn');
         
-        // ===== CURRENCY SELECTOR =====
-        const currencyDropdownBtn = document.getElementById('currencyDropdownBtn');
-        const currencyDropdown = document.getElementById('currencyDropdown');
-        const selectedCurrency = document.getElementById('selectedCurrency');
-        const currencyOptions = document.querySelectorAll('.currency-option');
-        
-        // Currency data with conversion rates to USD (example rates)
-        const currencyData = {
-            'USD': { symbol: '$', rate: 1, name: 'USD ($) - United States' },
-            'GBP': { symbol: '£', rate: 0.79, name: 'GBP (£) - United Kingdom' },
-            'EUR': { symbol: '€', rate: 0.92, name: 'EUR (€) - Europe' },
-            'CAD': { symbol: '$', rate: 1.36, name: 'CAD ($) - Canada' },
-            'AUD': { symbol: '$', rate: 1.56, name: 'AUD ($) - Australia' },
-            'INR': { symbol: '₹', rate: 83.16, name: 'INR (₹) - India' },
-            'PKR': { symbol: '₨', rate: 277.5, name: 'PKR (₨) - Pakistan' }
+        // Sample content for demonstration
+        const sampleContents = {
+            blogSummary: [
+                "This comprehensive guide explores the transformative power of AI in content creation. We analyze how artificial intelligence is reshaping content marketing strategies, enabling creators to produce higher-quality work in less time. Key takeaways include the importance of human-AI collaboration, ethical considerations, and practical implementation steps for businesses of all sizes.",
+                "The article presents a balanced view of AI's capabilities and limitations in creative fields. Rather than replacing human creativity, AI serves as a powerful tool that augments our abilities. Successful implementation requires understanding both the technology and the human elements of storytelling and audience connection."
+            ],
+            linkedin: [
+                "🚀 AI is transforming content creation - but what does this mean for creators?\n\nJust published a deep dive into how artificial intelligence is reshaping our industry. Here are the key insights:\n\n🔹 AI accelerates content production without sacrificing quality\n🔹 Human creativity remains irreplaceable for strategy and emotional connection\n🔹 The most successful teams combine AI efficiency with human insight\n🔹 Ethical considerations must guide our adoption of these tools\n\nThe future isn't AI OR humans - it's AI AND humans working together. Those who learn to collaborate effectively will lead the next wave of content innovation.\n\nWhat's your experience with AI content tools? Share in the comments! 👇\n\n#AI #ContentCreation #FutureOfWork #DigitalMarketing #Innovation"
+            ],
+            instagram: [
+                "🤖 AI is changing how we create content FOREVER!\n\nJust spent weeks researching how artificial intelligence is transforming our industry, and wow - the possibilities are mind-blowing! ✨\n\nHere's what you need to know:\n✅ AI can help you create faster without losing quality\n✅ Your unique human touch is still the secret sauce\n✅ The best creators are learning to work WITH AI\n✅ It's all about balance - tech + creativity = magic! \n\nWhat do you think? Are you using AI tools yet? Tell me in the comments! 👇\n\nPS: Swipe for before/after examples of AI-assisted content ➡️\n\n---\n#AI #ContentCreator #SocialMediaTips #InstagramMarketing #DigitalCreator #TechTrends #FutureIsNow #ContentStrategy"
+            ],
+            reel: [
+                "[Opening shot: Creator looking excited at camera]\n🎥 (0-3 sec): \"Okay, I need to show you something that's literally changing how I create content!\"\n\n[Quick cuts of different content types]\n🎥 (3-8 sec): \"AI tools are helping me make:\n• Blog posts in half the time ✍️\n• Social captions that actually engage 📱\n• Video scripts that convert 🎬\"\n\n[Creator demonstrating a tool]\n🎥 (8-15 sec): \"But here's the secret: I'm NOT letting AI replace my voice. It's my super-efficient assistant! The strategy and personality? That's all me. 💁‍♀️\"\n\n[Closing shot with text overlay]\n🎥 (15-18 sec): \"AI + Human Creativity = Unstoppable\"\n\n[CTA screen]\n🎥 (18-20 sec): \"Want my favorite AI tools? Comment 'TOOLS' below! 👇\"\n\n#AIContent #ContentCreator #ReelsInstagram #SocialMediaTips #DigitalMarketing #TechTools"
+            ],
+            shorts: [
+                "[0-3 seconds: Hook]\n\"What if I told you AI could 10X your content output?\n\n[3-10 seconds: Problem]\n\"Most creators struggle with:\n• Time-consuming writing\n• Platform-specific formatting\n• Consistent quality across channels\n\n[10-20 seconds: Solution]\n\"AI repurposing tools analyze your core content and adapt it for:\n📝 Blog summaries\n💼 LinkedIn posts\n📱 Instagram captions\n🎬 Video scripts\n\n[20-30 seconds: Value]\n\"You keep your unique voice while the AI handles the tedious parts. It's like having a content team for the price of a coffee subscription! ☕\n\n[30-45 seconds: CTA]\n\"Want to try it? Link in description for a free tool! 👇\n\n#ContentCreation #AI #Productivity #MarketingTips #YouTubeShorts\""
+            ],
+            twitter: [
+                "1/5 AI is revolutionizing content creation, but there's a LOT of misinformation out there. Here's what you actually need to know: 🧵\n\n2/5 AI content tools aren't about replacing human creativity. They're about augmenting it. The best creators use AI for:\n• Research assistance\n• First drafts\n• Repurposing content\n• Editing suggestions\n\n3/5 The key is maintaining YOUR voice. AI should sound like you, not like a robot. This requires proper prompting and always reviewing/editing the output.\n\n4/5 Ethical considerations matter. Be transparent when using AI, don't plagiarize, and ensure facts are checked. AI can be wrong!\n\n5/5 The future belongs to creators who master human-AI collaboration. Those who dismiss AI will be left behind. Those who rely entirely on AI will create generic content. The sweet spot is in the middle.\n\nWhat's your take on AI in content creation?",
+                "Reply to thread: Agree? Disagree? Share your experiences with AI tools below! 👇"
+            ],
+            email: [
+                "Subject: AI in Content Creation: What You Need to Know\n\nHi [First Name],\n\nIf you've been wondering how artificial intelligence is changing content creation, you're not alone. I've been researching this topic extensively, and I want to share what I've learned.\n\nHere are the key insights:\n\n1. AI is a tool, not a replacement\n   The most successful content teams use AI to handle repetitive tasks while focusing human creativity on strategy, storytelling, and emotional connection.\n\n2. Quality still requires human oversight\n   While AI can produce surprisingly good first drafts, it still needs human editing to catch errors, add nuance, and maintain your brand voice.\n\n3. The ethical considerations are real\n   Transparency matters. Your audience deserves to know when content is AI-assisted, and you need systems to verify facts and avoid plagiarism.\n\n4. Early adopters have an advantage\n   Like with any technological shift, those who learn to work effectively with AI tools now will have a significant advantage in the coming years.\n\nI've been testing several AI content tools and would be happy to share my recommendations if you're interested. Just reply to this email and let me know!\n\nTo your content success,\n\n[Your Name]\nContent Strategist\n\nPS: Want to see AI content repurposing in action? Try our free tool here: [Link to Tool]"
+            ],
+            seo: [
+                "Title Tag (50-60 characters):\nAI Content Creation: The Complete Guide for 2024\n\nMeta Description (150-160 characters):\nDiscover how AI is transforming content creation. Learn practical strategies for implementing AI tools while maintaining quality and authenticity in your content marketing.",
+                "Title Tag Variations:\n1. How AI is Changing Content Creation: A 2024 Guide\n2. AI Content Tools: Boost Productivity Without Losing Quality\n3. Human vs AI Content Creation: Finding the Right Balance\n\nAdditional SEO Elements:\n• Focus Keyword: AI content creation\n• Secondary Keywords: content repurposing, AI writing tools, content automation\n• Readability: Aim for 8th grade level\n• Optimal Content Length: 1,500-2,500 words\n• Internal Links: Include 3-5 links to related content on your site\n• External Links: Reference 2-3 authoritative sources"
+            ],
+            hashtag: [
+                "Primary Hashtags:\n#AIContentCreation #ContentMarketing #DigitalMarketing #AIWriting #ContentStrategy\n\nSecondary Hashtags:\n#MarketingAutomation #ContentCreator #SocialMediaMarketing #BloggingTips #SEO\n\nNiche Hashtags:\n#AITools #ContentRepurposing #MarketingTech #FutureOfWork #CreativeAI\n\nPlatform-Specific Hashtags:\nInstagram: #InstaContent #ContentCreatorLife #SocialMediaTips\nLinkedIn: #B2BMarketing #ProfessionalDevelopment #Industry40\nTwitter: #TwitterMarketing #Thread\nYouTube: #YouTubeCreator #VideoMarketing\n\nTrending/Seasonal:\n#TechTrends2024 #DigitalTransformation #AIRevolution"
+            ],
+            cta: [
+                "For Blogs:\n• \"Ready to transform your content strategy? Download our free AI content checklist here.\"\n• \"What's your biggest content challenge? Share in the comments below!\"\n• \"Liked this post? Share it with a fellow creator who needs to see this.\"\n\nFor Social Media:\n• \"Agree or disagree? Let me know in the comments! 👇\"\n• \"Save this for when you're ready to try AI content tools!\"\n• \"Tag a friend who needs to see this!\"\n• \"Want more tips like this? Follow for daily content strategy insights.\"\n\nFor Email Newsletters:\n• \"Ready to implement AI in your content workflow? Schedule a free strategy call here.\"\n• \"Which tip resonated most? Hit reply and let me know!\"\n• \"Not ready for AI tools yet? Download our free content calendar template instead.\"\n\nFor Video Content:\n• \"Want my favorite AI tools list? Comment 'TOOLS' below!\"\n• \"Subscribe for more content tech insights every Tuesday!\"\n• \"Link in bio/description to try the free tool mentioned!\""
+            ]
         };
         
-        let currentCurrency = 'USD';
-        
-        currencyDropdownBtn.addEventListener('click', () => {
-            currencyDropdownBtn.classList.toggle('active');
-            currencyDropdown.classList.toggle('active');
+        // AI Content Generation Logic
+        generateBtn.addEventListener('click', () => {
+            const inputText = contentInput.value.trim();
+            
+            if (inputText.length < 100) {
+                alert('Please enter at least 100 characters for best results.');
+                return;
+            }
+            
+            // Show loading state
+            generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            generateBtn.disabled = true;
+            
+            // Get user preferences
+            const tone = document.getElementById('toneSelect').value;
+            const language = document.getElementById('languageSelect').value;
+            const emojiLevel = document.getElementById('emojiSelect').value;
+            const length = document.getElementById('lengthSelect').value;
+            
+            // Simulate AI processing time
+            setTimeout(() => {
+                // Generate content based on user input and preferences
+                // In a real app, this would be processed by an actual AI
+                // For this demo, we'll use sample content adjusted based on preferences
+                
+                // Adjust sample content based on tone
+                let toneAdjustment = "";
+                if (tone === "professional") toneAdjustment = " (Professional Tone)";
+                if (tone === "casual") toneAdjustment = " (Casual Tone)";
+                if (tone === "friendly") toneAdjustment = " (Friendly Tone)";
+                if (tone === "persuasive") toneAdjustment = " (Persuasive Tone)";
+                if (tone === "storytelling") toneAdjustment = " (Storytelling Tone)";
+                
+                // Adjust emojis based on preference
+                let emojiAdjustment = "";
+                if (emojiLevel === "high") emojiAdjustment = " ✨🚀🔥";
+                if (emojiLevel === "medium") emojiAdjustment = " 👍👀";
+                if (emojiLevel === "low") emojiAdjustment = ".";
+                
+                // Adjust length
+                let lengthAdjustment = "";
+                if (length === "short") lengthAdjustment = " [Short Version]";
+                if (length === "long") lengthAdjustment = " [Detailed Version]";
+                
+                // Update all output areas with generated content
+                document.getElementById('summaryOutput').innerHTML = `<p><strong>Generated Blog Summary${toneAdjustment}${lengthAdjustment}:</strong></p><p>${sampleContents.blogSummary[0]}</p><p>${sampleContents.blogSummary[1]}</p>`;
+                
+                document.getElementById('linkedinOutput').innerHTML = `<p><strong>LinkedIn Post${toneAdjustment}${emojiAdjustment}:</strong></p><p>${sampleContents.linkedin[0]}</p>`;
+                
+                document.getElementById('instagramOutput').innerHTML = `<p><strong>Instagram Caption${toneAdjustment}${emojiAdjustment}:</strong></p><p>${sampleContents.instagram[0]}</p>`;
+                
+                document.getElementById('reelOutput').innerHTML = `<p><strong>Instagram Reel Script${toneAdjustment}:</strong></p><p>${sampleContents.reel[0]}</p>`;
+                
+                document.getElementById('shortsOutput').innerHTML = `<p><strong>YouTube Shorts Script${toneAdjustment}:</strong></p><p>${sampleContents.shorts[0]}</p>`;
+                
+                document.getElementById('twitterOutput').innerHTML = `<p><strong>Twitter/X Thread${toneAdjustment}:</strong></p><p>${sampleContents.twitter[0]}</p><p>${sampleContents.twitter[1]}</p>`;
+                
+                document.getElementById('emailOutput').innerHTML = `<p><strong>Email Newsletter${toneAdjustment}:</strong></p><p>${sampleContents.email[0]}</p>`;
+                
+                document.getElementById('seoOutput').innerHTML = `<p><strong>SEO Title & Meta Description${toneAdjustment}:</strong></p><p>${sampleContents.seo[0]}</p><p>${sampleContents.seo[1]}</p>`;
+                
+                document.getElementById('hashtagOutput').innerHTML = `<p><strong>Hashtag Recommendations${emojiAdjustment}:</strong></p><p>${sampleContents.hashtag[0]}</p>`;
+                
+                document.getElementById('ctaOutput').innerHTML = `<p><strong>Call-to-Action Suggestions${toneAdjustment}:</strong></p><p>${sampleContents.cta[0]}</p>`;
+                
+                // Reset button state
+                generateBtn.innerHTML = '<i class="fas fa-magic"></i> Generate All Formats';
+                generateBtn.disabled = false;
+                
+                // Show success message
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: var(--success-color);
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: var(--radius);
+                    box-shadow: var(--shadow-lg);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                `;
+                notification.innerHTML = `<i class="fas fa-check-circle"></i> Content generated successfully!`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+                
+                // Add CSS for animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+            }, 1500); // Simulate 1.5 second processing time
         });
         
-        currencyOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const currency = option.getAttribute('data-currency');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
                 
-                // Update selected currency
-                currentCurrency = currency;
-                selectedCurrency.textContent = currencyData[currency].name.split(' - ')[0];
+                if (targetId === '#') return;
                 
-                // Update active state
-                currencyOptions.forEach(opt => opt.classList.remove('active'));
-                option.classList.add('active');
+                const targetElement = document.querySelector(targetId);
                 
-                // Close dropdown
-                currencyDropdownBtn.classList.remove('active');
-                currencyDropdown.classList.remove('active');
-                
-                // Recalculate rates if results are shown
-                if (document.getElementById('resultsSection').classList.contains('active')) {
-                    calculateRates();
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
         
-        // Close currency dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!currencyDropdownBtn.contains(e.target) && !currencyDropdown.contains(e.target)) {
-                currencyDropdownBtn.classList.remove('active');
-                currencyDropdown.classList.remove('active');
-            }
+        // Initialize with some sample content for demo
+        window.addEventListener('DOMContentLoaded', () => {
+            // Add sample content to input for demo purposes
+            const sampleContent = `Artificial intelligence is transforming content creation in unprecedented ways. As we move further into 2024, it's becoming clear that AI isn't just another tool—it's a fundamental shift in how we produce, distribute, and optimize content.
+
+The most successful content creators and marketers are those who have learned to integrate AI into their workflows while maintaining their unique human perspective. AI excels at handling repetitive tasks, analyzing data, and generating first drafts, but it still requires human oversight for strategy, emotional nuance, and ethical considerations.
+
+In this comprehensive exploration, we'll examine how AI tools can help you:
+1. Repurpose existing content across multiple platforms
+2. Generate ideas and overcome creative blocks
+3. Optimize content for SEO and different audience segments
+4. Maintain consistency in tone and messaging
+5. Analyze performance data to improve future content
+
+However, it's crucial to approach AI with both enthusiasm and caution. The best results come from viewing AI as a collaborative partner rather than a replacement for human creativity. This means developing new skills in AI prompting, understanding the limitations of current technology, and establishing ethical guidelines for AI-assisted content creation.
+
+The future belongs to those who can effectively combine artificial intelligence with human insight, creativity, and empathy. Whether you're a solo creator or part of a large marketing team, now is the time to develop your AI content strategy.`;
+            
+            contentInput.value = sampleContent;
+            
+            // Trigger input event to update counters
+            contentInput.dispatchEvent(new Event('input'));
         });
-        
-        // ===== RATE CALCULATOR =====
-        const rateCalculator = document.getElementById('rateCalculator');
-        const resultsSection = document.getElementById('resultsSection');
-        
-        // Format currency based on selected currency
-        function formatCurrency(amount) {
-            const currency = currencyData[currentCurrency];
-            const formattedAmount = new Intl.NumberFormat('en-US', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(amount * currency.rate);
-            
-            return `${currency.symbol}${formattedAmount}`;
-        }
-        
-        // Calculate freelance rates
-        function calculateRates() {
-            // Get form values
-            const desiredIncome = parseFloat(document.getElementById('desiredIncome').value) || 0;
-            const businessExpenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
-            const workHours = parseFloat(document.getElementById('workHours').value) || 0;
-            const vacationWeeks = parseFloat(document.getElementById('vacationWeeks').value) || 0;
-            const billablePercentage = parseFloat(document.getElementById('billablePercentage').value) || 0;
-            const profitMargin = parseFloat(document.getElementById('profitMargin').value) || 0;
-            
-            // Validate inputs
-            if (desiredIncome <= 0 || workHours <= 0 || billablePercentage <= 0) {
-                alert('Please enter valid values for all required fields.');
-                return false;
-            }
-            
-            // Calculate working weeks per year
-            const workingWeeksPerYear = 52 - vacationWeeks;
-            
-            // Calculate total hours available for work per year
-            const totalHoursPerYear = workingWeeksPerYear * workHours;
-            
-            // Calculate billable hours per year
-            const billableHoursPerYear = totalHoursPerYear * (billablePercentage / 100);
-            
-            // Calculate total needed revenue (income + expenses + profit)
-            const profitAmount = desiredIncome * (profitMargin / 100);
-            const totalRevenueNeeded = desiredIncome + businessExpenses + profitAmount;
-            
-            // Calculate rates
-            const hourlyRate = totalRevenueNeeded / billableHoursPerYear;
-            const dailyRate = hourlyRate * 8;
-            const weeklyRate = hourlyRate * workHours;
-            
-            // Display results
-            document.getElementById('hourlyRate').textContent = formatCurrency(hourlyRate);
-            document.getElementById('dailyRate').textContent = formatCurrency(dailyRate);
-            document.getElementById('weeklyRate').textContent = formatCurrency(weeklyRate);
-            
-            // Show results section
-            resultsSection.classList.add('active');
-            
-            // Scroll to results
-            setTimeout(() => {
-                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 300);
-            
-            return false;
-        }
-        
-        // Handle form submission
-        rateCalculator.addEventListener('submit', (e) => {
-            e.preventDefault();
-            calculateRates();
-        });
-        
-        // ===== INITIALIZATION =====
-        // Set default form values
-        document.getElementById('desiredIncome').value = 60000;
-        document.getElementById('businessExpenses').value = 10000;
-        document.getElementById('workHours').value = 40;
-        document.getElementById('vacationWeeks').value = 4;
-        document.getElementById('billablePercentage').value = 70;
-        document.getElementById('profitMargin').value = 20;
-        
-        // Close mobile menu on window resize (if resizing to desktop)
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 900) {
-                closeMobileMenu();
-            }
-        });
-        
-        // ===== RESPONSIVE UTILITIES =====
-        // Handle responsive adjustments
-        function handleResponsiveAdjustments() {
-            const width = window.innerWidth;
-            
-            // Adjust container padding for very large screens
-            if (width > 1600) {
-                document.querySelectorAll('.container, .nav-container, .footer-container').forEach(el => {
-                    el.style.paddingLeft = '0';
-                    el.style.paddingRight = '0';
-                });
-            }
-        }
-        
-        // Initial call
-        handleResponsiveAdjustments();
-        
-        // Call on resize
-        window.addEventListener('resize', handleResponsiveAdjustments);
     </script>
 </body>
 </html>
