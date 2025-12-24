@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Content Repurposing Tool - Transform Content Across Platforms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>AI Content Repurposing Tool - Transform One Piece of Content Into Multiple Formats</title>
+    <meta name="description" content="Free AI-powered content repurposing tool. Transform your blog posts, articles, or scripts into social media posts, emails, videos scripts, and more with one click.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔄</text></svg>">
@@ -13,17 +14,19 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
+                <a href="#home" class="logo">
                     <i class="fas fa-recycle"></i>
                     <span>ContentRepurpose.ai</span>
                 </a>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#tool" class="nav-link">Tool</a></li>
+                    <li><a href="#tool" class="nav-link">Free Tool</a></li>
                     <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#" class="btn btn-outline nav-btn">Login</a></li>
                 </ul>
                 <div class="header-controls">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -46,50 +49,54 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">AI-Powered Content Repurposing Tool</h1>
-                    <p class="hero-subtitle">Transform one piece of content into 10+ formats instantly. Save hours of manual work with our intelligent AI.</p>
+                    <p class="hero-subtitle">Transform one piece of content into multiple formats instantly. Save hours of manual work by automatically adapting your content for different platforms and audiences.</p>
                     <div class="hero-buttons">
-                        <a href="#tool" class="btn btn-primary">Try Free Tool</a>
-                        <a href="#pricing" class="btn btn-outline">View Pricing</a>
+                        <a href="#tool" class="btn btn-primary">Try Free Tool Now</a>
+                        <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3>10,000+</h3>
-                            <p>Content Pieces Repurposed</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <p>Instant Conversion</p>
                         </div>
-                        <div class="stat">
-                            <h3>2,500+</h3>
-                            <p>Happy Creators</p>
+                        <div class="feature">
+                            <i class="fas fa-language"></i>
+                            <p>Multiple Languages</p>
                         </div>
-                        <div class="stat">
-                            <h3>95%</h3>
-                            <p>Time Saved</p>
+                        <div class="feature">
+                            <i class="fas fa-palette"></i>
+                            <p>Tone Customization</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>Mobile Friendly</p>
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fas fa-blog"></i>
-                        <p>Blog Post</p>
+                        <p>Blog Summary</p>
                     </div>
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fab fa-linkedin"></i>
-                        <p>LinkedIn</p>
+                        <p>LinkedIn Post</p>
                     </div>
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fab fa-instagram"></i>
-                        <p>Instagram</p>
+                        <p>Instagram Caption</p>
                     </div>
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fab fa-youtube"></i>
-                        <p>YouTube</p>
+                        <p>YouTube Script</p>
                     </div>
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fab fa-twitter"></i>
-                        <p>Twitter/X</p>
+                        <p>Twitter Thread</p>
                     </div>
-                    <div class="floating-card">
+                    <div class="platform-card">
                         <i class="fas fa-envelope"></i>
-                        <p>Email</p>
+                        <p>Email Newsletter</p>
                     </div>
                 </div>
             </div>
@@ -99,14 +106,14 @@
         <section class="tool-section" id="tool">
             <div class="container">
                 <div class="section-header">
-                    <h2>AI Content Repurposing Tool</h2>
-                    <p>Paste your original content below and watch it transform across platforms</p>
+                    <h2>Free Content Repurposing Tool</h2>
+                    <p>Paste your original content below and transform it into multiple formats with one click</p>
                 </div>
 
                 <div class="tool-wrapper">
                     <div class="tool-controls">
                         <div class="control-group">
-                            <label for="toneSelect">Content Tone</label>
+                            <label for="toneSelect"><i class="fas fa-volume-up"></i> Content Tone</label>
                             <select id="toneSelect" class="form-control">
                                 <option value="professional">Professional</option>
                                 <option value="casual" selected>Casual</option>
@@ -117,7 +124,7 @@
                         </div>
                         
                         <div class="control-group">
-                            <label for="languageSelect">Language</label>
+                            <label for="languageSelect"><i class="fas fa-globe"></i> Language</label>
                             <select id="languageSelect" class="form-control">
                                 <option value="english" selected>English</option>
                                 <option value="hindi">Hindi</option>
@@ -126,7 +133,7 @@
                         </div>
                         
                         <div class="control-group">
-                            <label for="emojiSelect">Emoji Level</label>
+                            <label for="emojiSelect"><i class="far fa-smile"></i> Emoji Level</label>
                             <select id="emojiSelect" class="form-control">
                                 <option value="none">None</option>
                                 <option value="low">Low</option>
@@ -136,7 +143,7 @@
                         </div>
                         
                         <div class="control-group">
-                            <label for="lengthSelect">Content Length</label>
+                            <label for="lengthSelect"><i class="fas fa-text-width"></i> Content Length</label>
                             <select id="lengthSelect" class="form-control">
                                 <option value="short">Short</option>
                                 <option value="medium" selected>Medium</option>
@@ -149,24 +156,24 @@
                         <!-- Input Section -->
                         <div class="input-section">
                             <div class="section-header">
-                                <h3>Original Content</h3>
+                                <h3><i class="fas fa-keyboard"></i> Original Content</h3>
                                 <div class="counter">
                                     <span id="wordCount">0</span> words | 
                                     <span id="charCount">0</span> characters
                                 </div>
                             </div>
-                            <textarea id="contentInput" class="content-input" placeholder="Paste your blog post, article, video script, or any content here... Minimum 100 words for best results." rows="10"></textarea>
+                            <textarea id="contentInput" class="content-input" placeholder="Paste your blog post, article, video script, or any content here... Our AI will analyze and repurpose it for different platforms. For best results, use content with at least 100 words." rows="8"></textarea>
                             <div class="input-actions">
                                 <button id="generateBtn" class="btn btn-primary">
                                     <i class="fas fa-magic"></i> Generate All Formats
                                 </button>
                                 <button id="resetBtn" class="btn btn-outline">
-                                    <i class="fas fa-redo"></i> Reset
+                                    <i class="fas fa-redo"></i> Clear All
                                 </button>
                             </div>
                             <div class="ad-placeholder" id="adTop">
                                 <div class="ad-label">Advertisement</div>
-                                <p>Premium users enjoy an ad-free experience</p>
+                                <div class="ad-content">Unlock unlimited usage and remove ads with our affordable premium plan</div>
                             </div>
                         </div>
 
@@ -174,7 +181,7 @@
                         <div class="output-section">
                             <div class="tabs-container">
                                 <div class="tabs-header">
-                                    <div class="tabs-scroll">
+                                    <div class="tabs-scroll" id="tabsScroll">
                                         <button class="tab-btn active" data-tab="summary">Blog Summary</button>
                                         <button class="tab-btn" data-tab="linkedin">LinkedIn Post</button>
                                         <button class="tab-btn" data-tab="instagram">Instagram Caption</button>
@@ -186,136 +193,148 @@
                                         <button class="tab-btn" data-tab="hashtag">Hashtags</button>
                                         <button class="tab-btn" data-tab="cta">CTAs</button>
                                     </div>
+                                    <button class="tab-nav prev" id="tabPrev"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="tab-nav next" id="tabNext"><i class="fas fa-chevron-right"></i></button>
                                 </div>
                                 
                                 <div class="tabs-content">
                                     <!-- Blog Summary -->
                                     <div class="tab-content active" id="summary">
                                         <div class="tab-header">
-                                            <h4>Blog Summary</h4>
+                                            <h4><i class="fas fa-blog"></i> Blog Summary</h4>
                                             <button class="copy-btn" data-target="summaryOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="summaryOutput" class="output-text">
                                             <p>Your AI-generated blog summary will appear here. Paste your content and click "Generate All Formats" to begin.</p>
+                                            <p>This tool creates concise summaries that capture the key points of your original content, perfect for sharing on platforms where readers want quick insights.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- LinkedIn Post -->
                                     <div class="tab-content" id="linkedin">
                                         <div class="tab-header">
-                                            <h4>LinkedIn Post</h4>
+                                            <h4><i class="fab fa-linkedin"></i> LinkedIn Post</h4>
                                             <button class="copy-btn" data-target="linkedinOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="linkedinOutput" class="output-text">
                                             <p>Your professional LinkedIn post will be generated here. Perfect for B2B audiences and networking.</p>
+                                            <p>LinkedIn posts generated by our AI maintain a professional tone while including engagement elements like questions and relevant hashtags.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- Instagram Caption -->
                                     <div class="tab-content" id="instagram">
                                         <div class="tab-header">
-                                            <h4>Instagram Caption</h4>
+                                            <h4><i class="fab fa-instagram"></i> Instagram Caption</h4>
                                             <button class="copy-btn" data-target="instagramOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="instagramOutput" class="output-text">
                                             <p>Your engaging Instagram caption with emojis will appear here. Ready to post with hashtags!</p>
+                                            <p>Instagram captions are optimized for visual platforms with appropriate emoji usage and hashtag suggestions based on your content.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- Reel Script -->
                                     <div class="tab-content" id="reel">
                                         <div class="tab-header">
-                                            <h4>Instagram Reel Script</h4>
+                                            <h4><i class="fas fa-video"></i> Instagram Reel Script</h4>
                                             <button class="copy-btn" data-target="reelOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="reelOutput" class="output-text">
                                             <p>Your 15-30 second Reel script with visual cues will be generated here. Perfect for viral content!</p>
+                                            <p>Reel scripts include timing cues, on-screen text suggestions, and engaging hooks to capture attention quickly.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- YouTube Shorts Script -->
                                     <div class="tab-content" id="shorts">
                                         <div class="tab-header">
-                                            <h4>YouTube Shorts Script</h4>
+                                            <h4><i class="fab fa-youtube"></i> YouTube Shorts Script</h4>
                                             <button class="copy-btn" data-target="shortsOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="shortsOutput" class="output-text">
                                             <p>Your YouTube Shorts script (under 60 seconds) will appear here. Hook, content, and CTA included.</p>
+                                            <p>Shorts scripts are structured for vertical video format with clear beginning, middle, and end sections for maximum retention.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- Twitter Thread -->
                                     <div class="tab-content" id="twitter">
                                         <div class="tab-header">
-                                            <h4>Twitter/X Thread</h4>
+                                            <h4><i class="fab fa-twitter"></i> Twitter/X Thread</h4>
                                             <button class="copy-btn" data-target="twitterOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="twitterOutput" class="output-text">
                                             <p>Your Twitter thread (2-5 tweets) will be generated here. Threaded for maximum engagement.</p>
+                                            <p>Twitter threads break down complex ideas into digestible tweets with clear numbering and engagement prompts.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- Email Newsletter -->
                                     <div class="tab-content" id="email">
                                         <div class="tab-header">
-                                            <h4>Email Newsletter</h4>
+                                            <h4><i class="fas fa-envelope"></i> Email Newsletter</h4>
                                             <button class="copy-btn" data-target="emailOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="emailOutput" class="output-text">
                                             <p>Your email newsletter draft will appear here. Includes subject line, body, and call-to-action.</p>
+                                            <p>Email newsletters are formatted for readability with clear sections, personalized elements, and actionable CTAs.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- SEO Meta -->
                                     <div class="tab-content" id="seo">
                                         <div class="tab-header">
-                                            <h4>SEO Title & Meta Description</h4>
+                                            <h4><i class="fas fa-search"></i> SEO Title & Meta Description</h4>
                                             <button class="copy-btn" data-target="seoOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="seoOutput" class="output-text">
                                             <p>Your SEO-optimized title tags and meta descriptions will be generated here.</p>
+                                            <p>SEO elements include primary and secondary keywords, proper length optimization, and compelling descriptions for click-through rates.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- Hashtag Generator -->
                                     <div class="tab-content" id="hashtag">
                                         <div class="tab-header">
-                                            <h4>Hashtag Generator</h4>
+                                            <h4><i class="fas fa-hashtag"></i> Hashtag Generator</h4>
                                             <button class="copy-btn" data-target="hashtagOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="hashtagOutput" class="output-text">
                                             <p>Relevant hashtags for your content will appear here. Categorized by popularity and relevance.</p>
+                                            <p>Hashtags are grouped by platform best practices, trending topics, and content relevance to maximize discoverability.</p>
                                         </div>
                                     </div>
                                     
                                     <!-- CTA Generator -->
                                     <div class="tab-content" id="cta">
                                         <div class="tab-header">
-                                            <h4>Call-to-Action Generator</h4>
+                                            <h4><i class="fas fa-bullhorn"></i> Call-to-Action Generator</h4>
                                             <button class="copy-btn" data-target="ctaOutput">
                                                 <i class="far fa-copy"></i> Copy
                                             </button>
                                         </div>
                                         <div id="ctaOutput" class="output-text">
                                             <p>Persuasive call-to-action phrases will be generated here. Tailored for different platforms.</p>
+                                            <p>CTAs are customized for each platform's best practices, audience expectations, and desired actions (clicks, comments, shares, etc.)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -326,39 +345,135 @@
             </div>
         </section>
 
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How Our Content Repurposing Tool Works</h2>
+                    <p>Three simple steps to transform your content across multiple platforms</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Paste Your Content</h3>
+                            <p>Copy and paste your blog post, article, video script, or any written content into the input field. Our tool works best with content that has clear key points and messages.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Customize Settings</h3>
+                            <p>Choose your preferred tone, language, emoji level, and content length. These settings help our AI understand how to adapt your content for different audiences and platforms.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Generate & Copy</h3>
+                            <p>Click the generate button and instantly get 10+ different formats. Copy each format with one click and use them directly on your preferred platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="use-cases" id="use-cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Who Can Use This Tool</h2>
+                    <p>Perfect for creators, marketers, and businesses of all sizes</p>
+                </div>
+                
+                <div class="case-grid">
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3>Bloggers & Writers</h3>
+                        <p>Turn your long-form articles into social media posts, email newsletters, and video scripts to reach wider audiences.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-business-time"></i>
+                        </div>
+                        <h3>Small Businesses</h3>
+                        <p>Maximize your marketing content by adapting it for different platforms without hiring additional staff.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Social Media Managers</h3>
+                        <p>Create consistent messaging across all platforms while saving time on content adaptation and formatting.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Educators & Coaches</h3>
+                        <p>Repurpose your educational content into different formats to engage students and clients across multiple channels.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Creators</h3>
+                        <p>Transform your video scripts into blog posts, social media captions, and email content to build a comprehensive content ecosystem.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>E-commerce Stores</h3>
+                        <p>Create consistent product messaging across your website, social media, and email marketing campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pricing Section -->
         <section class="pricing-section" id="pricing">
             <div class="container">
                 <div class="section-header">
-                    <h2>Choose Your Plan</h2>
-                    <p>Start for free, upgrade when you need more power</p>
+                    <h2>Simple, Affordable Pricing</h2>
+                    <p>Start free, upgrade when you need more features</p>
                 </div>
                 
                 <div class="pricing-cards">
                     <!-- Free Plan -->
                     <div class="pricing-card">
                         <div class="pricing-header">
-                            <h3>Free</h3>
+                            <h3>Free Plan</h3>
                             <div class="price">
                                 <span class="amount">$0</span>
-                                <span class="period">/month</span>
+                                <span class="period">/forever</span>
                             </div>
-                            <p>Perfect for beginners</p>
+                            <p>Perfect for getting started</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
-                                <li><i class="fas fa-check"></i> 10 repurposes per month</li>
+                                <li><i class="fas fa-check"></i> <strong>5 repurposes per day</strong></li>
                                 <li><i class="fas fa-check"></i> Basic tone options</li>
                                 <li><i class="fas fa-check"></i> 5 output formats</li>
                                 <li><i class="fas fa-check"></i> Standard generation speed</li>
                                 <li><i class="fas fa-check"></i> Ads enabled</li>
-                                <li><i class="fas fa-times"></i> Commercial use</li>
-                                <li><i class="fas fa-times"></i> Advanced tones</li>
+                                <li><i class="fas fa-times"></i> Commercial usage</li>
+                                <li><i class="fas fa-times"></i> Advanced AI tones</li>
                                 <li><i class="fas fa-times"></i> Export options</li>
                             </ul>
                         </div>
                         <div class="pricing-action">
-                            <a href="#tool" class="btn btn-outline">Get Started</a>
+                            <a href="#tool" class="btn btn-outline">Start Free</a>
                         </div>
                     </div>
                     
@@ -366,23 +481,24 @@
                     <div class="pricing-card featured">
                         <div class="pricing-badge">Most Popular</div>
                         <div class="pricing-header">
-                            <h3>Premium</h3>
+                            <h3>Premium Plan</h3>
                             <div class="price">
-                                <span class="amount">$10</span>
+                                <span class="amount">$2</span>
                                 <span class="period">/month</span>
                             </div>
-                            <p>For serious creators</p>
+                            <p class="price-note">Or $3 one-time payment</p>
+                            <p>For serious content creators</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
-                                <li><i class="fas fa-check"></i> Unlimited repurposes</li>
+                                <li><i class="fas fa-check"></i> <strong>Unlimited repurposes</strong></li>
                                 <li><i class="fas fa-check"></i> All tone options</li>
                                 <li><i class="fas fa-check"></i> All 10+ output formats</li>
                                 <li><i class="fas fa-check"></i> Priority generation</li>
-                                <li><i class="fas fa-check"></i> No ads</li>
+                                <li><i class="fas fa-check"></i> <strong>No ads</strong></li>
                                 <li><i class="fas fa-check"></i> Commercial use allowed</li>
-                                <li><i class="fas fa-check"></i> Export to PDF/TXT</li>
-                                <li><i class="fas fa-check"></i> Priority support</li>
+                                <li><i class="fas fa-check"></i> Export to text</li>
+                                <li><i class="fas fa-check"></i> Priority features</li>
                             </ul>
                         </div>
                         <div class="pricing-action">
@@ -393,7 +509,83 @@
                 
                 <div class="ad-placeholder" id="adMiddle">
                     <div class="ad-label">Advertisement</div>
-                    <p>Upgrade to Premium to remove all ads and unlock unlimited repurposing</p>
+                    <div class="ad-content">Premium plan users enjoy an ad-free experience with unlimited content repurposing</div>
+                </div>
+                
+                <div class="pricing-info">
+                    <p><i class="fas fa-info-circle"></i> Both plans include access to our core AI repurposing technology. Upgrade anytime to remove limits and ads.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about our content repurposing tool</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is this tool really free to use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, our basic tool is completely free to use with some limitations. You get 5 repurposes per day with access to 5 output formats. For unlimited usage and all features, we offer an affordable premium plan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How does the AI repurposing work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our AI analyzes your input content to understand key messages, tone, and structure. It then adapts this understanding to different platform requirements, maintaining your core message while optimizing for each format's best practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What types of content work best?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The tool works well with any written content that has clear key points: blog posts, articles, video scripts, podcast transcripts, reports, or even social media posts you want to expand. For best results, use content with at least 100 words.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is my content stored or used for training?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, we do not store your content or use it to train our AI models. Your content is processed in real-time and not saved on our servers. We prioritize user privacy and data protection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I use the generated content commercially?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>With the free plan, generated content is for personal use only. The premium plan allows commercial usage, meaning you can use the content for business purposes, client work, or monetized platforms.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What platforms are supported?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We currently support repurposing for: Blog summaries, LinkedIn posts, Instagram captions, Instagram Reels scripts, YouTube Shorts scripts, Twitter/X threads, email newsletters, SEO meta tags, hashtag suggestions, and call-to-action variations.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -403,57 +595,52 @@
             <div class="container">
                 <div class="section-header">
                     <h2>About ContentRepurpose.ai</h2>
-                    <p>Our mission is to help creators maximize their content's potential</p>
+                    <p>Our mission is to help creators maximize their content's reach and impact</p>
                 </div>
                 
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>Why We Built This Tool</h3>
-                        <p>In today's digital landscape, creators are expected to maintain a presence across multiple platforms. What works on LinkedIn doesn't resonate on Instagram. YouTube audiences have different expectations than email subscribers. Manually adapting content for each platform is time-consuming and inefficient.</p>
+                        <h3>Why We Created This Tool</h3>
+                        <p>In today's digital landscape, content creators face a significant challenge: maintaining an active presence across multiple platforms while producing quality content consistently. Each platform has its own requirements, audience expectations, and best practices. Manually adapting content for each platform is time-consuming and inefficient.</p>
                         
-                        <p>ContentRepurpose.ai was founded in 2023 to solve this exact problem. Our AI-powered platform analyzes your core content and intelligently adapts it for different platforms, audiences, and formats while maintaining your unique voice and message.</p>
+                        <p>ContentRepurpose.ai was created to solve this exact problem. We believe that great content deserves to reach as many people as possible, and that creators should spend more time creating and less time reformatting. Our tool helps you extract maximum value from every piece of content you create.</p>
                         
-                        <h3>How Our AI Works</h3>
-                        <p>Our proprietary AI engine doesn't just paraphrase content. It understands context, identifies key messages, and recreates them in platform-optimized formats. The system considers:</p>
+                        <h3>Our Approach to AI Content Repurposing</h3>
+                        <p>Unlike simple paraphrasing tools, our AI understands context, tone, and platform-specific requirements. We've designed our system to:</p>
                         
                         <ul>
-                            <li><strong>Platform norms:</strong> Character limits, visual preferences, user behavior</li>
-                            <li><strong>Audience expectations:</strong> Professional tone for LinkedIn, casual for Instagram</li>
-                            <li><strong>Content structure:</strong> Hashtags for social, bullet points for emails</li>
-                            <li><strong>SEO optimization:</strong> Keywords, meta descriptions, readability</li>
-                            <li><strong>Engagement elements:</strong> CTAs, questions, emojis where appropriate</li>
+                            <li><strong>Preserve your unique voice:</strong> The AI adapts your content while maintaining your personal or brand tone</li>
+                            <li><strong>Follow platform best practices:</strong> Each output format follows proven guidelines for that specific platform</li>
+                            <li><strong>Maintain content integrity:</strong> Key messages and information remain accurate across all formats</li>
+                            <li><strong>Add platform-specific elements:</strong> Includes appropriate hashtags, emojis, CTAs, and formatting</li>
                         </ul>
                         
-                        <p>We continuously train our AI on successful content across platforms to ensure our outputs are not just correct, but effective.</p>
+                        <h3>Transparency and Ethics</h3>
+                        <p>We're committed to ethical AI use and transparency. Our tool is designed to assist with content adaptation, not replace human creativity. We always recommend reviewing and personalizing AI-generated content. The best results come from combining AI efficiency with human insight and creativity.</p>
                         
-                        <h3>Our Commitment to Quality</h3>
-                        <p>Unlike many AI tools that produce generic, robotic content, we've fine-tuned our models to preserve your unique voice. The tone controls, language options, and customization features ensure the output feels authentically yours.</p>
-                        
-                        <p>We're transparent about our tool's capabilities. While AI can dramatically speed up the repurposing process, we always recommend reviewing and personalizing the generated content. Think of our tool as your most efficient content assistant, not a complete replacement for human creativity.</p>
-                        
-                        <p>Our tool is used by bloggers, marketers, small businesses, content agencies, and social media managers worldwide. Whether you're a solo creator or part of a marketing team, ContentRepurpose.ai can save you hours each week while improving your content's reach and effectiveness.</p>
+                        <p>Our tool is used by bloggers, marketers, small business owners, educators, and content creators worldwide. Whether you're creating content for personal projects or professional campaigns, our goal is to help you work smarter, not harder.</p>
                     </div>
                     
-                    <div class="about-image">
-                        <div class="about-card">
-                            <i class="fas fa-brain"></i>
-                            <h4>AI-Powered</h4>
-                            <p>Advanced algorithms trained on millions of successful content pieces</p>
+                    <div class="about-values">
+                        <div class="value-card">
+                            <i class="fas fa-user-shield"></i>
+                            <h4>Privacy First</h4>
+                            <p>Your content is never stored or shared. We process it in real-time and discard it after generation.</p>
                         </div>
-                        <div class="about-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>Privacy Focused</h4>
-                            <p>Your content is never stored or used to train public models</p>
-                        </div>
-                        <div class="about-card">
+                        <div class="value-card">
                             <i class="fas fa-rocket"></i>
-                            <h4>Constantly Improving</h4>
-                            <p>Weekly updates based on user feedback and platform changes</p>
+                            <h4>Always Improving</h4>
+                            <p>We continuously update our AI models based on platform changes and user feedback.</p>
                         </div>
-                        <div class="about-card">
-                            <i class="fas fa-globe"></i>
-                            <h4>Multilingual</h4>
-                            <p>Supports English, Hindi, and Hinglish with more languages coming soon</p>
+                        <div class="value-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>User-Focused</h4>
+                            <p>Designed based on real user needs and feedback from content creators.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Educational</h4>
+                            <p>We provide tips and best practices to help you improve your content strategy.</p>
                         </div>
                     </div>
                 </div>
@@ -465,59 +652,63 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Contact Us</h2>
-                    <p>Have questions? We're here to help</p>
+                    <p>Have questions or feedback? We'd love to hear from you</p>
                 </div>
                 
                 <div class="contact-wrapper">
                     <div class="contact-info">
                         <div class="contact-card">
                             <i class="fas fa-envelope"></i>
-                            <h4>Email Us</h4>
+                            <h4>Email Support</h4>
                             <p>support@contentrepurpose.ai</p>
-                        </div>
-                        <div class="contact-card">
-                            <i class="fas fa-comments"></i>
-                            <h4>Live Chat</h4>
-                            <p>Available for premium users</p>
+                            <small>Typically respond within 24 hours</small>
                         </div>
                         <div class="contact-card">
                             <i class="fas fa-file-alt"></i>
-                            <h4>Documentation</h4>
-                            <p>Check our help center</p>
+                            <h4>Help Center</h4>
+                            <p>Check our documentation</p>
+                            <small>Guides and tutorials available</small>
                         </div>
                         <div class="contact-card">
                             <i class="fas fa-lightbulb"></i>
                             <h4>Feature Requests</h4>
                             <p>Suggest new features</p>
+                            <small>We value your input</small>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-bug"></i>
+                            <h4>Report Issues</h4>
+                            <p>Found a bug? Let us know</p>
+                            <small>Help us improve the tool</small>
                         </div>
                     </div>
                     
                     <div class="contact-form-container">
                         <form id="contactForm" class="contact-form">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
+                                <label for="name">Full Name *</label>
                                 <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Email Address</label>
+                                <label for="email">Email Address *</label>
                                 <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="subject">Subject</label>
+                                <label for="subject">Subject *</label>
                                 <select id="subject" class="form-control" required>
                                     <option value="" disabled selected>Select a subject</option>
                                     <option value="support">Technical Support</option>
-                                    <option value="billing">Billing Inquiry</option>
                                     <option value="feedback">Product Feedback</option>
-                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="business">Business Inquiry</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="message">Message</label>
+                                <label for="message">Message *</label>
                                 <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
                             </div>
                             
@@ -531,150 +722,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Legal Pages (Hidden by default, accessible via footer) -->
-        <section class="legal-section" id="legalPages" style="display: none;">
-            <div class="container">
-                <div class="legal-nav">
-                    <button class="legal-tab active" data-legal="privacy">Privacy Policy</button>
-                    <button class="legal-tab" data-legal="terms">Terms & Conditions</button>
-                    <button class="legal-tab" data-legal="disclaimer">Disclaimer</button>
-                </div>
-                
-                <div class="legal-content">
-                    <!-- Privacy Policy -->
-                    <div class="legal-page active" id="privacy">
-                        <h2>Privacy Policy</h2>
-                        <p><strong>Last Updated:</strong> March 15, 2024</p>
-                        
-                        <h3>1. Introduction</h3>
-                        <p>Welcome to ContentRepurpose.ai. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
-                        
-                        <h3>2. The Data We Collect About You</h3>
-                        <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
-                        
-                        <ul>
-                            <li><strong>Identity Data:</strong> Includes first name, last name, username or similar identifier.</li>
-                            <li><strong>Contact Data:</strong> Includes email address.</li>
-                            <li><strong>Technical Data:</strong> Includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
-                            <li><strong>Usage Data:</strong> Includes information about how you use our website and services.</li>
-                            <li><strong>Content Data:</strong> Includes the content you input into our tool for repurposing.</li>
-                        </ul>
-                        
-                        <h3>3. How We Use Your Data</h3>
-                        <p>We will only use your personal data for the purpose for which we collected it which includes the following:</p>
-                        
-                        <ul>
-                            <li>To provide and maintain our service</li>
-                            <li>To notify you about changes to our service</li>
-                            <li>To provide customer support</li>
-                            <li>To gather analysis or valuable information so that we can improve our service</li>
-                            <li>To monitor the usage of our service</li>
-                            <li>To detect, prevent and address technical issues</li>
-                        </ul>
-                        
-                        <h3>4. Data Security</h3>
-                        <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.</p>
-                        
-                        <h3>5. Data Retention</h3>
-                        <p>We will only retain your personal data for as long as reasonably necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.</p>
-                        
-                        <h3>6. Your Legal Rights</h3>
-                        <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, to object to processing, to portability of data and (where the lawful ground of processing is consent) to withdraw consent.</p>
-                        
-                        <h3>7. Third-Party Links</h3>
-                        <p>This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.</p>
-                        
-                        <h3>8. Cookies</h3>
-                        <p>You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.</p>
-                        
-                        <h3>9. Contact Us</h3>
-                        <p>If you have any questions about this privacy policy or our privacy practices, please contact us at privacy@contentrepurpose.ai.</p>
-                    </div>
-                    
-                    <!-- Terms & Conditions -->
-                    <div class="legal-page" id="terms">
-                        <h2>Terms & Conditions</h2>
-                        <p><strong>Last Updated:</strong> March 15, 2024</p>
-                        
-                        <h3>1. Acceptance of Terms</h3>
-                        <p>By accessing and using ContentRepurpose.ai, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
-                        
-                        <h3>2. Description of Service</h3>
-                        <p>ContentRepurpose.ai provides users with an AI-powered content repurposing tool. The service allows users to input original content and receive reformatted versions optimized for different platforms including but not limited to blog summaries, social media posts, email newsletters, and video scripts.</p>
-                        
-                        <h3>3. User Obligations</h3>
-                        <p>As a user of this website, you agree not to:</p>
-                        
-                        <ul>
-                            <li>Use the service for any illegal purpose or in violation of any laws</li>
-                            <li>Violate or infringe upon the intellectual property rights of others</li>
-                            <li>Upload or transmit any malicious code, viruses, or harmful content</li>
-                            <li>Attempt to gain unauthorized access to any portion of the service</li>
-                            <li>Use the service to generate spam, misleading, or fraudulent content</li>
-                            <li>Impersonate any person or entity or falsely state your affiliation</li>
-                        </ul>
-                        
-                        <h3>4. Intellectual Property</h3>
-                        <p>The service and its original content, features, and functionality are and will remain the exclusive property of ContentRepurpose.ai and its licensors. The service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of ContentRepurpose.ai.</p>
-                        
-                        <h3>5. User Content</h3>
-                        <p>You retain all rights to the content you submit to our service. By submitting content, you grant us a limited license to process that content solely for the purpose of providing the repurposing service. We do not claim ownership of your content, and we do not store your content after processing except as necessary to provide the service.</p>
-                        
-                        <h3>6. Subscription and Payments</h3>
-                        <p>Certain features of the service may require payment. By selecting a premium subscription, you agree to pay the specified fees. All payments are processed through secure third-party payment processors. We reserve the right to change our subscription plans or adjust pricing for our service at any time.</p>
-                        
-                        <h3>7. Limitation of Liability</h3>
-                        <p>In no event shall ContentRepurpose.ai, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.</p>
-                        
-                        <h3>8. Termination</h3>
-                        <p>We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
-                        
-                        <h3>9. Changes to Terms</h3>
-                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                    </div>
-                    
-                    <!-- Disclaimer -->
-                    <div class="legal-page" id="disclaimer">
-                        <h2>Disclaimer</h2>
-                        <p><strong>Last Updated:</strong> March 15, 2024</p>
-                        
-                        <h3>1. No Professional Advice</h3>
-                        <p>The content generated by ContentRepurpose.ai is for informational and assistance purposes only. It should not be considered professional advice in fields such as legal, financial, medical, or any other professional domain. Always seek the advice of qualified professionals regarding any such matters.</p>
-                        
-                        <h3>2. AI-Generated Content</h3>
-                        <p>Our tool uses artificial intelligence to generate content based on your input. While we strive for accuracy and quality, AI-generated content may:</p>
-                        
-                        <ul>
-                            <li>Contain inaccuracies or errors</li>
-                            <li>Generate content that requires human review and editing</li>
-                            <li>Produce results that may not align perfectly with your expectations</li>
-                            <li>Require fact-checking and verification</li>
-                        </ul>
-                        
-                        <p>You are solely responsible for reviewing, editing, and approving all content generated by our tool before publication or use.</p>
-                        
-                        <h3>3. No Guarantee of Results</h3>
-                        <p>We do not guarantee that the use of our service will result in specific outcomes such as increased engagement, followers, sales, or any other metric. Content performance depends on numerous factors beyond our control including audience behavior, platform algorithms, timing, and market conditions.</p>
-                        
-                        <h3>4. Third-Party Content</h3>
-                        <p>Our service may contain links to third-party websites or services that are not owned or controlled by ContentRepurpose.ai. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
-                        
-                        <h3>5. Service Availability</h3>
-                        <p>We strive to maintain 24/7 service availability but do not guarantee uninterrupted access to our service. We may need to perform maintenance, updates, or experience unexpected downtime. We are not liable for any losses or damages resulting from service interruptions.</p>
-                        
-                        <h3>6. Fair Use and Copyright</h3>
-                        <p>You must ensure that any content you input into our tool does not violate copyright laws or intellectual property rights. Our tool is designed to help you repurpose your own original content. We do not condone or support plagiarism, copyright infringement, or unethical content practices.</p>
-                        
-                        <h3>7. Testimonials and Examples</h3>
-                        <p>Any testimonials or examples shown on our website are exceptional results, don't apply to the average user, and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
-                        
-                        <h3>8. Contact for Concerns</h3>
-                        <p>If you have concerns about any content generated by our tool or believe it may infringe upon your rights, please contact us immediately at legal@contentrepurpose.ai.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -682,27 +729,27 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
+                    <a href="#home" class="logo">
                         <i class="fas fa-recycle"></i>
                         <span>ContentRepurpose.ai</span>
                     </a>
-                    <p>Transform your content across platforms with AI-powered repurposing.</p>
+                    <p>Transform your content across platforms with AI-powered repurposing. Save time, maintain consistency, and reach wider audiences.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>Product</h4>
+                        <h4>Tool</h4>
                         <ul>
-                            <li><a href="#tool">AI Tool</a></li>
-                            <li><a href="#pricing">Pricing</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Updates</a></li>
+                            <li><a href="#tool">Free AI Tool</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#use-cases">Use Cases</a></li>
+                            <li><a href="#faq">FAQ</a></li>
                         </ul>
                     </div>
                     
@@ -711,18 +758,18 @@
                         <ul>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#" id="showPrivacy">Privacy Policy</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="#" class="legal-link" data-legal="privacy">Privacy Policy</a></li>
-                            <li><a href="#" class="legal-link" data-legal="terms">Terms & Conditions</a></li>
-                            <li><a href="#" class="legal-link" data-legal="disclaimer">Disclaimer</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#" id="showTerms">Terms & Conditions</a></li>
+                            <li><a href="#" id="showDisclaimer">Disclaimer</a></li>
+                            <li><a href="#" id="showCookie">Cookie Policy</a></li>
+                            <li><a href="#contact">Report Issue</a></li>
                         </ul>
                     </div>
                 </div>
@@ -730,13 +777,26 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2024 ContentRepurpose.ai. All rights reserved.</p>
-                <p>This is a demo tool for educational purposes. No real payments processed.</p>
+                <p>This tool is designed to assist with content repurposing. Always review AI-generated content before publication.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Legal Modal -->
+    <div class="legal-modal" id="legalModal">
+        <div class="legal-modal-content">
+            <div class="legal-modal-header">
+                <h3 id="legalTitle">Privacy Policy</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="legal-modal-body" id="legalContent">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <style>
-        /* CSS Reset and Base Styles */
+        /* ===== CSS RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -745,37 +805,52 @@
         
         :root {
             --primary-color: #4361ee;
+            --primary-dark: #3a56d4;
             --secondary-color: #3a0ca3;
             --accent-color: #4cc9f0;
-            --text-color: #333;
-            --text-light: #666;
-            --bg-color: #fff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --text-lighter: #888888;
+            --bg-color: #ffffff;
             --bg-secondary: #f8f9fa;
-            --bg-tertiary: #e9ecef;
-            --border-color: #dee2e6;
+            --bg-tertiary: #f1f3f5;
+            --border-color: #e9ecef;
+            --border-dark: #dee2e6;
             --success-color: #06d6a0;
             --warning-color: #ffd166;
             --danger-color: #ef476f;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
             --radius: 8px;
             --radius-lg: 12px;
+            --radius-sm: 6px;
             --transition: all 0.3s ease;
             --header-height: 70px;
+            --container-padding: 20px;
+            --max-width: 1200px;
         }
         
         .dark-mode {
             --primary-color: #5a7dff;
+            --primary-dark: #4a6cef;
             --secondary-color: #4a1fb8;
             --accent-color: #6bd7f8;
             --text-color: #f8f9fa;
             --text-light: #adb5bd;
+            --text-lighter: #6c757d;
             --bg-color: #121212;
             --bg-secondary: #1e1e1e;
             --bg-tertiary: #2d2d2d;
             --border-color: #404040;
+            --border-dark: #505050;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -784,6 +859,14 @@
             background-color: var(--bg-color);
             line-height: 1.6;
             transition: var(--transition);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
         }
         
         h1, h2, h3, h4 {
@@ -794,23 +877,24 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
         }
         
         h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
         }
         
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
         
         h4 {
-            font-size: 1.25rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
         }
         
         p {
             margin-bottom: 1rem;
+            font-size: clamp(0.95rem, 2vw, 1rem);
         }
         
         a {
@@ -834,9 +918,9 @@
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--container-padding);
         }
         
         .btn {
@@ -846,11 +930,13 @@
             padding: 12px 24px;
             border-radius: var(--radius);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
             cursor: pointer;
             transition: var(--transition);
             border: 2px solid transparent;
             gap: 8px;
+            text-align: center;
+            min-height: 48px;
         }
         
         .btn-primary {
@@ -859,7 +945,7 @@
         }
         
         .btn-primary:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
@@ -874,33 +960,35 @@
             background-color: var(--primary-color);
             color: white;
             transform: translateY(-2px);
-            box-shadow: var(--shadow);
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
         }
         
         .section-header h2 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         
         .section-header p {
             color: var(--text-light);
             max-width: 700px;
             margin: 0 auto;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
         }
         
-        /* Header Styles */
+        /* ===== HEADER STYLES ===== */
         .header {
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             background-color: var(--bg-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
             height: var(--header-height);
             transition: var(--transition);
+            backdrop-filter: blur(10px);
+            background-color: rgba(var(--bg-color-rgb), 0.9);
         }
         
         .navbar {
@@ -908,6 +996,7 @@
             align-items: center;
             justify-content: space-between;
             height: var(--header-height);
+            gap: 20px;
         }
         
         .logo {
@@ -915,25 +1004,29 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
             color: var(--text-color);
+            white-space: nowrap;
         }
         
         .logo i {
             color: var(--primary-color);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: clamp(1rem, 2vw, 1.5rem);
+            list-style: none;
         }
         
         .nav-link {
             color: var(--text-color);
             font-weight: 500;
+            font-size: clamp(0.85rem, 2vw, 1rem);
             position: relative;
+            padding: 5px 0;
         }
         
         .nav-link:hover, .nav-link.active {
@@ -948,10 +1041,6 @@
             width: 100%;
             height: 2px;
             background-color: var(--primary-color);
-        }
-        
-        .nav-btn {
-            margin-left: 1rem;
         }
         
         .header-controls {
@@ -972,6 +1061,8 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            min-width: 40px;
+            min-height: 40px;
         }
         
         .theme-toggle:hover {
@@ -983,6 +1074,9 @@
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
         }
         
         .hamburger span {
@@ -993,127 +1087,119 @@
             transition: var(--transition);
         }
         
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
-            padding: 5rem 0;
+            padding: clamp(3rem, 8vw, 5rem) 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(76, 201, 240, 0.05) 100%);
         }
         
         .hero .container {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
+            flex-direction: column;
+            gap: clamp(2rem, 5vw, 3rem);
         }
         
         .hero-content {
-            flex: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
         
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             color: var(--text-light);
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            margin-bottom: 3rem;
+            justify-content: center;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            flex-wrap: wrap;
         }
         
-        .hero-stats {
+        .hero-features {
             display: flex;
-            gap: 3rem;
+            justify-content: center;
+            gap: clamp(1rem, 3vw, 2rem);
+            flex-wrap: wrap;
         }
         
-        .stat h3 {
-            font-size: 2rem;
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 100px;
+        }
+        
+        .feature i {
+            font-size: 1.5rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            background: var(--bg-secondary);
+            padding: 12px;
+            border-radius: 50%;
         }
         
-        .stat p {
+        .feature p {
+            font-size: 0.9rem;
             color: var(--text-light);
             margin: 0;
+            text-align: center;
         }
         
         .hero-image {
-            flex: 1;
-            position: relative;
-            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .floating-card {
-            position: absolute;
+        .platform-card {
             background-color: var(--bg-color);
             border-radius: var(--radius);
+            padding: 1.5rem 1rem;
             box-shadow: var(--shadow);
-            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            width: 120px;
-            height: 120px;
+            text-align: center;
+            border: 1px solid var(--border-color);
         }
         
-        .floating-card:hover {
-            transform: translateY(-10px);
+        .platform-card:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
         }
         
-        .floating-card i {
+        .platform-card i {
             font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         
-        .floating-card p {
+        .platform-card p {
             font-weight: 600;
             margin: 0;
+            font-size: 0.9rem;
         }
         
-        .floating-card:nth-child(1) {
-            top: 0;
-            left: 0;
-        }
-        
-        .floating-card:nth-child(2) {
-            top: 20%;
-            right: 10%;
-        }
-        
-        .floating-card:nth-child(3) {
-            top: 60%;
-            left: 10%;
-        }
-        
-        .floating-card:nth-child(4) {
-            top: 40%;
-            right: 0;
-        }
-        
-        .floating-card:nth-child(5) {
-            bottom: 0;
-            left: 30%;
-        }
-        
-        .floating-card:nth-child(6) {
-            bottom: 20%;
-            right: 30%;
-        }
-        
-        /* Tool Section */
+        /* ===== TOOL SECTION ===== */
         .tool-section {
-            padding: 5rem 0;
+            padding: clamp(3rem, 8vw, 5rem) 0;
             background-color: var(--bg-secondary);
         }
         
@@ -1121,7 +1207,8 @@
             background-color: var(--bg-color);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow);
-            padding: 2rem;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border: 1px solid var(--border-color);
         }
         
         .tool-controls {
@@ -1134,21 +1221,29 @@
         }
         
         .control-group label {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .control-group label i {
+            color: var(--primary-color);
         }
         
         .form-control {
             width: 100%;
             padding: 12px 16px;
             border-radius: var(--radius);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-dark);
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
+            min-height: 48px;
         }
         
         .form-control:focus {
@@ -1159,41 +1254,62 @@
         
         .input-output-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: clamp(1.5rem, 4vw, 2rem);
         }
         
-        @media (max-width: 992px) {
+        @media (min-width: 992px) {
             .input-output-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         .input-section, .output-section {
             background-color: var(--bg-secondary);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: clamp(1.25rem, 3vw, 1.5rem);
+            border: 1px solid var(--border-color);
         }
         
         .input-section .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1rem;
             text-align: left;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        @media (min-width: 576px) {
+            .input-section .section-header {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        
+        .input-section .section-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            font-size: 1.1rem;
         }
         
         .counter {
             font-size: 0.9rem;
             color: var(--text-light);
             font-weight: 600;
+            background: var(--bg-tertiary);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
         }
         
         .content-input {
             width: 100%;
             padding: 1rem;
             border-radius: var(--radius);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-dark);
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Inter', sans-serif;
@@ -1214,6 +1330,12 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .input-actions .btn {
+            flex: 1;
+            min-width: 140px;
         }
         
         .ad-placeholder {
@@ -1235,7 +1357,12 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Tabs */
+        .ad-content {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* ===== TABS ===== */
         .tabs-container {
             height: 100%;
             display: flex;
@@ -1243,18 +1370,56 @@
         }
         
         .tabs-header {
-            overflow-x: auto;
+            position: relative;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
         
         .tabs-scroll {
             display: flex;
-            min-width: max-content;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            flex: 1;
+            padding-bottom: 5px;
+        }
+        
+        .tabs-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .tab-nav {
+            display: none;
+            background: var(--bg-tertiary);
+            border: none;
+            color: var(--text-color);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+            margin: 0 5px;
+        }
+        
+        .tab-nav:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        @media (min-width: 768px) {
+            .tab-nav {
+                display: flex;
+            }
         }
         
         .tab-btn {
-            padding: 12px 20px;
+            padding: 10px 16px;
             background: none;
             border: none;
             border-bottom: 3px solid transparent;
@@ -1263,6 +1428,8 @@
             cursor: pointer;
             white-space: nowrap;
             transition: var(--transition);
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
         
         .tab-btn:hover {
@@ -1276,16 +1443,20 @@
         
         .tabs-content {
             flex: 1;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
         }
         
         .tab-content {
             display: none;
             animation: fadeIn 0.5s ease;
+            flex: 1;
         }
         
         .tab-content.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
         
         @keyframes fadeIn {
@@ -1298,6 +1469,16 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tab-header h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            font-size: 1.1rem;
         }
         
         .copy-btn {
@@ -1312,6 +1493,7 @@
             align-items: center;
             gap: 6px;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .copy-btn:hover {
@@ -1324,37 +1506,160 @@
             border-radius: var(--radius);
             padding: 1.5rem;
             border: 1px solid var(--border-color);
-            min-height: 300px;
-            max-height: 400px;
+            flex: 1;
             overflow-y: auto;
             line-height: 1.6;
+            font-size: 0.95rem;
+            min-height: 250px;
         }
         
-        /* Pricing Section */
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background-color: var(--bg-color);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        .step {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .step-content p {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* ===== USE CASES ===== */
+        .use-cases {
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background-color: var(--bg-secondary);
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .case-card {
+            background: var(--bg-color);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .case-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .case-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .case-card p {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* ===== PRICING SECTION ===== */
         .pricing-section {
-            padding: 5rem 0;
+            padding: clamp(3rem, 8vw, 5rem) 0;
             background-color: var(--bg-color);
         }
         
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .pricing-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .pricing-card {
             background-color: var(--bg-secondary);
             border-radius: var(--radius-lg);
             padding: 2rem;
-            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
             position: relative;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
         }
         
         .pricing-card.featured {
@@ -1398,6 +1703,23 @@
         .period {
             color: var(--text-light);
             font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+        
+        .pricing-header p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .pricing-features {
+            flex: 1;
+            margin-bottom: 2rem;
         }
         
         .pricing-features ul {
@@ -1407,39 +1729,129 @@
         
         .pricing-features li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
             margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
         
         .pricing-features .fa-check {
             color: var(--success-color);
+            flex-shrink: 0;
+            margin-top: 2px;
         }
         
         .pricing-features .fa-times {
             color: var(--danger-color);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .pricing-features strong {
+            color: var(--text-color);
         }
         
         .pricing-action {
             text-align: center;
-            margin-top: 2rem;
         }
         
-        /* About Section */
-        .about-section {
-            padding: 5rem 0;
+        .pricing-action .btn {
+            width: 100%;
+        }
+        
+        .pricing-info {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-info i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+        
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: clamp(3rem, 8vw, 5rem) 0;
             background-color: var(--bg-secondary);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--bg-color);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: left;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--bg-tertiary);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-light);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background-color: var(--bg-color);
         }
         
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        @media (max-width: 992px) {
+        @media (min-width: 992px) {
             .about-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 2fr 1fr;
             }
         }
         
@@ -1452,72 +1864,95 @@
             margin-top: 0;
         }
         
-        .about-image {
+        .about-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .about-text li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .about-text li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .about-values {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
         
-        .about-card {
-            background-color: var(--bg-color);
+        .value-card {
+            background: var(--bg-secondary);
             border-radius: var(--radius);
             padding: 1.5rem;
             text-align: center;
-            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
             transition: var(--transition);
         }
         
-        .about-card:hover {
+        .value-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow);
         }
         
-        .about-card i {
+        .value-card i {
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
         
-        .about-card h4 {
+        .value-card h4 {
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
-        .about-card p {
+        .value-card p {
             font-size: 0.9rem;
             color: var(--text-light);
             margin: 0;
         }
         
-        /* Contact Section */
+        /* ===== CONTACT SECTION ===== */
         .contact-section {
-            padding: 5rem 0;
-            background-color: var(--bg-color);
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background-color: var(--bg-secondary);
         }
         
         .contact-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        @media (max-width: 992px) {
+        @media (min-width: 992px) {
             .contact-wrapper {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         .contact-info {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
         }
         
         .contact-card {
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-color);
             border-radius: var(--radius);
             padding: 1.5rem;
             text-align: center;
             transition: var(--transition);
+            border: 1px solid var(--border-color);
         }
         
         .contact-card:hover {
@@ -1532,17 +1967,27 @@
         
         .contact-card h4 {
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
         .contact-card p {
-            color: var(--text-light);
+            color: var(--text-color);
             margin: 0;
+            font-weight: 500;
+        }
+        
+        .contact-card small {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 0.5rem;
         }
         
         .contact-form-container {
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-color);
             border-radius: var(--radius);
             padding: 2rem;
+            border: 1px solid var(--border-color);
         }
         
         .form-group {
@@ -1553,82 +1998,37 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
-        /* Legal Section */
-        .legal-section {
-            padding: 3rem 0;
-            background-color: var(--bg-secondary);
+        .contact-form .form-control {
+            width: 100%;
         }
         
-        .legal-nav {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-        
-        .legal-tab {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            font-weight: 600;
-            color: var(--text-light);
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: var(--transition);
-        }
-        
-        .legal-tab:hover {
-            color: var(--primary-color);
-        }
-        
-        .legal-tab.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-        }
-        
-        .legal-page {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .legal-page.active {
-            display: block;
-        }
-        
-        .legal-page h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .legal-page h3 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Footer */
+        /* ===== FOOTER ===== */
         .footer {
             background-color: var(--bg-tertiary);
-            padding: 3rem 0 1.5rem;
+            padding: clamp(2rem, 5vw, 3rem) 0 1.5rem;
+            margin-top: auto;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
         
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .footer-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 2fr;
             }
         }
         
         .footer-brand p {
             margin: 1rem 0;
             color: var(--text-light);
+            font-size: 0.95rem;
         }
         
         .social-links {
@@ -1655,14 +2055,8 @@
         
         .footer-links {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-links {
-                grid-template-columns: 1fr;
-            }
         }
         
         .footer-column h4 {
@@ -1672,6 +2066,7 @@
         
         .footer-column ul {
             list-style: none;
+            padding: 0;
         }
         
         .footer-column li {
@@ -1680,10 +2075,13 @@
         
         .footer-column a {
             color: var(--text-light);
+            font-size: 0.95rem;
+            transition: var(--transition);
         }
         
         .footer-column a:hover {
             color: var(--primary-color);
+            padding-left: 5px;
         }
         
         .footer-bottom {
@@ -1698,35 +2096,96 @@
             margin-bottom: 0.5rem;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 1024px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-stats {
-                justify-content: center;
-            }
+        /* ===== LEGAL MODAL ===== */
+        .legal-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
         }
         
-        @media (max-width: 768px) {
+        .legal-modal.active {
+            display: flex;
+        }
+        
+        .legal-modal-content {
+            background: var(--bg-color);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 800px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lg);
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .legal-modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .legal-modal-header h3 {
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+        
+        .legal-modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .legal-modal-body h2 {
+            margin-top: 0;
+        }
+        
+        .legal-modal-body h3 {
+            margin-top: 1.5rem;
+        }
+        
+        .legal-modal-body p, .legal-modal-body ul {
+            margin-bottom: 1rem;
+        }
+        
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 991px) {
             .nav-menu {
                 position: fixed;
                 top: var(--header-height);
@@ -1739,8 +2198,10 @@
                 justify-content: flex-start;
                 padding: 2rem;
                 transition: var(--transition);
-                z-index: 99;
+                z-index: 999;
                 overflow-y: auto;
+                gap: 1.5rem;
+                box-shadow: var(--shadow-lg);
             }
             
             .nav-menu.active {
@@ -1762,17 +2223,56 @@
             .hamburger.active span:nth-child(3) {
                 transform: rotate(-45deg) translate(6px, -6px);
             }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-features {
+                gap: 1rem;
+            }
             
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
+            .feature {
+                min-width: 80px;
+            }
+            
+            .feature i {
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .feature p {
+                font-size: 0.8rem;
+            }
+            
+            .hero-image {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .platform-card {
+                padding: 1rem 0.75rem;
+            }
+            
+            .platform-card i {
+                font-size: 1.5rem;
+            }
+            
+            .platform-card p {
+                font-size: 0.8rem;
             }
             
             .tool-controls {
                 grid-template-columns: 1fr;
             }
             
-            .pricing-cards {
+            .input-actions {
+                flex-direction: column;
+            }
+            
+            .input-actions .btn {
+                width: 100%;
+            }
+            
+            .case-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1781,39 +2281,81 @@
             }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 575px) {
             .container {
                 padding: 0 15px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
             }
             
             .hero-buttons {
                 flex-direction: column;
             }
             
-            .input-actions {
-                flex-direction: column;
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
             }
             
-            .tabs-scroll {
-                overflow-x: auto;
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-modal-content {
+                max-height: 90vh;
+            }
+            
+            .legal-modal-header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .legal-modal-body {
+                padding: 1.5rem;
             }
         }
+        
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        :focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+        
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
     </style>
 
     <script>
-        // Theme Toggle
+        // ===== THEME TOGGLE =====
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('i');
         
@@ -1841,7 +2383,7 @@
             }
         });
         
-        // Mobile Navigation
+        // ===== MOBILE NAVIGATION =====
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.querySelector('.nav-menu');
         
@@ -1858,24 +2400,36 @@
             });
         });
         
-        // Word and Character Counter
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // ===== WORD AND CHARACTER COUNTER =====
         const contentInput = document.getElementById('contentInput');
         const wordCount = document.getElementById('wordCount');
         const charCount = document.getElementById('charCount');
         
         contentInput.addEventListener('input', () => {
             const text = contentInput.value.trim();
-            const words = text === '' ? 0 : text.split(/\s+/).length;
+            const words = text === '' ? 0 : text.split(/\s+/).filter(word => word.length > 0).length;
             const chars = text.length;
             
             wordCount.textContent = words;
             charCount.textContent = chars;
         });
         
-        // Tab Switching
+        // ===== TAB FUNCTIONALITY =====
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
+        const tabsScroll = document.getElementById('tabsScroll');
+        const tabPrev = document.getElementById('tabPrev');
+        const tabNext = document.getElementById('tabNext');
         
+        // Tab switching
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabId = btn.getAttribute('data-tab');
@@ -1891,10 +2445,24 @@
                         content.classList.add('active');
                     }
                 });
+                
+                // Scroll active tab into view on mobile
+                if (window.innerWidth < 768) {
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
             });
         });
         
-        // Copy Buttons
+        // Tab navigation arrows
+        tabPrev.addEventListener('click', () => {
+            tabsScroll.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+        
+        tabNext.addEventListener('click', () => {
+            tabsScroll.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+        
+        // ===== COPY BUTTONS =====
         const copyBtns = document.querySelectorAll('.copy-btn');
         
         copyBtns.forEach(btn => {
@@ -1925,61 +2493,247 @@
             });
         });
         
-        // Legal Pages
-        const legalLinks = document.querySelectorAll('.legal-link');
-        const legalSection = document.getElementById('legalPages');
-        const legalTabs = document.querySelectorAll('.legal-tab');
-        const legalPages = document.querySelectorAll('.legal-page');
+        // ===== FAQ FUNCTIONALITY =====
+        const faqQuestions = document.querySelectorAll('.faq-question');
         
-        legalLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const legalType = link.getAttribute('data-legal');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
                 
-                // Show legal section
-                legalSection.style.display = 'block';
-                
-                // Scroll to legal section
-                legalSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Activate correct tab
-                legalTabs.forEach(tab => {
-                    tab.classList.remove('active');
-                    if (tab.getAttribute('data-legal') === legalType) {
-                        tab.classList.add('active');
-                    }
+                // Close all other FAQ items
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
                 });
                 
-                // Show correct page
-                legalPages.forEach(page => {
-                    page.classList.remove('active');
-                    if (page.id === legalType) {
-                        page.classList.add('active');
-                    }
-                });
+                // Toggle current FAQ item
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
             });
         });
         
-        // Legal Tab Switching
-        legalTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const legalType = tab.getAttribute('data-legal');
-                
-                // Update active tab
-                legalTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Show active page
-                legalPages.forEach(page => {
-                    page.classList.remove('active');
-                    if (page.id === legalType) {
-                        page.classList.add('active');
-                    }
-                });
-            });
+        // ===== LEGAL MODAL =====
+        const legalModal = document.getElementById('legalModal');
+        const closeModal = document.getElementById('closeModal');
+        const legalTitle = document.getElementById('legalTitle');
+        const legalContent = document.getElementById('legalContent');
+        
+        // Legal content
+        const legalPages = {
+            privacy: {
+                title: "Privacy Policy",
+                content: `
+                    <h2>Privacy Policy</h2>
+                    <p><strong>Last Updated:</strong> March 15, 2024</p>
+                    
+                    <h3>1. Introduction</h3>
+                    <p>Welcome to ContentRepurpose.ai. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights.</p>
+                    
+                    <h3>2. Data We Collect</h3>
+                    <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+                    
+                    <ul>
+                        <li><strong>Identity Data:</strong> Includes first name, last name, username or similar identifier.</li>
+                        <li><strong>Contact Data:</strong> Includes email address.</li>
+                        <li><strong>Technical Data:</strong> Includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform.</li>
+                        <li><strong>Usage Data:</strong> Includes information about how you use our website and services.</li>
+                        <li><strong>Content Data:</strong> Includes the content you input into our tool for repurposing.</li>
+                    </ul>
+                    
+                    <h3>3. How We Use Your Data</h3>
+                    <p>We will only use your personal data for the purpose for which we collected it which includes the following:</p>
+                    
+                    <ul>
+                        <li>To provide and maintain our service</li>
+                        <li>To notify you about changes to our service</li>
+                        <li>To provide customer support</li>
+                        <li>To gather analysis to improve our service</li>
+                        <li>To monitor the usage of our service</li>
+                        <li>To detect, prevent and address technical issues</li>
+                    </ul>
+                    
+                    <h3>4. Data Security</h3>
+                    <p>We have implemented appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.</p>
+                    
+                    <h3>5. Data Retention</h3>
+                    <p>We will only retain your personal data for as long as reasonably necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.</p>
+                    
+                    <h3>6. Your Legal Rights</h3>
+                    <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, to object to processing, to portability of data and (where the lawful ground of processing is consent) to withdraw consent.</p>
+                    
+                    <h3>7. Third-Party Links</h3>
+                    <p>This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.</p>
+                    
+                    <h3>8. Cookies</h3>
+                    <p>You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.</p>
+                    
+                    <h3>9. Contact Us</h3>
+                    <p>If you have any questions about this privacy policy or our privacy practices, please contact us at privacy@contentrepurpose.ai.</p>
+                `
+            },
+            terms: {
+                title: "Terms & Conditions",
+                content: `
+                    <h2>Terms & Conditions</h2>
+                    <p><strong>Last Updated:</strong> March 15, 2024</p>
+                    
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing and using ContentRepurpose.ai, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                    
+                    <h3>2. Description of Service</h3>
+                    <p>ContentRepurpose.ai provides users with an AI-powered content repurposing tool. The service allows users to input original content and receive reformatted versions optimized for different platforms.</p>
+                    
+                    <h3>3. User Obligations</h3>
+                    <p>As a user of this website, you agree not to:</p>
+                    
+                    <ul>
+                        <li>Use the service for any illegal purpose or in violation of any laws</li>
+                        <li>Violate or infringe upon the intellectual property rights of others</li>
+                        <li>Upload or transmit any malicious code, viruses, or harmful content</li>
+                        <li>Attempt to gain unauthorized access to any portion of the service</li>
+                        <li>Use the service to generate spam, misleading, or fraudulent content</li>
+                        <li>Impersonate any person or entity or falsely state your affiliation</li>
+                    </ul>
+                    
+                    <h3>4. Intellectual Property</h3>
+                    <p>The service and its original content, features, and functionality are and will remain the exclusive property of ContentRepurpose.ai and its licensors. The service is protected by copyright, trademark, and other laws.</p>
+                    
+                    <h3>5. User Content</h3>
+                    <p>You retain all rights to the content you submit to our service. By submitting content, you grant us a limited license to process that content solely for the purpose of providing the repurposing service. We do not claim ownership of your content, and we do not store your content after processing except as necessary to provide the service.</p>
+                    
+                    <h3>6. Subscription and Payments</h3>
+                    <p>Certain features of the service may require payment. By selecting a premium subscription, you agree to pay the specified fees. All payments are processed through secure third-party payment processors.</p>
+                    
+                    <h3>7. Limitation of Liability</h3>
+                    <p>In no event shall ContentRepurpose.ai, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.</p>
+                    
+                    <h3>8. Termination</h3>
+                    <p>We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                    
+                    <h3>9. Changes to Terms</h3>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.</p>
+                `
+            },
+            disclaimer: {
+                title: "Disclaimer",
+                content: `
+                    <h2>Disclaimer</h2>
+                    <p><strong>Last Updated:</strong> March 15, 2024</p>
+                    
+                    <h3>1. No Professional Advice</h3>
+                    <p>The content generated by ContentRepurpose.ai is for informational and assistance purposes only. It should not be considered professional advice in fields such as legal, financial, medical, or any other professional domain. Always seek the advice of qualified professionals regarding any such matters.</p>
+                    
+                    <h3>2. AI-Generated Content</h3>
+                    <p>Our tool uses artificial intelligence to generate content based on your input. While we strive for accuracy and quality, AI-generated content may:</p>
+                    
+                    <ul>
+                        <li>Contain inaccuracies or errors</li>
+                        <li>Generate content that requires human review and editing</li>
+                        <li>Produce results that may not align perfectly with your expectations</li>
+                        <li>Require fact-checking and verification</li>
+                    </ul>
+                    
+                    <p>You are solely responsible for reviewing, editing, and approving all content generated by our tool before publication or use.</p>
+                    
+                    <h3>3. No Guarantee of Results</h3>
+                    <p>We do not guarantee that the use of our service will result in specific outcomes such as increased engagement, followers, sales, or any other metric. Content performance depends on numerous factors beyond our control including audience behavior, platform algorithms, timing, and market conditions.</p>
+                    
+                    <h3>4. Third-Party Content</h3>
+                    <p>Our service may contain links to third-party websites or services that are not owned or controlled by ContentRepurpose.ai. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+                    
+                    <h3>5. Service Availability</h3>
+                    <p>We strive to maintain service availability but do not guarantee uninterrupted access to our service. We may need to perform maintenance, updates, or experience unexpected downtime. We are not liable for any losses or damages resulting from service interruptions.</p>
+                    
+                    <h3>6. Fair Use and Copyright</h3>
+                    <p>You must ensure that any content you input into our tool does not violate copyright laws or intellectual property rights. Our tool is designed to help you repurpose your own original content. We do not condone or support plagiarism, copyright infringement, or unethical content practices.</p>
+                    
+                    <h3>7. Testimonials and Examples</h3>
+                    <p>Any testimonials or examples shown on our website are exceptional results, don't apply to the average user, and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
+                    
+                    <h3>8. Contact for Concerns</h3>
+                    <p>If you have concerns about any content generated by our tool or believe it may infringe upon your rights, please contact us immediately at legal@contentrepurpose.ai.</p>
+                `
+            },
+            cookie: {
+                title: "Cookie Policy",
+                content: `
+                    <h2>Cookie Policy</h2>
+                    <p><strong>Last Updated:</strong> March 15, 2024</p>
+                    
+                    <h3>1. What Are Cookies</h3>
+                    <p>Cookies are small text files that are placed on your computer or mobile device when you visit our website. They are widely used to make websites work more efficiently and provide information to the website owners.</p>
+                    
+                    <h3>2. How We Use Cookies</h3>
+                    <p>We use cookies for the following purposes:</p>
+                    
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> These are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</li>
+                        <li><strong>Preference Cookies:</strong> These cookies enable the website to remember information that changes the way the website behaves or looks, like your preferred language or region.</li>
+                        <li><strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</li>
+                        <li><strong>Marketing Cookies:</strong> These cookies are used to track visitors across websites to display relevant advertisements.</li>
+                    </ul>
+                    
+                    <h3>3. Your Cookie Choices</h3>
+                    <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                    
+                    <h3>4. Third-Party Cookies</h3>
+                    <p>Some cookies are placed by third-party services that appear on our pages. We have no control over these cookies and you should check the relevant third-party's website for more information about how they use cookies.</p>
+                    
+                    <h3>5. Changes to This Policy</h3>
+                    <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will post any changes on this page with an updated revision date.</p>
+                    
+                    <h3>6. Contact Us</h3>
+                    <p>If you have any questions about our use of cookies, please contact us at privacy@contentrepurpose.ai.</p>
+                `
+            }
+        };
+        
+        // Open modal functions
+        document.getElementById('showPrivacy').addEventListener('click', (e) => {
+            e.preventDefault();
+            openLegalModal('privacy');
         });
         
-        // Contact Form Submission
+        document.getElementById('showTerms').addEventListener('click', (e) => {
+            e.preventDefault();
+            openLegalModal('terms');
+        });
+        
+        document.getElementById('showDisclaimer').addEventListener('click', (e) => {
+            e.preventDefault();
+            openLegalModal('disclaimer');
+        });
+        
+        document.getElementById('showCookie').addEventListener('click', (e) => {
+            e.preventDefault();
+            openLegalModal('cookie');
+        });
+        
+        function openLegalModal(page) {
+            legalTitle.textContent = legalPages[page].title;
+            legalContent.innerHTML = legalPages[page].content;
+            legalModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            legalModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking outside
+        legalModal.addEventListener('click', (e) => {
+            if (e.target === legalModal) {
+                legalModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // ===== CONTACT FORM =====
         const contactForm = document.getElementById('contactForm');
         
         contactForm.addEventListener('submit', (e) => {
@@ -1993,13 +2747,13 @@
             
             // In a real app, you would send this data to a server
             // For this demo, we'll just show a success message
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} soon.`);
+            showNotification(`Thank you, ${name}! Your message has been received. We'll get back to you at ${email} soon.`, 'success');
             
             // Reset form
             contactForm.reset();
         });
         
-        // Reset Button
+        // ===== RESET BUTTON =====
         const resetBtn = document.getElementById('resetBtn');
         
         resetBtn.addEventListener('click', () => {
@@ -2022,9 +2776,11 @@
                 content.classList.remove('active');
                 if (index === 0) content.classList.add('active');
             });
+            
+            showNotification('All content has been cleared.', 'info');
         });
         
-        // Generate Button - AI Simulation
+        // ===== GENERATE BUTTON - AI SIMULATION =====
         const generateBtn = document.getElementById('generateBtn');
         
         // Sample content for demonstration
@@ -2069,7 +2825,7 @@
             const inputText = contentInput.value.trim();
             
             if (inputText.length < 100) {
-                alert('Please enter at least 100 characters for best results.');
+                showNotification('Please enter at least 100 characters for best results.', 'warning');
                 return;
             }
             
@@ -2085,11 +2841,7 @@
             
             // Simulate AI processing time
             setTimeout(() => {
-                // Generate content based on user input and preferences
-                // In a real app, this would be processed by an actual AI
-                // For this demo, we'll use sample content adjusted based on preferences
-                
-                // Adjust sample content based on tone
+                // Adjust sample content based on preferences
                 let toneAdjustment = "";
                 if (tone === "professional") toneAdjustment = " (Professional Tone)";
                 if (tone === "casual") toneAdjustment = " (Casual Tone)";
@@ -2133,32 +2885,52 @@
                 generateBtn.innerHTML = '<i class="fas fa-magic"></i> Generate All Formats';
                 generateBtn.disabled = false;
                 
-                // Show success message
-                const notification = document.createElement('div');
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 100px;
-                    right: 20px;
-                    background: var(--success-color);
-                    color: white;
-                    padding: 15px 20px;
-                    border-radius: var(--radius);
-                    box-shadow: var(--shadow-lg);
-                    z-index: 1000;
-                    animation: slideIn 0.3s ease;
-                `;
-                notification.innerHTML = `<i class="fas fa-check-circle"></i> Content generated successfully!`;
-                document.body.appendChild(notification);
+                showNotification('Content generated successfully!', 'success');
                 
+            }, 1500); // Simulate 1.5 second processing time
+        });
+        
+        // ===== NOTIFICATION FUNCTION =====
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            
+            let bgColor = 'var(--primary-color)';
+            if (type === 'success') bgColor = 'var(--success-color)';
+            if (type === 'warning') bgColor = 'var(--warning-color)';
+            if (type === 'error') bgColor = 'var(--danger-color)';
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${bgColor};
+                color: white;
+                padding: 15px 20px;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow-lg);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+                max-width: 300px;
+                font-weight: 500;
+            `;
+            
+            notification.innerHTML = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
-                    notification.style.animation = 'slideOut 0.3s ease';
-                    setTimeout(() => {
+                    if (notification.parentNode) {
                         document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
-                
-                // Add CSS for animation
+                    }
+                }, 300);
+            }, 3000);
+            
+            // Add CSS for animation if not already present
+            if (!document.querySelector('#notificationStyles')) {
                 const style = document.createElement('style');
+                style.id = 'notificationStyles';
                 style.textContent = `
                     @keyframes slideIn {
                         from { transform: translateX(100%); opacity: 0; }
@@ -2170,11 +2942,10 @@
                     }
                 `;
                 document.head.appendChild(style);
-                
-            }, 1500); // Simulate 1.5 second processing time
-        });
+            }
+        }
         
-        // Smooth scrolling for anchor links
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
@@ -2197,15 +2968,19 @@
                     this.classList.add('active');
                     
                     // Scroll to target
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - 20;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Initialize with some sample content for demo
+        // ===== INITIALIZE WITH SAMPLE CONTENT =====
         window.addEventListener('DOMContentLoaded', () => {
             // Add sample content to input for demo purposes
             const sampleContent = `Artificial intelligence is transforming content creation in unprecedented ways. As we move further into 2024, it's becoming clear that AI isn't just another tool—it's a fundamental shift in how we produce, distribute, and optimize content.
@@ -2227,6 +3002,17 @@ The future belongs to those who can effectively combine artificial intelligence 
             
             // Trigger input event to update counters
             contentInput.dispatchEvent(new Event('input'));
+            
+            // Initialize first tab as active
+            if (tabBtns.length > 0 && tabContents.length > 0) {
+                tabBtns[0].classList.add('active');
+                tabContents[0].classList.add('active');
+            }
+            
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Welcome! Sample content loaded. Try generating different formats.', 'info');
+            }, 1000);
         });
     </script>
 </body>
